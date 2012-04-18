@@ -68,34 +68,34 @@ public final class EChannel extends AbstractEnumerator {
 	public static final int SMS = 2;
 
 	/**
-	 * The '<em><b>Selfservice Machine</b></em>' literal value.
+	 * The '<em><b>Self Service Machine</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Selfservice Machine</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Self Service Machine</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #SELFSERVICE_MACHINE_LITERAL
-	 * @model name="selfserviceMachine"
+	 * @see #SELF_SERVICE_MACHINE_LITERAL
+	 * @model name="selfServiceMachine"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SELFSERVICE_MACHINE = 3;
+	public static final int SELF_SERVICE_MACHINE = 3;
 
 	/**
-	 * The '<em><b>Facetoface</b></em>' literal value.
+	 * The '<em><b>Face To Face</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Facetoface</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Face To Face</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #FACETOFACE_LITERAL
-	 * @model name="facetoface"
+	 * @see #FACE_TO_FACE_LITERAL
+	 * @model name="faceToFace"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int FACETOFACE = 4;
+	public static final int FACE_TO_FACE = 4;
 
 	/**
 	 * The '<em><b>Phone</b></em>' literal value.
@@ -143,24 +143,24 @@ public final class EChannel extends AbstractEnumerator {
 	public static final EChannel SMS_LITERAL = new EChannel(SMS, "sms", "sms");
 
 	/**
-	 * The '<em><b>Selfservice Machine</b></em>' literal object.
+	 * The '<em><b>Self Service Machine</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SELFSERVICE_MACHINE
+	 * @see #SELF_SERVICE_MACHINE
 	 * @generated
 	 * @ordered
 	 */
-	public static final EChannel SELFSERVICE_MACHINE_LITERAL = new EChannel(SELFSERVICE_MACHINE, "selfserviceMachine", "selfserviceMachine");
+	public static final EChannel SELF_SERVICE_MACHINE_LITERAL = new EChannel(SELF_SERVICE_MACHINE, "selfServiceMachine", "selfServiceMachine");
 
 	/**
-	 * The '<em><b>Facetoface</b></em>' literal object.
+	 * The '<em><b>Face To Face</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #FACETOFACE
+	 * @see #FACE_TO_FACE
 	 * @generated
 	 * @ordered
 	 */
-	public static final EChannel FACETOFACE_LITERAL = new EChannel(FACETOFACE, "facetoface", "facetoface");
+	public static final EChannel FACE_TO_FACE_LITERAL = new EChannel(FACE_TO_FACE, "faceToFace", "faceToFace");
 
 	/**
 	 * The '<em><b>Phone</b></em>' literal object.
@@ -183,8 +183,8 @@ public final class EChannel extends AbstractEnumerator {
 			WEB_LITERAL,
 			EMAIL_LITERAL,
 			SMS_LITERAL,
-			SELFSERVICE_MACHINE_LITERAL,
-			FACETOFACE_LITERAL,
+			SELF_SERVICE_MACHINE_LITERAL,
+			FACE_TO_FACE_LITERAL,
 			PHONE_LITERAL,
 		};
 
@@ -239,8 +239,8 @@ public final class EChannel extends AbstractEnumerator {
 			case WEB: return WEB_LITERAL;
 			case EMAIL: return EMAIL_LITERAL;
 			case SMS: return SMS_LITERAL;
-			case SELFSERVICE_MACHINE: return SELFSERVICE_MACHINE_LITERAL;
-			case FACETOFACE: return FACETOFACE_LITERAL;
+			case SELF_SERVICE_MACHINE: return SELF_SERVICE_MACHINE_LITERAL;
+			case FACE_TO_FACE: return FACE_TO_FACE_LITERAL;
 			case PHONE: return PHONE_LITERAL;
 		}
 		return null;

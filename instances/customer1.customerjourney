@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customerjourney:CustomerJourney xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:customerjourney="http://customerjourney/1.0" ID="" name="" comment="Simple Case, no problems, no ad-hoc touchpoints">
+  <touchpoints ID="T0" name="customer orders and pays movie ticket via web site" DT1="0" comment=""/>
+  <touchpoints ID="T1" name="confirmation received by e-mail" DT1="0" channel="email" initiator="movieAgency"/>
+  <touchpoints ID="T1" name="confirmation received by SMS" DT1="0" channel="sms" initiator="movieAgency"/>
+  <touchpoints ID="T3" name="print ticket via self-service machine at the movie" DT1="1" evaluation="bad" channel="selfServiceMachine"/>
+  <touchpoints ID="T4" name="customer shows ticket at entrance" channel="faceToFace"/>
+</customerjourney:CustomerJourney>
