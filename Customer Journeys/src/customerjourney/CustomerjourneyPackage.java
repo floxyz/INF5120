@@ -154,13 +154,22 @@ public interface CustomerjourneyPackage extends EPackage {
 	int TOUCHPOINT = 1;
 
 	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUCHPOINT__ID = 0;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TOUCHPOINT__NAME = 0;
+	int TOUCHPOINT__NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Date</b></em>' attribute.
@@ -169,7 +178,7 @@ public interface CustomerjourneyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TOUCHPOINT__DATE = 1;
+	int TOUCHPOINT__DATE = 2;
 
 	/**
 	 * The feature id for the '<em><b>DT1</b></em>' attribute.
@@ -178,7 +187,7 @@ public interface CustomerjourneyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TOUCHPOINT__DT1 = 2;
+	int TOUCHPOINT__DT1 = 3;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -187,7 +196,7 @@ public interface CustomerjourneyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TOUCHPOINT__TYPE = 3;
+	int TOUCHPOINT__TYPE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -196,7 +205,7 @@ public interface CustomerjourneyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TOUCHPOINT__COMMENT = 4;
+	int TOUCHPOINT__COMMENT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Evaluation</b></em>' attribute.
@@ -205,7 +214,7 @@ public interface CustomerjourneyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TOUCHPOINT__EVALUATION = 5;
+	int TOUCHPOINT__EVALUATION = 6;
 
 	/**
 	 * The feature id for the '<em><b>Channel</b></em>' attribute.
@@ -214,7 +223,7 @@ public interface CustomerjourneyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TOUCHPOINT__CHANNEL = 6;
+	int TOUCHPOINT__CHANNEL = 7;
 
 	/**
 	 * The feature id for the '<em><b>Initiator</b></em>' attribute.
@@ -223,16 +232,7 @@ public interface CustomerjourneyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TOUCHPOINT__INITIATOR = 7;
-
-	/**
-	 * The feature id for the '<em><b>Status</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOUCHPOINT__STATUS = 8;
+	int TOUCHPOINT__INITIATOR = 8;
 
 	/**
 	 * The number of structural features of the '<em>Touchpoint</em>' class.
@@ -284,6 +284,26 @@ public interface CustomerjourneyPackage extends EPackage {
 	int EINITIATOR = 5;
 
 	/**
+	 * The meta object id for the '{@link customerjourney.EEvaluation <em>EEvaluation</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see customerjourney.EEvaluation
+	 * @see customerjourney.impl.CustomerjourneyPackageImpl#getEEvaluation()
+	 * @generated
+	 */
+	int EEVALUATION = 6;
+
+	/**
+	 * The meta object id for the '{@link customerjourney.EEnum0 <em>EEnum0</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see customerjourney.EEnum0
+	 * @see customerjourney.impl.CustomerjourneyPackageImpl#getEEnum0()
+	 * @generated
+	 */
+	int EENUM0 = 7;
+
+	/**
 	 * The meta object id for the '<em>Calendar</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -291,7 +311,7 @@ public interface CustomerjourneyPackage extends EPackage {
 	 * @see customerjourney.impl.CustomerjourneyPackageImpl#getCalendar()
 	 * @generated
 	 */
-	int CALENDAR = 6;
+	int CALENDAR = 8;
 
 
 	/**
@@ -392,6 +412,17 @@ public interface CustomerjourneyPackage extends EPackage {
 	EClass getTouchpoint();
 
 	/**
+	 * Returns the meta object for the attribute '{@link customerjourney.Touchpoint#getID <em>ID</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>ID</em>'.
+	 * @see customerjourney.Touchpoint#getID()
+	 * @see #getTouchpoint()
+	 * @generated
+	 */
+	EAttribute getTouchpoint_ID();
+
+	/**
 	 * Returns the meta object for the attribute '{@link customerjourney.Touchpoint#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -480,17 +511,6 @@ public interface CustomerjourneyPackage extends EPackage {
 	EAttribute getTouchpoint_Initiator();
 
 	/**
-	 * Returns the meta object for the attribute '{@link customerjourney.Touchpoint#getStatus <em>Status</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Status</em>'.
-	 * @see customerjourney.Touchpoint#getStatus()
-	 * @see #getTouchpoint()
-	 * @generated
-	 */
-	EAttribute getTouchpoint_Status();
-
-	/**
 	 * Returns the meta object for enum '{@link customerjourney.EStatus <em>EStatus</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -529,6 +549,26 @@ public interface CustomerjourneyPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getEInitiator();
+
+	/**
+	 * Returns the meta object for enum '{@link customerjourney.EEvaluation <em>EEvaluation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>EEvaluation</em>'.
+	 * @see customerjourney.EEvaluation
+	 * @generated
+	 */
+	EEnum getEEvaluation();
+
+	/**
+	 * Returns the meta object for enum '{@link customerjourney.EEnum0 <em>EEnum0</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>EEnum0</em>'.
+	 * @see customerjourney.EEnum0
+	 * @generated
+	 */
+	EEnum getEEnum0();
 
 	/**
 	 * Returns the meta object for data type '{@link java.util.Calendar <em>Calendar</em>}'.
@@ -640,6 +680,14 @@ public interface CustomerjourneyPackage extends EPackage {
 		EClass TOUCHPOINT = eINSTANCE.getTouchpoint();
 
 		/**
+		 * The meta object literal for the '<em><b>ID</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TOUCHPOINT__ID = eINSTANCE.getTouchpoint_ID();
+
+		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -704,14 +752,6 @@ public interface CustomerjourneyPackage extends EPackage {
 		EAttribute TOUCHPOINT__INITIATOR = eINSTANCE.getTouchpoint_Initiator();
 
 		/**
-		 * The meta object literal for the '<em><b>Status</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TOUCHPOINT__STATUS = eINSTANCE.getTouchpoint_Status();
-
-		/**
 		 * The meta object literal for the '{@link customerjourney.EStatus <em>EStatus</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -750,6 +790,26 @@ public interface CustomerjourneyPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum EINITIATOR = eINSTANCE.getEInitiator();
+
+		/**
+		 * The meta object literal for the '{@link customerjourney.EEvaluation <em>EEvaluation</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see customerjourney.EEvaluation
+		 * @see customerjourney.impl.CustomerjourneyPackageImpl#getEEvaluation()
+		 * @generated
+		 */
+		EEnum EEVALUATION = eINSTANCE.getEEvaluation();
+
+		/**
+		 * The meta object literal for the '{@link customerjourney.EEnum0 <em>EEnum0</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see customerjourney.EEnum0
+		 * @see customerjourney.impl.CustomerjourneyPackageImpl#getEEnum0()
+		 * @generated
+		 */
+		EEnum EENUM0 = eINSTANCE.getEEnum0();
 
 		/**
 		 * The meta object literal for the '<em>Calendar</em>' data type.

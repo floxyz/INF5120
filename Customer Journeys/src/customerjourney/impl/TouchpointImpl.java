@@ -8,6 +8,7 @@ package customerjourney.impl;
 
 import customerjourney.CustomerjourneyPackage;
 import customerjourney.EChannel;
+import customerjourney.EEvaluation;
 import customerjourney.EInitiator;
 import customerjourney.EStatus;
 import customerjourney.EType;
@@ -29,6 +30,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link customerjourney.impl.TouchpointImpl#getID <em>ID</em>}</li>
  *   <li>{@link customerjourney.impl.TouchpointImpl#getName <em>Name</em>}</li>
  *   <li>{@link customerjourney.impl.TouchpointImpl#getDate <em>Date</em>}</li>
  *   <li>{@link customerjourney.impl.TouchpointImpl#getDT1 <em>DT1</em>}</li>
@@ -37,13 +39,32 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link customerjourney.impl.TouchpointImpl#getEvaluation <em>Evaluation</em>}</li>
  *   <li>{@link customerjourney.impl.TouchpointImpl#getChannel <em>Channel</em>}</li>
  *   <li>{@link customerjourney.impl.TouchpointImpl#getInitiator <em>Initiator</em>}</li>
- *   <li>{@link customerjourney.impl.TouchpointImpl#getStatus <em>Status</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class TouchpointImpl extends EObjectImpl implements Touchpoint {
+	/**
+	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getID()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getID() <em>ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getID()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -152,7 +173,7 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer EVALUATION_EDEFAULT = null;
+	protected static final EEvaluation EVALUATION_EDEFAULT = EEvaluation.GOOD_LITERAL;
 
 	/**
 	 * The cached value of the '{@link #getEvaluation() <em>Evaluation</em>}' attribute.
@@ -162,7 +183,7 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 	 * @generated
 	 * @ordered
 	 */
-	protected Integer evaluation = EVALUATION_EDEFAULT;
+	protected EEvaluation evaluation = EVALUATION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getChannel() <em>Channel</em>}' attribute.
@@ -205,26 +226,6 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 	protected EInitiator initiator = INITIATOR_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatus()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final EStatus STATUS_EDEFAULT = EStatus.COMPLETED_LITERAL;
-
-	/**
-	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatus()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStatus status = STATUS_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -240,6 +241,27 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 	 */
 	protected EClass eStaticClass() {
 		return CustomerjourneyPackage.Literals.TOUCHPOINT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getID() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setID(String newID) {
+		String oldID = id;
+		id = newID;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CustomerjourneyPackage.TOUCHPOINT__ID, oldID, id));
 	}
 
 	/**
@@ -352,7 +374,7 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Integer getEvaluation() {
+	public EEvaluation getEvaluation() {
 		return evaluation;
 	}
 
@@ -361,9 +383,9 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEvaluation(Integer newEvaluation) {
-		Integer oldEvaluation = evaluation;
-		evaluation = newEvaluation;
+	public void setEvaluation(EEvaluation newEvaluation) {
+		EEvaluation oldEvaluation = evaluation;
+		evaluation = newEvaluation == null ? EVALUATION_EDEFAULT : newEvaluation;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CustomerjourneyPackage.TOUCHPOINT__EVALUATION, oldEvaluation, evaluation));
 	}
@@ -415,29 +437,10 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EStatus getStatus() {
-		return status;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setStatus(EStatus newStatus) {
-		EStatus oldStatus = status;
-		status = newStatus == null ? STATUS_EDEFAULT : newStatus;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CustomerjourneyPackage.TOUCHPOINT__STATUS, oldStatus, status));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case CustomerjourneyPackage.TOUCHPOINT__ID:
+				return getID();
 			case CustomerjourneyPackage.TOUCHPOINT__NAME:
 				return getName();
 			case CustomerjourneyPackage.TOUCHPOINT__DATE:
@@ -454,8 +457,6 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 				return getChannel();
 			case CustomerjourneyPackage.TOUCHPOINT__INITIATOR:
 				return getInitiator();
-			case CustomerjourneyPackage.TOUCHPOINT__STATUS:
-				return getStatus();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -467,6 +468,9 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case CustomerjourneyPackage.TOUCHPOINT__ID:
+				setID((String)newValue);
+				return;
 			case CustomerjourneyPackage.TOUCHPOINT__NAME:
 				setName((String)newValue);
 				return;
@@ -483,16 +487,13 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 				setComment((String)newValue);
 				return;
 			case CustomerjourneyPackage.TOUCHPOINT__EVALUATION:
-				setEvaluation((Integer)newValue);
+				setEvaluation((EEvaluation)newValue);
 				return;
 			case CustomerjourneyPackage.TOUCHPOINT__CHANNEL:
 				setChannel((EChannel)newValue);
 				return;
 			case CustomerjourneyPackage.TOUCHPOINT__INITIATOR:
 				setInitiator((EInitiator)newValue);
-				return;
-			case CustomerjourneyPackage.TOUCHPOINT__STATUS:
-				setStatus((EStatus)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -505,6 +506,9 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 	 */
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case CustomerjourneyPackage.TOUCHPOINT__ID:
+				setID(ID_EDEFAULT);
+				return;
 			case CustomerjourneyPackage.TOUCHPOINT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -529,9 +533,6 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 			case CustomerjourneyPackage.TOUCHPOINT__INITIATOR:
 				setInitiator(INITIATOR_EDEFAULT);
 				return;
-			case CustomerjourneyPackage.TOUCHPOINT__STATUS:
-				setStatus(STATUS_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -543,6 +544,8 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 	 */
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case CustomerjourneyPackage.TOUCHPOINT__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case CustomerjourneyPackage.TOUCHPOINT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case CustomerjourneyPackage.TOUCHPOINT__DATE:
@@ -554,13 +557,11 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 			case CustomerjourneyPackage.TOUCHPOINT__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case CustomerjourneyPackage.TOUCHPOINT__EVALUATION:
-				return EVALUATION_EDEFAULT == null ? evaluation != null : !EVALUATION_EDEFAULT.equals(evaluation);
+				return evaluation != EVALUATION_EDEFAULT;
 			case CustomerjourneyPackage.TOUCHPOINT__CHANNEL:
 				return channel != CHANNEL_EDEFAULT;
 			case CustomerjourneyPackage.TOUCHPOINT__INITIATOR:
 				return initiator != INITIATOR_EDEFAULT;
-			case CustomerjourneyPackage.TOUCHPOINT__STATUS:
-				return status != STATUS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -574,7 +575,9 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
+		result.append(" (ID: ");
+		result.append(id);
+		result.append(", name: ");
 		result.append(name);
 		result.append(", date: ");
 		result.append(date);
@@ -590,8 +593,6 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 		result.append(channel);
 		result.append(", initiator: ");
 		result.append(initiator);
-		result.append(", status: ");
-		result.append(status);
 		result.append(')');
 		return result.toString();
 	}

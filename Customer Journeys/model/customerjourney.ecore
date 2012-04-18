@@ -7,29 +7,51 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="#//Calendar"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//EStatus"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Touchpoint"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="touchpoints" lowerBound="1"
         upperBound="-1" eType="#//Touchpoint" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Touchpoint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="#//Calendar"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="DT1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="channel" lowerBound="1"
-        eType="#//Channel" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="initiator" lowerBound="1"
-        eType="#//Initiator" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//EType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="evaluation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Channel">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Initiator">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="evaluation" eType="#//EEvaluation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="channel" eType="#//EChannel"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initiator" eType="#//EInitiator"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Calendar" instanceClassName="java.util.Calendar"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="EStatus">
+    <eLiterals name="completed"/>
+    <eLiterals name="aborted" value="1"/>
+    <eLiterals name="inProgress" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EChannel">
+    <eLiterals name="web"/>
+    <eLiterals name="email" value="1"/>
+    <eLiterals name="sms" value="2"/>
+    <eLiterals name="selfServiceMachine" value="3"/>
+    <eLiterals name="faceToFace" value="4"/>
+    <eLiterals name="phone" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EType">
+    <eLiterals name="generic"/>
+    <eLiterals name="adhoc" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EInitiator">
+    <eLiterals name="customer"/>
+    <eLiterals name="movieAgency" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EEvaluation">
+    <eLiterals name="good"/>
+    <eLiterals name="bad" value="1"/>
+    <eLiterals name="medium" value="2"/>
+    <eLiterals name="na" value="3"/>
+    <eLiterals name="empty" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EEnum0"/>
 </ecore:EPackage>

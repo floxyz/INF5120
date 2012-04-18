@@ -66,15 +66,37 @@ public class TouchpointItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addIDPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addDatePropertyDescriptor(object);
 			addDT1PropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 			addCommentPropertyDescriptor(object);
 			addEvaluationPropertyDescriptor(object);
-			addStatusPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the ID feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIDPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Touchpoint_ID_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Touchpoint_ID_feature", "_UI_Touchpoint_type"),
+				 CustomerjourneyPackage.Literals.TOUCHPOINT__ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -210,28 +232,6 @@ public class TouchpointItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Status feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addStatusPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Touchpoint_status_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Touchpoint_status_feature", "_UI_Touchpoint_type"),
-				 CustomerjourneyPackage.Literals.TOUCHPOINT__STATUS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -294,13 +294,13 @@ public class TouchpointItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Touchpoint.class)) {
+			case CustomerjourneyPackage.TOUCHPOINT__ID:
 			case CustomerjourneyPackage.TOUCHPOINT__NAME:
 			case CustomerjourneyPackage.TOUCHPOINT__DATE:
 			case CustomerjourneyPackage.TOUCHPOINT__DT1:
 			case CustomerjourneyPackage.TOUCHPOINT__TYPE:
 			case CustomerjourneyPackage.TOUCHPOINT__COMMENT:
 			case CustomerjourneyPackage.TOUCHPOINT__EVALUATION:
-			case CustomerjourneyPackage.TOUCHPOINT__STATUS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case CustomerjourneyPackage.TOUCHPOINT__CHANNEL:

@@ -84,6 +84,10 @@ public class CustomerjourneyFactoryImpl extends EFactoryImpl implements Customer
 				return createETypeFromString(eDataType, initialValue);
 			case CustomerjourneyPackage.EINITIATOR:
 				return createEInitiatorFromString(eDataType, initialValue);
+			case CustomerjourneyPackage.EEVALUATION:
+				return createEEvaluationFromString(eDataType, initialValue);
+			case CustomerjourneyPackage.EENUM0:
+				return createEEnum0FromString(eDataType, initialValue);
 			case CustomerjourneyPackage.CALENDAR:
 				return createCalendarFromString(eDataType, initialValue);
 			default:
@@ -106,6 +110,10 @@ public class CustomerjourneyFactoryImpl extends EFactoryImpl implements Customer
 				return convertETypeToString(eDataType, instanceValue);
 			case CustomerjourneyPackage.EINITIATOR:
 				return convertEInitiatorToString(eDataType, instanceValue);
+			case CustomerjourneyPackage.EEVALUATION:
+				return convertEEvaluationToString(eDataType, instanceValue);
+			case CustomerjourneyPackage.EENUM0:
+				return convertEEnum0ToString(eDataType, instanceValue);
 			case CustomerjourneyPackage.CALENDAR:
 				return convertCalendarToString(eDataType, instanceValue);
 			default:
@@ -210,6 +218,46 @@ public class CustomerjourneyFactoryImpl extends EFactoryImpl implements Customer
 	 * @generated
 	 */
 	public String convertEInitiatorToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEvaluation createEEvaluationFromString(EDataType eDataType, String initialValue) {
+		EEvaluation result = EEvaluation.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEEvaluationToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum0 createEEnum0FromString(EDataType eDataType, String initialValue) {
+		EEnum0 result = EEnum0.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEEnum0ToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
