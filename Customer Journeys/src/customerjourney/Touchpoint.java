@@ -22,10 +22,11 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link customerjourney.Touchpoint#getDate <em>Date</em>}</li>
  *   <li>{@link customerjourney.Touchpoint#getDT1 <em>DT1</em>}</li>
  *   <li>{@link customerjourney.Touchpoint#getType <em>Type</em>}</li>
- *   <li>{@link customerjourney.Touchpoint#getChannel <em>Channel</em>}</li>
- *   <li>{@link customerjourney.Touchpoint#getInitiator <em>Initiator</em>}</li>
  *   <li>{@link customerjourney.Touchpoint#getComment <em>Comment</em>}</li>
  *   <li>{@link customerjourney.Touchpoint#getEvaluation <em>Evaluation</em>}</li>
+ *   <li>{@link customerjourney.Touchpoint#getChannel <em>Channel</em>}</li>
+ *   <li>{@link customerjourney.Touchpoint#getInitiator <em>Initiator</em>}</li>
+ *   <li>{@link customerjourney.Touchpoint#getStatus <em>Status</em>}</li>
  * </ul>
  * </p>
  *
@@ -114,6 +115,7 @@ public interface Touchpoint extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link customerjourney.EType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
@@ -121,74 +123,24 @@ public interface Touchpoint extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see #setType(String)
+	 * @see customerjourney.EType
+	 * @see #setType(EType)
 	 * @see customerjourney.CustomerjourneyPackage#getTouchpoint_Type()
 	 * @model
 	 * @generated
 	 */
-	String getType();
+	EType getType();
 
 	/**
 	 * Sets the value of the '{@link customerjourney.Touchpoint#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Type</em>' attribute.
+	 * @see customerjourney.EType
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Channel</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Channel</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Channel</em>' containment reference.
-	 * @see #setChannel(Channel)
-	 * @see customerjourney.CustomerjourneyPackage#getTouchpoint_Channel()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	Channel getChannel();
-
-	/**
-	 * Sets the value of the '{@link customerjourney.Touchpoint#getChannel <em>Channel</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Channel</em>' containment reference.
-	 * @see #getChannel()
-	 * @generated
-	 */
-	void setChannel(Channel value);
-
-	/**
-	 * Returns the value of the '<em><b>Initiator</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Initiator</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Initiator</em>' containment reference.
-	 * @see #setInitiator(Initiator)
-	 * @see customerjourney.CustomerjourneyPackage#getTouchpoint_Initiator()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	Initiator getInitiator();
-
-	/**
-	 * Sets the value of the '{@link customerjourney.Touchpoint#getInitiator <em>Initiator</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Initiator</em>' containment reference.
-	 * @see #getInitiator()
-	 * @generated
-	 */
-	void setInitiator(Initiator value);
+	void setType(EType value);
 
 	/**
 	 * Returns the value of the '<em><b>Comment</b></em>' attribute.
@@ -241,5 +193,92 @@ public interface Touchpoint extends EObject {
 	 * @generated
 	 */
 	void setEvaluation(Integer value);
+
+	/**
+	 * Returns the value of the '<em><b>Channel</b></em>' attribute.
+	 * The literals are from the enumeration {@link customerjourney.EChannel}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Channel</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Channel</em>' attribute.
+	 * @see customerjourney.EChannel
+	 * @see #setChannel(EChannel)
+	 * @see customerjourney.CustomerjourneyPackage#getTouchpoint_Channel()
+	 * @model
+	 * @generated
+	 */
+	EChannel getChannel();
+
+	/**
+	 * Sets the value of the '{@link customerjourney.Touchpoint#getChannel <em>Channel</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Channel</em>' attribute.
+	 * @see customerjourney.EChannel
+	 * @see #getChannel()
+	 * @generated
+	 */
+	void setChannel(EChannel value);
+
+	/**
+	 * Returns the value of the '<em><b>Initiator</b></em>' attribute.
+	 * The literals are from the enumeration {@link customerjourney.EInitiator}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Initiator</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Initiator</em>' attribute.
+	 * @see customerjourney.EInitiator
+	 * @see #setInitiator(EInitiator)
+	 * @see customerjourney.CustomerjourneyPackage#getTouchpoint_Initiator()
+	 * @model
+	 * @generated
+	 */
+	EInitiator getInitiator();
+
+	/**
+	 * Sets the value of the '{@link customerjourney.Touchpoint#getInitiator <em>Initiator</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Initiator</em>' attribute.
+	 * @see customerjourney.EInitiator
+	 * @see #getInitiator()
+	 * @generated
+	 */
+	void setInitiator(EInitiator value);
+
+	/**
+	 * Returns the value of the '<em><b>Status</b></em>' attribute.
+	 * The literals are from the enumeration {@link customerjourney.EStatus}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Status</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Status</em>' attribute.
+	 * @see customerjourney.EStatus
+	 * @see #setStatus(EStatus)
+	 * @see customerjourney.CustomerjourneyPackage#getTouchpoint_Status()
+	 * @model
+	 * @generated
+	 */
+	EStatus getStatus();
+
+	/**
+	 * Sets the value of the '{@link customerjourney.Touchpoint#getStatus <em>Status</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Status</em>' attribute.
+	 * @see customerjourney.EStatus
+	 * @see #getStatus()
+	 * @generated
+	 */
+	void setStatus(EStatus value);
 
 } // Touchpoint

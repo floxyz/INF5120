@@ -64,8 +64,6 @@ public class CustomerjourneyFactoryImpl extends EFactoryImpl implements Customer
 		switch (eClass.getClassifierID()) {
 			case CustomerjourneyPackage.CUSTOMER_JOURNEY: return createCustomerJourney();
 			case CustomerjourneyPackage.TOUCHPOINT: return createTouchpoint();
-			case CustomerjourneyPackage.CHANNEL: return createChannel();
-			case CustomerjourneyPackage.INITIATOR: return createInitiator();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -78,6 +76,14 @@ public class CustomerjourneyFactoryImpl extends EFactoryImpl implements Customer
 	 */
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
+			case CustomerjourneyPackage.ESTATUS:
+				return createEStatusFromString(eDataType, initialValue);
+			case CustomerjourneyPackage.ECHANNEL:
+				return createEChannelFromString(eDataType, initialValue);
+			case CustomerjourneyPackage.ETYPE:
+				return createETypeFromString(eDataType, initialValue);
+			case CustomerjourneyPackage.EINITIATOR:
+				return createEInitiatorFromString(eDataType, initialValue);
 			case CustomerjourneyPackage.CALENDAR:
 				return createCalendarFromString(eDataType, initialValue);
 			default:
@@ -92,6 +98,14 @@ public class CustomerjourneyFactoryImpl extends EFactoryImpl implements Customer
 	 */
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
+			case CustomerjourneyPackage.ESTATUS:
+				return convertEStatusToString(eDataType, instanceValue);
+			case CustomerjourneyPackage.ECHANNEL:
+				return convertEChannelToString(eDataType, instanceValue);
+			case CustomerjourneyPackage.ETYPE:
+				return convertETypeToString(eDataType, instanceValue);
+			case CustomerjourneyPackage.EINITIATOR:
+				return convertEInitiatorToString(eDataType, instanceValue);
 			case CustomerjourneyPackage.CALENDAR:
 				return convertCalendarToString(eDataType, instanceValue);
 			default:
@@ -124,9 +138,10 @@ public class CustomerjourneyFactoryImpl extends EFactoryImpl implements Customer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Channel createChannel() {
-		ChannelImpl channel = new ChannelImpl();
-		return channel;
+	public EStatus createEStatusFromString(EDataType eDataType, String initialValue) {
+		EStatus result = EStatus.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
 	}
 
 	/**
@@ -134,9 +149,68 @@ public class CustomerjourneyFactoryImpl extends EFactoryImpl implements Customer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Initiator createInitiator() {
-		InitiatorImpl initiator = new InitiatorImpl();
-		return initiator;
+	public String convertEStatusToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EChannel createEChannelFromString(EDataType eDataType, String initialValue) {
+		EChannel result = EChannel.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEChannelToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EType createETypeFromString(EDataType eDataType, String initialValue) {
+		EType result = EType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertETypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EInitiator createEInitiatorFromString(EDataType eDataType, String initialValue) {
+		EInitiator result = EInitiator.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEInitiatorToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

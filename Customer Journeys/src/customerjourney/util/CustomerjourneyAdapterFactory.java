@@ -76,12 +76,6 @@ public class CustomerjourneyAdapterFactory extends AdapterFactoryImpl {
 			public Object caseTouchpoint(Touchpoint object) {
 				return createTouchpointAdapter();
 			}
-			public Object caseChannel(Channel object) {
-				return createChannelAdapter();
-			}
-			public Object caseInitiator(Initiator object) {
-				return createInitiatorAdapter();
-			}
 			public Object defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -125,34 +119,6 @@ public class CustomerjourneyAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTouchpointAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link customerjourney.Channel <em>Channel</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see customerjourney.Channel
-	 * @generated
-	 */
-	public Adapter createChannelAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link customerjourney.Initiator <em>Initiator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see customerjourney.Initiator
-	 * @generated
-	 */
-	public Adapter createInitiatorAdapter() {
 		return null;
 	}
 

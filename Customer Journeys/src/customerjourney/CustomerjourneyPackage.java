@@ -9,6 +9,7 @@ package customerjourney;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -189,31 +190,13 @@ public interface CustomerjourneyPackage extends EPackage {
 	int TOUCHPOINT__TYPE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Channel</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOUCHPOINT__CHANNEL = 4;
-
-	/**
-	 * The feature id for the '<em><b>Initiator</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOUCHPOINT__INITIATOR = 5;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TOUCHPOINT__COMMENT = 6;
+	int TOUCHPOINT__COMMENT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Evaluation</b></em>' attribute.
@@ -222,7 +205,34 @@ public interface CustomerjourneyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TOUCHPOINT__EVALUATION = 7;
+	int TOUCHPOINT__EVALUATION = 5;
+
+	/**
+	 * The feature id for the '<em><b>Channel</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUCHPOINT__CHANNEL = 6;
+
+	/**
+	 * The feature id for the '<em><b>Initiator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUCHPOINT__INITIATOR = 7;
+
+	/**
+	 * The feature id for the '<em><b>Status</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUCHPOINT__STATUS = 8;
 
 	/**
 	 * The number of structural features of the '<em>Touchpoint</em>' class.
@@ -231,63 +241,47 @@ public interface CustomerjourneyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TOUCHPOINT_FEATURE_COUNT = 8;
+	int TOUCHPOINT_FEATURE_COUNT = 9;
 
 	/**
-	 * The meta object id for the '{@link customerjourney.impl.ChannelImpl <em>Channel</em>}' class.
+	 * The meta object id for the '{@link customerjourney.EStatus <em>EStatus</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see customerjourney.impl.ChannelImpl
-	 * @see customerjourney.impl.CustomerjourneyPackageImpl#getChannel()
+	 * @see customerjourney.EStatus
+	 * @see customerjourney.impl.CustomerjourneyPackageImpl#getEStatus()
 	 * @generated
 	 */
-	int CHANNEL = 2;
+	int ESTATUS = 2;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The meta object id for the '{@link customerjourney.EChannel <em>EChannel</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see customerjourney.EChannel
+	 * @see customerjourney.impl.CustomerjourneyPackageImpl#getEChannel()
 	 * @generated
-	 * @ordered
 	 */
-	int CHANNEL__NAME = 0;
+	int ECHANNEL = 3;
 
 	/**
-	 * The number of structural features of the '<em>Channel</em>' class.
+	 * The meta object id for the '{@link customerjourney.EType <em>EType</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see customerjourney.EType
+	 * @see customerjourney.impl.CustomerjourneyPackageImpl#getEType()
 	 * @generated
-	 * @ordered
 	 */
-	int CHANNEL_FEATURE_COUNT = 1;
+	int ETYPE = 4;
 
 	/**
-	 * The meta object id for the '{@link customerjourney.impl.InitiatorImpl <em>Initiator</em>}' class.
+	 * The meta object id for the '{@link customerjourney.EInitiator <em>EInitiator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see customerjourney.impl.InitiatorImpl
-	 * @see customerjourney.impl.CustomerjourneyPackageImpl#getInitiator()
+	 * @see customerjourney.EInitiator
+	 * @see customerjourney.impl.CustomerjourneyPackageImpl#getEInitiator()
 	 * @generated
 	 */
-	int INITIATOR = 3;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INITIATOR__NAME = 0;
-
-	/**
-	 * The number of structural features of the '<em>Initiator</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INITIATOR_FEATURE_COUNT = 1;
+	int EINITIATOR = 5;
 
 	/**
 	 * The meta object id for the '<em>Calendar</em>' data type.
@@ -297,7 +291,7 @@ public interface CustomerjourneyPackage extends EPackage {
 	 * @see customerjourney.impl.CustomerjourneyPackageImpl#getCalendar()
 	 * @generated
 	 */
-	int CALENDAR = 4;
+	int CALENDAR = 6;
 
 
 	/**
@@ -442,28 +436,6 @@ public interface CustomerjourneyPackage extends EPackage {
 	EAttribute getTouchpoint_Type();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link customerjourney.Touchpoint#getChannel <em>Channel</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Channel</em>'.
-	 * @see customerjourney.Touchpoint#getChannel()
-	 * @see #getTouchpoint()
-	 * @generated
-	 */
-	EReference getTouchpoint_Channel();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link customerjourney.Touchpoint#getInitiator <em>Initiator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Initiator</em>'.
-	 * @see customerjourney.Touchpoint#getInitiator()
-	 * @see #getTouchpoint()
-	 * @generated
-	 */
-	EReference getTouchpoint_Initiator();
-
-	/**
 	 * Returns the meta object for the attribute '{@link customerjourney.Touchpoint#getComment <em>Comment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -486,46 +458,77 @@ public interface CustomerjourneyPackage extends EPackage {
 	EAttribute getTouchpoint_Evaluation();
 
 	/**
-	 * Returns the meta object for class '{@link customerjourney.Channel <em>Channel</em>}'.
+	 * Returns the meta object for the attribute '{@link customerjourney.Touchpoint#getChannel <em>Channel</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Channel</em>'.
-	 * @see customerjourney.Channel
+	 * @return the meta object for the attribute '<em>Channel</em>'.
+	 * @see customerjourney.Touchpoint#getChannel()
+	 * @see #getTouchpoint()
 	 * @generated
 	 */
-	EClass getChannel();
+	EAttribute getTouchpoint_Channel();
 
 	/**
-	 * Returns the meta object for the attribute '{@link customerjourney.Channel#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link customerjourney.Touchpoint#getInitiator <em>Initiator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see customerjourney.Channel#getName()
-	 * @see #getChannel()
+	 * @return the meta object for the attribute '<em>Initiator</em>'.
+	 * @see customerjourney.Touchpoint#getInitiator()
+	 * @see #getTouchpoint()
 	 * @generated
 	 */
-	EAttribute getChannel_Name();
+	EAttribute getTouchpoint_Initiator();
 
 	/**
-	 * Returns the meta object for class '{@link customerjourney.Initiator <em>Initiator</em>}'.
+	 * Returns the meta object for the attribute '{@link customerjourney.Touchpoint#getStatus <em>Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Initiator</em>'.
-	 * @see customerjourney.Initiator
+	 * @return the meta object for the attribute '<em>Status</em>'.
+	 * @see customerjourney.Touchpoint#getStatus()
+	 * @see #getTouchpoint()
 	 * @generated
 	 */
-	EClass getInitiator();
+	EAttribute getTouchpoint_Status();
 
 	/**
-	 * Returns the meta object for the attribute '{@link customerjourney.Initiator#getName <em>Name</em>}'.
+	 * Returns the meta object for enum '{@link customerjourney.EStatus <em>EStatus</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see customerjourney.Initiator#getName()
-	 * @see #getInitiator()
+	 * @return the meta object for enum '<em>EStatus</em>'.
+	 * @see customerjourney.EStatus
 	 * @generated
 	 */
-	EAttribute getInitiator_Name();
+	EEnum getEStatus();
+
+	/**
+	 * Returns the meta object for enum '{@link customerjourney.EChannel <em>EChannel</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>EChannel</em>'.
+	 * @see customerjourney.EChannel
+	 * @generated
+	 */
+	EEnum getEChannel();
+
+	/**
+	 * Returns the meta object for enum '{@link customerjourney.EType <em>EType</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>EType</em>'.
+	 * @see customerjourney.EType
+	 * @generated
+	 */
+	EEnum getEType();
+
+	/**
+	 * Returns the meta object for enum '{@link customerjourney.EInitiator <em>EInitiator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>EInitiator</em>'.
+	 * @see customerjourney.EInitiator
+	 * @generated
+	 */
+	EEnum getEInitiator();
 
 	/**
 	 * Returns the meta object for data type '{@link java.util.Calendar <em>Calendar</em>}'.
@@ -669,22 +672,6 @@ public interface CustomerjourneyPackage extends EPackage {
 		EAttribute TOUCHPOINT__TYPE = eINSTANCE.getTouchpoint_Type();
 
 		/**
-		 * The meta object literal for the '<em><b>Channel</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TOUCHPOINT__CHANNEL = eINSTANCE.getTouchpoint_Channel();
-
-		/**
-		 * The meta object literal for the '<em><b>Initiator</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TOUCHPOINT__INITIATOR = eINSTANCE.getTouchpoint_Initiator();
-
-		/**
 		 * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -701,40 +688,68 @@ public interface CustomerjourneyPackage extends EPackage {
 		EAttribute TOUCHPOINT__EVALUATION = eINSTANCE.getTouchpoint_Evaluation();
 
 		/**
-		 * The meta object literal for the '{@link customerjourney.impl.ChannelImpl <em>Channel</em>}' class.
+		 * The meta object literal for the '<em><b>Channel</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see customerjourney.impl.ChannelImpl
-		 * @see customerjourney.impl.CustomerjourneyPackageImpl#getChannel()
 		 * @generated
 		 */
-		EClass CHANNEL = eINSTANCE.getChannel();
+		EAttribute TOUCHPOINT__CHANNEL = eINSTANCE.getTouchpoint_Channel();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Initiator</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CHANNEL__NAME = eINSTANCE.getChannel_Name();
+		EAttribute TOUCHPOINT__INITIATOR = eINSTANCE.getTouchpoint_Initiator();
 
 		/**
-		 * The meta object literal for the '{@link customerjourney.impl.InitiatorImpl <em>Initiator</em>}' class.
+		 * The meta object literal for the '<em><b>Status</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see customerjourney.impl.InitiatorImpl
-		 * @see customerjourney.impl.CustomerjourneyPackageImpl#getInitiator()
 		 * @generated
 		 */
-		EClass INITIATOR = eINSTANCE.getInitiator();
+		EAttribute TOUCHPOINT__STATUS = eINSTANCE.getTouchpoint_Status();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '{@link customerjourney.EStatus <em>EStatus</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see customerjourney.EStatus
+		 * @see customerjourney.impl.CustomerjourneyPackageImpl#getEStatus()
 		 * @generated
 		 */
-		EAttribute INITIATOR__NAME = eINSTANCE.getInitiator_Name();
+		EEnum ESTATUS = eINSTANCE.getEStatus();
+
+		/**
+		 * The meta object literal for the '{@link customerjourney.EChannel <em>EChannel</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see customerjourney.EChannel
+		 * @see customerjourney.impl.CustomerjourneyPackageImpl#getEChannel()
+		 * @generated
+		 */
+		EEnum ECHANNEL = eINSTANCE.getEChannel();
+
+		/**
+		 * The meta object literal for the '{@link customerjourney.EType <em>EType</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see customerjourney.EType
+		 * @see customerjourney.impl.CustomerjourneyPackageImpl#getEType()
+		 * @generated
+		 */
+		EEnum ETYPE = eINSTANCE.getEType();
+
+		/**
+		 * The meta object literal for the '{@link customerjourney.EInitiator <em>EInitiator</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see customerjourney.EInitiator
+		 * @see customerjourney.impl.CustomerjourneyPackageImpl#getEInitiator()
+		 * @generated
+		 */
+		EEnum EINITIATOR = eINSTANCE.getEInitiator();
 
 		/**
 		 * The meta object literal for the '<em>Calendar</em>' data type.
