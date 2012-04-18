@@ -6,6 +6,7 @@
  */
 package customerjourney;
 
+import java.util.Date;
 import java.util.Calendar;
 
 import org.eclipse.emf.common.util.EList;
@@ -96,12 +97,12 @@ public interface CustomerJourney extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Date</em>' attribute.
-	 * @see #setDate(Calendar)
+	 * @see #setDate(Date)
 	 * @see customerjourney.CustomerjourneyPackage#getCustomerJourney_Date()
-	 * @model dataType="customerjourney.Calendar"
+	 * @model
 	 * @generated
 	 */
-	Calendar getDate();
+	Date getDate();
 
 	/**
 	 * Sets the value of the '{@link customerjourney.CustomerJourney#getDate <em>Date</em>}' attribute.
@@ -111,7 +112,7 @@ public interface CustomerJourney extends EObject {
 	 * @see #getDate()
 	 * @generated
 	 */
-	void setDate(Calendar value);
+	void setDate(Date value);
 
 	/**
 	 * Returns the value of the '<em><b>Status</b></em>' attribute.

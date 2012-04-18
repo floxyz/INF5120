@@ -14,6 +14,7 @@ import customerjourney.EStatus;
 import customerjourney.EType;
 import customerjourney.Touchpoint;
 
+import java.util.Date;
 import java.util.Calendar;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -93,7 +94,7 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Calendar DATE_EDEFAULT = null;
+	protected static final Date DATE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getDate() <em>Date</em>}' attribute.
@@ -103,7 +104,7 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 	 * @generated
 	 * @ordered
 	 */
-	protected Calendar date = DATE_EDEFAULT;
+	protected Date date = DATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDT1() <em>DT1</em>}' attribute.
@@ -290,7 +291,7 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Calendar getDate() {
+	public Date getDate() {
 		return date;
 	}
 
@@ -299,8 +300,8 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDate(Calendar newDate) {
-		Calendar oldDate = date;
+	public void setDate(Date newDate) {
+		Date oldDate = date;
 		date = newDate;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CustomerjourneyPackage.TOUCHPOINT__DATE, oldDate, date));
@@ -475,7 +476,7 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 				setName((String)newValue);
 				return;
 			case CustomerjourneyPackage.TOUCHPOINT__DATE:
-				setDate((Calendar)newValue);
+				setDate((Date)newValue);
 				return;
 			case CustomerjourneyPackage.TOUCHPOINT__DT1:
 				setDT1((String)newValue);

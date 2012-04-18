@@ -14,6 +14,7 @@ import customerjourney.Touchpoint;
 import java.util.Calendar;
 import java.util.Collection;
 
+import java.util.Date;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -96,7 +97,7 @@ public class CustomerJourneyImpl extends EObjectImpl implements CustomerJourney 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Calendar DATE_EDEFAULT = null;
+	protected static final Date DATE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getDate() <em>Date</em>}' attribute.
@@ -106,7 +107,7 @@ public class CustomerJourneyImpl extends EObjectImpl implements CustomerJourney 
 	 * @generated
 	 * @ordered
 	 */
-	protected Calendar date = DATE_EDEFAULT;
+	protected Date date = DATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
@@ -233,7 +234,7 @@ public class CustomerJourneyImpl extends EObjectImpl implements CustomerJourney 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Calendar getDate() {
+	public Date getDate() {
 		return date;
 	}
 
@@ -242,8 +243,8 @@ public class CustomerJourneyImpl extends EObjectImpl implements CustomerJourney 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDate(Calendar newDate) {
-		Calendar oldDate = date;
+	public void setDate(Date newDate) {
+		Date oldDate = date;
 		date = newDate;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CustomerjourneyPackage.CUSTOMER_JOURNEY__DATE, oldDate, date));
@@ -394,7 +395,7 @@ public class CustomerJourneyImpl extends EObjectImpl implements CustomerJourney 
 				setName((String)newValue);
 				return;
 			case CustomerjourneyPackage.CUSTOMER_JOURNEY__DATE:
-				setDate((Calendar)newValue);
+				setDate((Date)newValue);
 				return;
 			case CustomerjourneyPackage.CUSTOMER_JOURNEY__STATUS:
 				setStatus((EStatus)newValue);
