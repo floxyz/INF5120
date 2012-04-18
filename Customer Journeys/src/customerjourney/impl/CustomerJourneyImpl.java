@@ -8,6 +8,7 @@ package customerjourney.impl;
 
 import customerjourney.CustomerJourney;
 import customerjourney.CustomerjourneyPackage;
+import customerjourney.EStatus;
 import customerjourney.Touchpoint;
 
 import java.util.Calendar;
@@ -115,7 +116,7 @@ public class CustomerJourneyImpl extends EObjectImpl implements CustomerJourney 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STATUS_EDEFAULT = null;
+	protected static final EStatus STATUS_EDEFAULT = EStatus.COMPLETED_LITERAL;
 
 	/**
 	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
@@ -125,7 +126,7 @@ public class CustomerJourneyImpl extends EObjectImpl implements CustomerJourney 
 	 * @generated
 	 * @ordered
 	 */
-	protected String status = STATUS_EDEFAULT;
+	protected EStatus status = STATUS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
@@ -253,7 +254,7 @@ public class CustomerJourneyImpl extends EObjectImpl implements CustomerJourney 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getStatus() {
+	public EStatus getStatus() {
 		return status;
 	}
 
@@ -262,9 +263,9 @@ public class CustomerJourneyImpl extends EObjectImpl implements CustomerJourney 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatus(String newStatus) {
-		String oldStatus = status;
-		status = newStatus;
+	public void setStatus(EStatus newStatus) {
+		EStatus oldStatus = status;
+		status = newStatus == null ? STATUS_EDEFAULT : newStatus;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CustomerjourneyPackage.CUSTOMER_JOURNEY__STATUS, oldStatus, status));
 	}
@@ -396,7 +397,7 @@ public class CustomerJourneyImpl extends EObjectImpl implements CustomerJourney 
 				setDate((Calendar)newValue);
 				return;
 			case CustomerjourneyPackage.CUSTOMER_JOURNEY__STATUS:
-				setStatus((String)newValue);
+				setStatus((EStatus)newValue);
 				return;
 			case CustomerjourneyPackage.CUSTOMER_JOURNEY__COMMENT:
 				setComment((String)newValue);
@@ -458,7 +459,7 @@ public class CustomerJourneyImpl extends EObjectImpl implements CustomerJourney 
 			case CustomerjourneyPackage.CUSTOMER_JOURNEY__DATE:
 				return DATE_EDEFAULT == null ? date != null : !DATE_EDEFAULT.equals(date);
 			case CustomerjourneyPackage.CUSTOMER_JOURNEY__STATUS:
-				return STATUS_EDEFAULT == null ? status != null : !STATUS_EDEFAULT.equals(status);
+				return status != STATUS_EDEFAULT;
 			case CustomerjourneyPackage.CUSTOMER_JOURNEY__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case CustomerjourneyPackage.CUSTOMER_JOURNEY__EREFERENCE0:

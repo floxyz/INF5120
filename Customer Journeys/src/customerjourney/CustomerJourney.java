@@ -115,6 +115,7 @@ public interface CustomerJourney extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Status</b></em>' attribute.
+	 * The literals are from the enumeration {@link customerjourney.EStatus}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status</em>' attribute isn't clear,
@@ -122,22 +123,24 @@ public interface CustomerJourney extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Status</em>' attribute.
-	 * @see #setStatus(String)
+	 * @see customerjourney.EStatus
+	 * @see #setStatus(EStatus)
 	 * @see customerjourney.CustomerjourneyPackage#getCustomerJourney_Status()
 	 * @model
 	 * @generated
 	 */
-	String getStatus();
+	EStatus getStatus();
 
 	/**
 	 * Sets the value of the '{@link customerjourney.CustomerJourney#getStatus <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Status</em>' attribute.
+	 * @see customerjourney.EStatus
 	 * @see #getStatus()
 	 * @generated
 	 */
-	void setStatus(String value);
+	void setStatus(EStatus value);
 
 	/**
 	 * Returns the value of the '<em><b>Comment</b></em>' attribute.

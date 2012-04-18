@@ -6,18 +6,18 @@
  */
 package customerjourney.impl;
 
-import customerjourney.Channel;
 import customerjourney.CustomerjourneyPackage;
-import customerjourney.Initiator;
+import customerjourney.EChannel;
+import customerjourney.EInitiator;
+import customerjourney.EStatus;
+import customerjourney.EType;
 import customerjourney.Touchpoint;
 
 import java.util.Calendar;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
@@ -33,10 +33,11 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link customerjourney.impl.TouchpointImpl#getDate <em>Date</em>}</li>
  *   <li>{@link customerjourney.impl.TouchpointImpl#getDT1 <em>DT1</em>}</li>
  *   <li>{@link customerjourney.impl.TouchpointImpl#getType <em>Type</em>}</li>
- *   <li>{@link customerjourney.impl.TouchpointImpl#getChannel <em>Channel</em>}</li>
- *   <li>{@link customerjourney.impl.TouchpointImpl#getInitiator <em>Initiator</em>}</li>
  *   <li>{@link customerjourney.impl.TouchpointImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link customerjourney.impl.TouchpointImpl#getEvaluation <em>Evaluation</em>}</li>
+ *   <li>{@link customerjourney.impl.TouchpointImpl#getChannel <em>Channel</em>}</li>
+ *   <li>{@link customerjourney.impl.TouchpointImpl#getInitiator <em>Initiator</em>}</li>
+ *   <li>{@link customerjourney.impl.TouchpointImpl#getStatus <em>Status</em>}</li>
  * </ul>
  * </p>
  *
@@ -111,7 +112,7 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TYPE_EDEFAULT = null;
+	protected static final EType TYPE_EDEFAULT = EType.GENERIC_LITERAL;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -121,27 +122,7 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 	 * @generated
 	 * @ordered
 	 */
-	protected String type = TYPE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getChannel() <em>Channel</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChannel()
-	 * @generated
-	 * @ordered
-	 */
-	protected Channel channel;
-
-	/**
-	 * The cached value of the '{@link #getInitiator() <em>Initiator</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInitiator()
-	 * @generated
-	 * @ordered
-	 */
-	protected Initiator initiator;
+	protected EType type = TYPE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
@@ -182,6 +163,66 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 	 * @ordered
 	 */
 	protected Integer evaluation = EVALUATION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getChannel() <em>Channel</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChannel()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EChannel CHANNEL_EDEFAULT = EChannel.WEB_LITERAL;
+
+	/**
+	 * The cached value of the '{@link #getChannel() <em>Channel</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChannel()
+	 * @generated
+	 * @ordered
+	 */
+	protected EChannel channel = CHANNEL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getInitiator() <em>Initiator</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInitiator()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EInitiator INITIATOR_EDEFAULT = EInitiator.CUSTOMER_LITERAL;
+
+	/**
+	 * The cached value of the '{@link #getInitiator() <em>Initiator</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInitiator()
+	 * @generated
+	 * @ordered
+	 */
+	protected EInitiator initiator = INITIATOR_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatus()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EStatus STATUS_EDEFAULT = EStatus.COMPLETED_LITERAL;
+
+	/**
+	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatus()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStatus status = STATUS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -269,7 +310,7 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getType() {
+	public EType getType() {
 		return type;
 	}
 
@@ -278,97 +319,11 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(String newType) {
-		String oldType = type;
-		type = newType;
+	public void setType(EType newType) {
+		EType oldType = type;
+		type = newType == null ? TYPE_EDEFAULT : newType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CustomerjourneyPackage.TOUCHPOINT__TYPE, oldType, type));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Channel getChannel() {
-		return channel;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetChannel(Channel newChannel, NotificationChain msgs) {
-		Channel oldChannel = channel;
-		channel = newChannel;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CustomerjourneyPackage.TOUCHPOINT__CHANNEL, oldChannel, newChannel);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setChannel(Channel newChannel) {
-		if (newChannel != channel) {
-			NotificationChain msgs = null;
-			if (channel != null)
-				msgs = ((InternalEObject)channel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CustomerjourneyPackage.TOUCHPOINT__CHANNEL, null, msgs);
-			if (newChannel != null)
-				msgs = ((InternalEObject)newChannel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CustomerjourneyPackage.TOUCHPOINT__CHANNEL, null, msgs);
-			msgs = basicSetChannel(newChannel, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CustomerjourneyPackage.TOUCHPOINT__CHANNEL, newChannel, newChannel));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Initiator getInitiator() {
-		return initiator;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetInitiator(Initiator newInitiator, NotificationChain msgs) {
-		Initiator oldInitiator = initiator;
-		initiator = newInitiator;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CustomerjourneyPackage.TOUCHPOINT__INITIATOR, oldInitiator, newInitiator);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setInitiator(Initiator newInitiator) {
-		if (newInitiator != initiator) {
-			NotificationChain msgs = null;
-			if (initiator != null)
-				msgs = ((InternalEObject)initiator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CustomerjourneyPackage.TOUCHPOINT__INITIATOR, null, msgs);
-			if (newInitiator != null)
-				msgs = ((InternalEObject)newInitiator).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CustomerjourneyPackage.TOUCHPOINT__INITIATOR, null, msgs);
-			msgs = basicSetInitiator(newInitiator, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CustomerjourneyPackage.TOUCHPOINT__INITIATOR, newInitiator, newInitiator));
 	}
 
 	/**
@@ -418,14 +373,62 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case CustomerjourneyPackage.TOUCHPOINT__CHANNEL:
-				return basicSetChannel(null, msgs);
-			case CustomerjourneyPackage.TOUCHPOINT__INITIATOR:
-				return basicSetInitiator(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+	public EChannel getChannel() {
+		return channel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setChannel(EChannel newChannel) {
+		EChannel oldChannel = channel;
+		channel = newChannel == null ? CHANNEL_EDEFAULT : newChannel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CustomerjourneyPackage.TOUCHPOINT__CHANNEL, oldChannel, channel));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EInitiator getInitiator() {
+		return initiator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInitiator(EInitiator newInitiator) {
+		EInitiator oldInitiator = initiator;
+		initiator = newInitiator == null ? INITIATOR_EDEFAULT : newInitiator;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CustomerjourneyPackage.TOUCHPOINT__INITIATOR, oldInitiator, initiator));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EStatus getStatus() {
+		return status;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setStatus(EStatus newStatus) {
+		EStatus oldStatus = status;
+		status = newStatus == null ? STATUS_EDEFAULT : newStatus;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CustomerjourneyPackage.TOUCHPOINT__STATUS, oldStatus, status));
 	}
 
 	/**
@@ -443,14 +446,16 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 				return getDT1();
 			case CustomerjourneyPackage.TOUCHPOINT__TYPE:
 				return getType();
-			case CustomerjourneyPackage.TOUCHPOINT__CHANNEL:
-				return getChannel();
-			case CustomerjourneyPackage.TOUCHPOINT__INITIATOR:
-				return getInitiator();
 			case CustomerjourneyPackage.TOUCHPOINT__COMMENT:
 				return getComment();
 			case CustomerjourneyPackage.TOUCHPOINT__EVALUATION:
 				return getEvaluation();
+			case CustomerjourneyPackage.TOUCHPOINT__CHANNEL:
+				return getChannel();
+			case CustomerjourneyPackage.TOUCHPOINT__INITIATOR:
+				return getInitiator();
+			case CustomerjourneyPackage.TOUCHPOINT__STATUS:
+				return getStatus();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -472,19 +477,22 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 				setDT1((String)newValue);
 				return;
 			case CustomerjourneyPackage.TOUCHPOINT__TYPE:
-				setType((String)newValue);
-				return;
-			case CustomerjourneyPackage.TOUCHPOINT__CHANNEL:
-				setChannel((Channel)newValue);
-				return;
-			case CustomerjourneyPackage.TOUCHPOINT__INITIATOR:
-				setInitiator((Initiator)newValue);
+				setType((EType)newValue);
 				return;
 			case CustomerjourneyPackage.TOUCHPOINT__COMMENT:
 				setComment((String)newValue);
 				return;
 			case CustomerjourneyPackage.TOUCHPOINT__EVALUATION:
 				setEvaluation((Integer)newValue);
+				return;
+			case CustomerjourneyPackage.TOUCHPOINT__CHANNEL:
+				setChannel((EChannel)newValue);
+				return;
+			case CustomerjourneyPackage.TOUCHPOINT__INITIATOR:
+				setInitiator((EInitiator)newValue);
+				return;
+			case CustomerjourneyPackage.TOUCHPOINT__STATUS:
+				setStatus((EStatus)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -509,17 +517,20 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 			case CustomerjourneyPackage.TOUCHPOINT__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
-			case CustomerjourneyPackage.TOUCHPOINT__CHANNEL:
-				setChannel((Channel)null);
-				return;
-			case CustomerjourneyPackage.TOUCHPOINT__INITIATOR:
-				setInitiator((Initiator)null);
-				return;
 			case CustomerjourneyPackage.TOUCHPOINT__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
 			case CustomerjourneyPackage.TOUCHPOINT__EVALUATION:
 				setEvaluation(EVALUATION_EDEFAULT);
+				return;
+			case CustomerjourneyPackage.TOUCHPOINT__CHANNEL:
+				setChannel(CHANNEL_EDEFAULT);
+				return;
+			case CustomerjourneyPackage.TOUCHPOINT__INITIATOR:
+				setInitiator(INITIATOR_EDEFAULT);
+				return;
+			case CustomerjourneyPackage.TOUCHPOINT__STATUS:
+				setStatus(STATUS_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -539,15 +550,17 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 			case CustomerjourneyPackage.TOUCHPOINT__DT1:
 				return DT1_EDEFAULT == null ? dt1 != null : !DT1_EDEFAULT.equals(dt1);
 			case CustomerjourneyPackage.TOUCHPOINT__TYPE:
-				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-			case CustomerjourneyPackage.TOUCHPOINT__CHANNEL:
-				return channel != null;
-			case CustomerjourneyPackage.TOUCHPOINT__INITIATOR:
-				return initiator != null;
+				return type != TYPE_EDEFAULT;
 			case CustomerjourneyPackage.TOUCHPOINT__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case CustomerjourneyPackage.TOUCHPOINT__EVALUATION:
 				return EVALUATION_EDEFAULT == null ? evaluation != null : !EVALUATION_EDEFAULT.equals(evaluation);
+			case CustomerjourneyPackage.TOUCHPOINT__CHANNEL:
+				return channel != CHANNEL_EDEFAULT;
+			case CustomerjourneyPackage.TOUCHPOINT__INITIATOR:
+				return initiator != INITIATOR_EDEFAULT;
+			case CustomerjourneyPackage.TOUCHPOINT__STATUS:
+				return status != STATUS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -573,6 +586,12 @@ public class TouchpointImpl extends EObjectImpl implements Touchpoint {
 		result.append(comment);
 		result.append(", evaluation: ");
 		result.append(evaluation);
+		result.append(", channel: ");
+		result.append(channel);
+		result.append(", initiator: ");
+		result.append(initiator);
+		result.append(", status: ");
+		result.append(status);
 		result.append(')');
 		return result.toString();
 	}

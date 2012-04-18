@@ -6,11 +6,13 @@
  */
 package customerjourney.impl;
 
-import customerjourney.Channel;
 import customerjourney.CustomerJourney;
 import customerjourney.CustomerjourneyFactory;
 import customerjourney.CustomerjourneyPackage;
-import customerjourney.Initiator;
+import customerjourney.EChannel;
+import customerjourney.EInitiator;
+import customerjourney.EStatus;
+import customerjourney.EType;
 import customerjourney.Touchpoint;
 
 import java.util.Calendar;
@@ -18,6 +20,7 @@ import java.util.Calendar;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -49,14 +52,28 @@ public class CustomerjourneyPackageImpl extends EPackageImpl implements Customer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass channelEClass = null;
+	private EEnum eStatusEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass initiatorEClass = null;
+	private EEnum eChannelEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum eTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum eInitiatorEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -248,26 +265,8 @@ public class CustomerjourneyPackageImpl extends EPackageImpl implements Customer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTouchpoint_Channel() {
-		return (EReference)touchpointEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getTouchpoint_Initiator() {
-		return (EReference)touchpointEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getTouchpoint_Comment() {
-		return (EAttribute)touchpointEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)touchpointEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -276,6 +275,24 @@ public class CustomerjourneyPackageImpl extends EPackageImpl implements Customer
 	 * @generated
 	 */
 	public EAttribute getTouchpoint_Evaluation() {
+		return (EAttribute)touchpointEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTouchpoint_Channel() {
+		return (EAttribute)touchpointEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTouchpoint_Initiator() {
 		return (EAttribute)touchpointEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -284,8 +301,8 @@ public class CustomerjourneyPackageImpl extends EPackageImpl implements Customer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getChannel() {
-		return channelEClass;
+	public EAttribute getTouchpoint_Status() {
+		return (EAttribute)touchpointEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -293,8 +310,8 @@ public class CustomerjourneyPackageImpl extends EPackageImpl implements Customer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getChannel_Name() {
-		return (EAttribute)channelEClass.getEStructuralFeatures().get(0);
+	public EEnum getEStatus() {
+		return eStatusEEnum;
 	}
 
 	/**
@@ -302,8 +319,8 @@ public class CustomerjourneyPackageImpl extends EPackageImpl implements Customer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getInitiator() {
-		return initiatorEClass;
+	public EEnum getEChannel() {
+		return eChannelEEnum;
 	}
 
 	/**
@@ -311,8 +328,17 @@ public class CustomerjourneyPackageImpl extends EPackageImpl implements Customer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInitiator_Name() {
-		return (EAttribute)initiatorEClass.getEStructuralFeatures().get(0);
+	public EEnum getEType() {
+		return eTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getEInitiator() {
+		return eInitiatorEEnum;
 	}
 
 	/**
@@ -366,16 +392,17 @@ public class CustomerjourneyPackageImpl extends EPackageImpl implements Customer
 		createEAttribute(touchpointEClass, TOUCHPOINT__DATE);
 		createEAttribute(touchpointEClass, TOUCHPOINT__DT1);
 		createEAttribute(touchpointEClass, TOUCHPOINT__TYPE);
-		createEReference(touchpointEClass, TOUCHPOINT__CHANNEL);
-		createEReference(touchpointEClass, TOUCHPOINT__INITIATOR);
 		createEAttribute(touchpointEClass, TOUCHPOINT__COMMENT);
 		createEAttribute(touchpointEClass, TOUCHPOINT__EVALUATION);
+		createEAttribute(touchpointEClass, TOUCHPOINT__CHANNEL);
+		createEAttribute(touchpointEClass, TOUCHPOINT__INITIATOR);
+		createEAttribute(touchpointEClass, TOUCHPOINT__STATUS);
 
-		channelEClass = createEClass(CHANNEL);
-		createEAttribute(channelEClass, CHANNEL__NAME);
-
-		initiatorEClass = createEClass(INITIATOR);
-		createEAttribute(initiatorEClass, INITIATOR__NAME);
+		// Create enums
+		eStatusEEnum = createEEnum(ESTATUS);
+		eChannelEEnum = createEEnum(ECHANNEL);
+		eTypeEEnum = createEEnum(ETYPE);
+		eInitiatorEEnum = createEEnum(EINITIATOR);
 
 		// Create data types
 		calendarEDataType = createEDataType(CALENDAR);
@@ -411,7 +438,7 @@ public class CustomerjourneyPackageImpl extends EPackageImpl implements Customer
 		initEAttribute(getCustomerJourney_ID(), ecorePackage.getEString(), "ID", null, 0, 1, CustomerJourney.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustomerJourney_Name(), ecorePackage.getEString(), "name", null, 0, 1, CustomerJourney.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustomerJourney_Date(), this.getCalendar(), "date", null, 0, 1, CustomerJourney.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCustomerJourney_Status(), ecorePackage.getEString(), "status", null, 0, 1, CustomerJourney.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCustomerJourney_Status(), this.getEStatus(), "status", null, 0, 1, CustomerJourney.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCustomerJourney_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, CustomerJourney.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCustomerJourney_EReference0(), this.getTouchpoint(), null, "EReference0", null, 0, 1, CustomerJourney.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCustomerJourney_Touchpoints(), this.getTouchpoint(), null, "touchpoints", null, 1, -1, CustomerJourney.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -420,17 +447,34 @@ public class CustomerjourneyPackageImpl extends EPackageImpl implements Customer
 		initEAttribute(getTouchpoint_Name(), ecorePackage.getEString(), "name", null, 0, 1, Touchpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTouchpoint_Date(), this.getCalendar(), "date", null, 0, 1, Touchpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTouchpoint_DT1(), ecorePackage.getEString(), "DT1", null, 0, 1, Touchpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTouchpoint_Type(), ecorePackage.getEString(), "type", null, 0, 1, Touchpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTouchpoint_Channel(), this.getChannel(), null, "channel", null, 1, 1, Touchpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTouchpoint_Initiator(), this.getInitiator(), null, "initiator", null, 1, 1, Touchpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTouchpoint_Type(), this.getEType(), "type", null, 0, 1, Touchpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTouchpoint_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, Touchpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTouchpoint_Evaluation(), ecorePackage.getEIntegerObject(), "evaluation", null, 0, 1, Touchpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTouchpoint_Channel(), this.getEChannel(), "channel", null, 0, 1, Touchpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTouchpoint_Initiator(), this.getEInitiator(), "initiator", null, 0, 1, Touchpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTouchpoint_Status(), this.getEStatus(), "status", null, 0, 1, Touchpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(channelEClass, Channel.class, "Channel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getChannel_Name(), ecorePackage.getEString(), "name", null, 0, 1, Channel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		// Initialize enums and add enum literals
+		initEEnum(eStatusEEnum, EStatus.class, "EStatus");
+		addEEnumLiteral(eStatusEEnum, EStatus.COMPLETED_LITERAL);
+		addEEnumLiteral(eStatusEEnum, EStatus.ABORTED_LITERAL);
+		addEEnumLiteral(eStatusEEnum, EStatus.IN_PROGRESS_LITERAL);
 
-		initEClass(initiatorEClass, Initiator.class, "Initiator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInitiator_Name(), ecorePackage.getEString(), "name", null, 0, 1, Initiator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEEnum(eChannelEEnum, EChannel.class, "EChannel");
+		addEEnumLiteral(eChannelEEnum, EChannel.WEB_LITERAL);
+		addEEnumLiteral(eChannelEEnum, EChannel.EMAIL_LITERAL);
+		addEEnumLiteral(eChannelEEnum, EChannel.SMS_LITERAL);
+		addEEnumLiteral(eChannelEEnum, EChannel.SELFSERVICE_MACHINE_LITERAL);
+		addEEnumLiteral(eChannelEEnum, EChannel.FACETOFACE_LITERAL);
+		addEEnumLiteral(eChannelEEnum, EChannel.PHONE_LITERAL);
+
+		initEEnum(eTypeEEnum, EType.class, "EType");
+		addEEnumLiteral(eTypeEEnum, EType.GENERIC_LITERAL);
+		addEEnumLiteral(eTypeEEnum, EType.ADHOC_LITERAL);
+
+		initEEnum(eInitiatorEEnum, EInitiator.class, "EInitiator");
+		addEEnumLiteral(eInitiatorEEnum, EInitiator.CUSTOMER_LITERAL);
+		addEEnumLiteral(eInitiatorEEnum, EInitiator.MOVIE_AGENCY_LITERAL);
 
 		// Initialize data types
 		initEDataType(calendarEDataType, Calendar.class, "Calendar", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

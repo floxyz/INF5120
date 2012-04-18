@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="customerjourney.presentation.CustomerjourneyModelWizardID"
+            name="%_UI_CustomerjourneyModelWizard_label"
+            class="customerjourney.presentation.CustomerjourneyModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/CustomerjourneyModelFile.gif">
+         <description>%_UI_CustomerjourneyModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="customerjourney.presentation.CustomerjourneyEditorID"
+            name="%_UI_CustomerjourneyEditor_label"
+            icon="icons/full/obj16/CustomerjourneyModelFile.gif"
+            extensions="customerjourney"
+            class="customerjourney.presentation.CustomerjourneyEditor"
+            contributorClass="customerjourney.presentation.CustomerjourneyActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

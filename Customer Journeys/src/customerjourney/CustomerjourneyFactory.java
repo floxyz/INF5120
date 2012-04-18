@@ -44,24 +44,6 @@ public interface CustomerjourneyFactory extends EFactory {
 	Touchpoint createTouchpoint();
 
 	/**
-	 * Returns a new object of class '<em>Channel</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Channel</em>'.
-	 * @generated
-	 */
-	Channel createChannel();
-
-	/**
-	 * Returns a new object of class '<em>Initiator</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Initiator</em>'.
-	 * @generated
-	 */
-	Initiator createInitiator();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
