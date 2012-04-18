@@ -37,10 +37,16 @@ public class Analyzer {
 		// Do something with the model
 		if(resourceContent instanceof CustomerJourney){ // Model is the root class of your model
 			CustomerJourney journey = (CustomerJourney) resourceContent;
-			System.out.println("Journey: " + journey.getName());
+			System.out.println("customer journey " + journey.getName());
+			System.out.println("   from: " + journey.getDate());
+			System.out.println(" status: " + journey.getStatus());
+			System.out.println(" commnt: " + journey.getComment());
+			System.out.println(" touchpoints:");
 			for (Touchpoint tp: (List<Touchpoint>) journey.getTouchpoints()){
-				System.out.println(" - " + tp.getName());
+				System.out.println("   - " + tp.getName() + " (" + tp.getEvaluation()+ ")");
 			}
 		}
 	}
+	
+	
 }

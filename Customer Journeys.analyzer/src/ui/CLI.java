@@ -9,7 +9,7 @@ public class CLI {
 	 */
 	public static void main(String[] args) {
 
-		Analyzer analyzer = new Analyzer("../instances/some.customerjourney");
+		Analyzer analyzer = new Analyzer("../instances/customer1.customerjourney");
 		analyzer.printJourney();
 		
 	}
