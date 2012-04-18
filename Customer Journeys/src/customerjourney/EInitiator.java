@@ -53,6 +53,21 @@ public final class EInitiator extends AbstractEnumerator {
 	public static final int MOVIE_AGENCY = 1;
 
 	/**
+	 * The '<em><b>Movie Employee</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Movie Employee</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #MOVIE_EMPLOYEE_LITERAL
+	 * @model name="movieEmployee"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MOVIE_EMPLOYEE = 2;
+
+	/**
 	 * The '<em><b>Customer</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -73,6 +88,16 @@ public final class EInitiator extends AbstractEnumerator {
 	public static final EInitiator MOVIE_AGENCY_LITERAL = new EInitiator(MOVIE_AGENCY, "movieAgency", "movieAgency");
 
 	/**
+	 * The '<em><b>Movie Employee</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MOVIE_EMPLOYEE
+	 * @generated
+	 * @ordered
+	 */
+	public static final EInitiator MOVIE_EMPLOYEE_LITERAL = new EInitiator(MOVIE_EMPLOYEE, "movieEmployee", "movieEmployee");
+
+	/**
 	 * An array of all the '<em><b>EInitiator</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -82,6 +107,7 @@ public final class EInitiator extends AbstractEnumerator {
 		new EInitiator[] {
 			CUSTOMER_LITERAL,
 			MOVIE_AGENCY_LITERAL,
+			MOVIE_EMPLOYEE_LITERAL,
 		};
 
 	/**
@@ -134,6 +160,7 @@ public final class EInitiator extends AbstractEnumerator {
 		switch (value) {
 			case CUSTOMER: return CUSTOMER_LITERAL;
 			case MOVIE_AGENCY: return MOVIE_AGENCY_LITERAL;
+			case MOVIE_EMPLOYEE: return MOVIE_EMPLOYEE_LITERAL;
 		}
 		return null;
 	}

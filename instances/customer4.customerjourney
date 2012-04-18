@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customerjourney:CustomerJourney xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:customerjourney="http://customerjourney/1.0" status="aborted" comment="Complicated case, journey canceled, several deviations">
+  <touchpoints ID="T0" name="customer orders and pays movie ticket via web site" DT1="2" evaluation="medium"/>
+  <touchpoints ID="D0" name="confirmation not received by e-mail" DT1="2" type="adhoc" comment="customer wrote incorrect e-mail address when ordering" evaluation="bad" channel="email" initiator="movieAgency"/>
+  <touchpoints ID="T2" name="confirmation received by SMS" DT1="2" channel="sms" initiator="movieAgency"/>
+  <touchpoints ID="D3" name="customer visits ticket office to clarify that the date is correct" DT1="2" type="adhoc" comment="customer happy with the service" channel="faceToFace"/>
+  <touchpoints ID="T4" name="customer shows ticket at entrance" DT1="2" evaluation="na" channel="faceToFace"/>
+  <touchpoints ID="D41" name="customer is expeled from the theater" DT1="2" type="adhoc" comment="customer is drunk and misbehaves" evaluation="empty" channel="faceToFace" initiator="movieEmployee"/>
+  <touchpoints ID="D42" name="customer calls help desk to get ticket refunded" DT1="4" type="adhoc" comment="customer wants money back" evaluation="na" channel="phone"/>
+</customerjourney:CustomerJourney>

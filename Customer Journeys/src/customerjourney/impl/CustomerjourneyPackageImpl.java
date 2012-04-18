@@ -511,6 +511,7 @@ public class CustomerjourneyPackageImpl extends EPackageImpl implements Customer
 		initEEnum(eInitiatorEEnum, EInitiator.class, "EInitiator");
 		addEEnumLiteral(eInitiatorEEnum, EInitiator.CUSTOMER_LITERAL);
 		addEEnumLiteral(eInitiatorEEnum, EInitiator.MOVIE_AGENCY_LITERAL);
+		addEEnumLiteral(eInitiatorEEnum, EInitiator.MOVIE_EMPLOYEE_LITERAL);
 
 		initEEnum(eEvaluationEEnum, EEvaluation.class, "EEvaluation");
 		addEEnumLiteral(eEvaluationEEnum, EEvaluation.GOOD_LITERAL);

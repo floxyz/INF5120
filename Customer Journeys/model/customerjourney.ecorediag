@@ -183,6 +183,10 @@
         <element xmi:type="ecore:EEnumLiteral" href="customerjourney.ecore#//EInitiator/movieAgency"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_taH6AYk8EeGvSJquJH5IEA"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_j3EjgIlJEeGctfRy6p2nig" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="customerjourney.ecore#//EInitiator/movieEmployee"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_j3EjgYlJEeGctfRy6p2nig"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_rb1BUok8EeGvSJquJH5IEA"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_rb1BU4k8EeGvSJquJH5IEA"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_rb1BVIk8EeGvSJquJH5IEA"/>

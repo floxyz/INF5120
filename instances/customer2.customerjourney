@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<customerjourney:CustomerJourney xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:customerjourney="http://customerjourney/1.0"/>
+<customerjourney:CustomerJourney xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:customerjourney="http://customerjourney/1.0" comment="Simple case, one deviation">
+  <touchpoints ID="T0" name="customer orders and pays movie ticket via web site" DT1="0" evaluation="medium"/>
+  <touchpoints ID="T1" name="confirmation received by e-mail" DT1="0" evaluation="bad" channel="email" initiator="movieAgency"/>
+  <touchpoints ID="T2" name="confirmation received by SMS" DT1="0" channel="sms" initiator="movieAgency"/>
+  <touchpoints ID="D2" name="customer calls help desk because of confusing information in the e-mail" DT1="1" type="adhoc" evaluation="empty" channel="phone"/>
+  <touchpoints ID="T3" name="print ticket via self-service machine at the movie" DT1="4" evaluation="medium" channel="selfServiceMachine"/>
+  <touchpoints ID="T4" name="customer shows ticket at entrance" DT1="4" evaluation="na" channel="faceToFace"/>
+</customerjourney:CustomerJourney>

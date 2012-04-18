@@ -45,6 +45,7 @@
   <eClassifiers xsi:type="ecore:EEnum" name="EInitiator">
     <eLiterals name="customer"/>
     <eLiterals name="movieAgency" value="1"/>
+    <eLiterals name="movieEmployee" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="EEvaluation">
     <eLiterals name="good"/>
