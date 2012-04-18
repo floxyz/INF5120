@@ -43,7 +43,7 @@ public class Analyzer {
 			System.out.println(" commnt: " + journey.getComment());
 			System.out.println(" touchpoints:");
 			for (Touchpoint tp: (List<Touchpoint>) journey.getTouchpoints()){
-				System.out.println("   - " + tp.getName() + " (" + tp.getEvaluation()+ ")");
+				System.out.println("   - " + tp.getID() + " " + tp.getName() + " (" + tp.getEvaluation()+ ")");
 			}
 		}
 	}
