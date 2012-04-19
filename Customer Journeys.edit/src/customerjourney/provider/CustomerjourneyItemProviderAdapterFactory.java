@@ -120,6 +120,28 @@ public class CustomerjourneyItemProviderAdapterFactory extends CustomerjourneyAd
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link customerjourney.JourneySet} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected JourneySetItemProvider journeySetItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link customerjourney.JourneySet}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Adapter createJourneySetAdapter() {
+		if (journeySetItemProvider == null) {
+			journeySetItemProvider = new JourneySetItemProvider(this);
+		}
+
+		return journeySetItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -217,6 +239,7 @@ public class CustomerjourneyItemProviderAdapterFactory extends CustomerjourneyAd
 	public void dispose() {
 		if (customerJourneyItemProvider != null) customerJourneyItemProvider.dispose();
 		if (touchpointItemProvider != null) touchpointItemProvider.dispose();
+		if (journeySetItemProvider != null) journeySetItemProvider.dispose();
 	}
 
 }

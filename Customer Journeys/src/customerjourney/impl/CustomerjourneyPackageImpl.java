@@ -15,6 +15,7 @@ import customerjourney.EEvaluation;
 import customerjourney.EInitiator;
 import customerjourney.EStatus;
 import customerjourney.EType;
+import customerjourney.JourneySet;
 import customerjourney.Touchpoint;
 
 import java.util.Calendar;
@@ -48,6 +49,13 @@ public class CustomerjourneyPackageImpl extends EPackageImpl implements Customer
 	 * @generated
 	 */
 	private EClass touchpointEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass journeySetEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -326,6 +334,33 @@ public class CustomerjourneyPackageImpl extends EPackageImpl implements Customer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getJourneySet() {
+		return journeySetEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getJourneySet_Journeys() {
+		return (EReference)journeySetEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getJourneySet_SetName() {
+		return (EAttribute)journeySetEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getEStatus() {
 		return eStatusEEnum;
 	}
@@ -432,6 +467,10 @@ public class CustomerjourneyPackageImpl extends EPackageImpl implements Customer
 		createEAttribute(touchpointEClass, TOUCHPOINT__CHANNEL);
 		createEAttribute(touchpointEClass, TOUCHPOINT__INITIATOR);
 
+		journeySetEClass = createEClass(JOURNEY_SET);
+		createEReference(journeySetEClass, JOURNEY_SET__JOURNEYS);
+		createEAttribute(journeySetEClass, JOURNEY_SET__SET_NAME);
+
 		// Create enums
 		eStatusEEnum = createEEnum(ESTATUS);
 		eChannelEEnum = createEEnum(ECHANNEL);
@@ -489,6 +528,10 @@ public class CustomerjourneyPackageImpl extends EPackageImpl implements Customer
 		initEAttribute(getTouchpoint_Evaluation(), this.getEEvaluation(), "evaluation", null, 0, 1, Touchpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTouchpoint_Channel(), this.getEChannel(), "channel", null, 0, 1, Touchpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTouchpoint_Initiator(), this.getEInitiator(), "initiator", null, 0, 1, Touchpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(journeySetEClass, JourneySet.class, "JourneySet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getJourneySet_Journeys(), this.getCustomerJourney(), null, "journeys", null, 0, -1, JourneySet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getJourneySet_SetName(), ecorePackage.getEString(), "setName", null, 0, 1, JourneySet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(eStatusEEnum, EStatus.class, "EStatus");

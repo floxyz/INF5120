@@ -64,6 +64,7 @@ public class CustomerjourneyFactoryImpl extends EFactoryImpl implements Customer
 		switch (eClass.getClassifierID()) {
 			case CustomerjourneyPackage.CUSTOMER_JOURNEY: return createCustomerJourney();
 			case CustomerjourneyPackage.TOUCHPOINT: return createTouchpoint();
+			case CustomerjourneyPackage.JOURNEY_SET: return createJourneySet();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -139,6 +140,16 @@ public class CustomerjourneyFactoryImpl extends EFactoryImpl implements Customer
 	public Touchpoint createTouchpoint() {
 		TouchpointImpl touchpoint = new TouchpointImpl();
 		return touchpoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public JourneySet createJourneySet() {
+		JourneySetImpl journeySet = new JourneySetImpl();
+		return journeySet;
 	}
 
 	/**

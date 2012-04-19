@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<customerjourney:CustomerJourney xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:customerjourney="http://customerjourney/1.0">
-  <touchpoints name="TP1"/>
-  <touchpoints name="Whurr Durr Derp SLDKFJSLKDJFSDL" DT1="some delta"/>
-  <touchpoints name="Wurbelzahn" comment=""/>
-</customerjourney:CustomerJourney>

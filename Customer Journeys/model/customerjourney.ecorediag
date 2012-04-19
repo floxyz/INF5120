@@ -170,7 +170,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_n1HZUYk8EeGvSJquJH5IEA" fontColor="4210752" fontName="Ubuntu" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EEnum" href="customerjourney.ecore#//EType"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_n1HZUok8EeGvSJquJH5IEA" x="120" y="60"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_n1HZUok8EeGvSJquJH5IEA" x="96" y="60"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_rbzzMIk8EeGvSJquJH5IEA" type="1005">
     <children xmi:type="notation:Node" xmi:id="_rb1BUIk8EeGvSJquJH5IEA" type="4010"/>
@@ -193,7 +193,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_rbzzMYk8EeGvSJquJH5IEA" fontColor="4210752" fontName="Ubuntu" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EEnum" href="customerjourney.ecore#//EInitiator"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rbzzMok8EeGvSJquJH5IEA" x="240" y="60"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rbzzMok8EeGvSJquJH5IEA" x="216" y="60"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_Vn4lIIlCEeGctfRy6p2nig" type="1005">
     <children xmi:type="notation:Node" xmi:id="_Vn6aUIlCEeGctfRy6p2nig" type="4010"/>
@@ -226,6 +226,26 @@
     <element xmi:type="ecore:EEnum" href="customerjourney.ecore#//EEvaluation"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Vn4lIolCEeGctfRy6p2nig" x="636" y="60"/>
   </children>
+  <children xmi:type="notation:Node" xmi:id="_YIHPwIlOEeGctfRy6p2nig" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_YIId4IlOEeGctfRy6p2nig" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_YIJE8IlOEeGctfRy6p2nig" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_RubUYIlPEeGctfRy6p2nig" type="2001">
+        <element xmi:type="ecore:EAttribute" href="customerjourney.ecore#//JourneySet/setName"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_RubUYYlPEeGctfRy6p2nig"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_YIJE8YlOEeGctfRy6p2nig"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_YIJE8olOEeGctfRy6p2nig"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_YIJE84lOEeGctfRy6p2nig"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_YIJsAIlOEeGctfRy6p2nig" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_YIJsAYlOEeGctfRy6p2nig"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_YIJsAolOEeGctfRy6p2nig"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_YIJsA4lOEeGctfRy6p2nig"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_YIHPwYlOEeGctfRy6p2nig" fontColor="4210752" fontName="Ubuntu" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="customerjourney.ecore#//JourneySet"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YIHPwolOEeGctfRy6p2nig" y="228"/>
+  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_VqIAAocBEeGBQKjn51irxw"/>
   <element xmi:type="ecore:EPackage" href="customerjourney.ecore#/"/>
   <edges xmi:type="notation:Edge" xmi:id="_2EvbwIcCEeGBQKjn51irxw" type="3002" source="_ZQPLEIcBEeGBQKjn51irxw" target="_nnY20IcBEeGBQKjn51irxw">
@@ -240,5 +260,18 @@
     <element xmi:type="ecore:EReference" href="customerjourney.ecore#//CustomerJourney/touchpoints"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2EwC0ocCEeGBQKjn51irxw" points="[23, 2, -147, 10]$[62, 28, -108, 36]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2EzGIIcCEeGBQKjn51irxw" id="(0.8894230769230769,0.5535714285714286)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_aFT8QIlOEeGctfRy6p2nig" type="3002" source="_YIHPwIlOEeGctfRy6p2nig" target="_ZQPLEIcBEeGBQKjn51irxw">
+    <children xmi:type="notation:Node" xmi:id="_aFVKYIlOEeGctfRy6p2nig" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_aFVKYYlOEeGctfRy6p2nig" x="-21" y="-9"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_aFVxcIlOEeGctfRy6p2nig" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_aFVxcYlOEeGctfRy6p2nig" x="-12" y="18"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_aFT8QYlOEeGctfRy6p2nig" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_aFT8QolOEeGctfRy6p2nig" fontColor="4210752" fontName="Ubuntu" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="customerjourney.ecore#//JourneySet/journeys"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_aFT8Q4lOEeGctfRy6p2nig" points="[50, 5, -113, -12]$[164, -36, 1, -53]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_aFZb0IlOEeGctfRy6p2nig" id="(0.24519230769230768,0.3392857142857143)"/>
   </edges>
 </notation:Diagram>

@@ -76,6 +76,9 @@ public class CustomerjourneyAdapterFactory extends AdapterFactoryImpl {
 			public Object caseTouchpoint(Touchpoint object) {
 				return createTouchpointAdapter();
 			}
+			public Object caseJourneySet(JourneySet object) {
+				return createJourneySetAdapter();
+			}
 			public Object defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -119,6 +122,20 @@ public class CustomerjourneyAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTouchpointAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link customerjourney.JourneySet <em>Journey Set</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see customerjourney.JourneySet
+	 * @generated
+	 */
+	public Adapter createJourneySetAdapter() {
 		return null;
 	}
 

@@ -244,6 +244,43 @@ public interface CustomerjourneyPackage extends EPackage {
 	int TOUCHPOINT_FEATURE_COUNT = 9;
 
 	/**
+	 * The meta object id for the '{@link customerjourney.impl.JourneySetImpl <em>Journey Set</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see customerjourney.impl.JourneySetImpl
+	 * @see customerjourney.impl.CustomerjourneyPackageImpl#getJourneySet()
+	 * @generated
+	 */
+	int JOURNEY_SET = 2;
+
+	/**
+	 * The feature id for the '<em><b>Journeys</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOURNEY_SET__JOURNEYS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Set Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOURNEY_SET__SET_NAME = 1;
+
+	/**
+	 * The number of structural features of the '<em>Journey Set</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOURNEY_SET_FEATURE_COUNT = 2;
+
+	/**
 	 * The meta object id for the '{@link customerjourney.EStatus <em>EStatus</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -251,7 +288,7 @@ public interface CustomerjourneyPackage extends EPackage {
 	 * @see customerjourney.impl.CustomerjourneyPackageImpl#getEStatus()
 	 * @generated
 	 */
-	int ESTATUS = 2;
+	int ESTATUS = 3;
 
 	/**
 	 * The meta object id for the '{@link customerjourney.EChannel <em>EChannel</em>}' enum.
@@ -261,7 +298,7 @@ public interface CustomerjourneyPackage extends EPackage {
 	 * @see customerjourney.impl.CustomerjourneyPackageImpl#getEChannel()
 	 * @generated
 	 */
-	int ECHANNEL = 3;
+	int ECHANNEL = 4;
 
 	/**
 	 * The meta object id for the '{@link customerjourney.EType <em>EType</em>}' enum.
@@ -271,7 +308,7 @@ public interface CustomerjourneyPackage extends EPackage {
 	 * @see customerjourney.impl.CustomerjourneyPackageImpl#getEType()
 	 * @generated
 	 */
-	int ETYPE = 4;
+	int ETYPE = 5;
 
 	/**
 	 * The meta object id for the '{@link customerjourney.EInitiator <em>EInitiator</em>}' enum.
@@ -281,7 +318,7 @@ public interface CustomerjourneyPackage extends EPackage {
 	 * @see customerjourney.impl.CustomerjourneyPackageImpl#getEInitiator()
 	 * @generated
 	 */
-	int EINITIATOR = 5;
+	int EINITIATOR = 6;
 
 	/**
 	 * The meta object id for the '{@link customerjourney.EEvaluation <em>EEvaluation</em>}' enum.
@@ -291,7 +328,7 @@ public interface CustomerjourneyPackage extends EPackage {
 	 * @see customerjourney.impl.CustomerjourneyPackageImpl#getEEvaluation()
 	 * @generated
 	 */
-	int EEVALUATION = 6;
+	int EEVALUATION = 7;
 
 	/**
 	 * The meta object id for the '{@link customerjourney.EEnum0 <em>EEnum0</em>}' enum.
@@ -301,7 +338,7 @@ public interface CustomerjourneyPackage extends EPackage {
 	 * @see customerjourney.impl.CustomerjourneyPackageImpl#getEEnum0()
 	 * @generated
 	 */
-	int EENUM0 = 7;
+	int EENUM0 = 8;
 
 	/**
 	 * The meta object id for the '<em>Calendar</em>' data type.
@@ -311,7 +348,7 @@ public interface CustomerjourneyPackage extends EPackage {
 	 * @see customerjourney.impl.CustomerjourneyPackageImpl#getCalendar()
 	 * @generated
 	 */
-	int CALENDAR = 8;
+	int CALENDAR = 9;
 
 
 	/**
@@ -509,6 +546,38 @@ public interface CustomerjourneyPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTouchpoint_Initiator();
+
+	/**
+	 * Returns the meta object for class '{@link customerjourney.JourneySet <em>Journey Set</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Journey Set</em>'.
+	 * @see customerjourney.JourneySet
+	 * @generated
+	 */
+	EClass getJourneySet();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link customerjourney.JourneySet#getJourneys <em>Journeys</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Journeys</em>'.
+	 * @see customerjourney.JourneySet#getJourneys()
+	 * @see #getJourneySet()
+	 * @generated
+	 */
+	EReference getJourneySet_Journeys();
+
+	/**
+	 * Returns the meta object for the attribute '{@link customerjourney.JourneySet#getSetName <em>Set Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Set Name</em>'.
+	 * @see customerjourney.JourneySet#getSetName()
+	 * @see #getJourneySet()
+	 * @generated
+	 */
+	EAttribute getJourneySet_SetName();
 
 	/**
 	 * Returns the meta object for enum '{@link customerjourney.EStatus <em>EStatus</em>}'.
@@ -750,6 +819,32 @@ public interface CustomerjourneyPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TOUCHPOINT__INITIATOR = eINSTANCE.getTouchpoint_Initiator();
+
+		/**
+		 * The meta object literal for the '{@link customerjourney.impl.JourneySetImpl <em>Journey Set</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see customerjourney.impl.JourneySetImpl
+		 * @see customerjourney.impl.CustomerjourneyPackageImpl#getJourneySet()
+		 * @generated
+		 */
+		EClass JOURNEY_SET = eINSTANCE.getJourneySet();
+
+		/**
+		 * The meta object literal for the '<em><b>Journeys</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference JOURNEY_SET__JOURNEYS = eINSTANCE.getJourneySet_Journeys();
+
+		/**
+		 * The meta object literal for the '<em><b>Set Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JOURNEY_SET__SET_NAME = eINSTANCE.getJourneySet_SetName();
 
 		/**
 		 * The meta object literal for the '{@link customerjourney.EStatus <em>EStatus</em>}' enum.

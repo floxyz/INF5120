@@ -55,4 +55,9 @@
     <eLiterals name="empty" value="4"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="EEnum0"/>
+  <eClassifiers xsi:type="ecore:EClass" name="JourneySet">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="journeys" upperBound="-1"
+        eType="#//CustomerJourney" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="setName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>
