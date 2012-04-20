@@ -8,7 +8,9 @@ import org.eclipse.emf.ecore.resource.*;
 import org.eclipse.emf.ecore.resource.impl.*;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import journeymodel.*;
+import journeymodel.Journey;
+import journeymodel.JourneySet;
+import journeymodel.Touchpoint;
 import journeymodel.impl.JourneymodelPackageImpl;
 
 public class Analyzer {

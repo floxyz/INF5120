@@ -28,6 +28,10 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_tIM8Q4rsEeGA99DvRpD4VA"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_tIM8RIrsEeGA99DvRpD4VA" type="5002">
+      <children xmi:type="notation:Node" xmi:id="_r_dccIr1EeGA99DvRpD4VA" type="2002">
+        <element xmi:type="ecore:EOperation" href="JourneyModel.ecore#//Journey/getScore"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_r_dccYr1EeGA99DvRpD4VA"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_tINjUIrsEeGA99DvRpD4VA"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_tINjUYrsEeGA99DvRpD4VA"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_tINjUorsEeGA99DvRpD4VA"/>

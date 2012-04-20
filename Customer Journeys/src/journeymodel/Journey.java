@@ -210,4 +210,12 @@ public interface Journey extends EObject {
 	 */
 	EList<Touchpoint> getTouchpoints();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	void getScore();
+
 } // Journey
