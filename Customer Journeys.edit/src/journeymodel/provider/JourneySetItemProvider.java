@@ -68,6 +68,7 @@ public class JourneySetItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addExpectedJoruneyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -90,6 +91,28 @@ public class JourneySetItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Expected Joruney feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addExpectedJoruneyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_JourneySet_expectedJoruney_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_JourneySet_expectedJoruney_feature", "_UI_JourneySet_type"),
+				 JourneymodelPackage.Literals.JOURNEY_SET__EXPECTED_JORUNEY,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

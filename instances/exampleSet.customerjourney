@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<customerjourney:JourneySet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:customerjourney="http://customerjourney/1.0">
+<journeymodel:JourneySet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:journeymodel="http://customerjourney/1.0" name="Example Set" expectedJoruney="//@journeys.4">
   <journeys ID="" name="Customer Journey - Example 1" date="2012-03-01T00:00:00.000+0100" comment="Simple Case, no problems, no ad-hoc touchpoints">
     <touchpoints ID="T0" name="customer orders and pays movie ticket via web site" date="2012-03-01T00:00:00.000+0100" DT1="0" comment=""/>
     <touchpoints ID="T1" name="confirmation received by e-mail" date="2012-03-01T00:00:00.000+0100" DT1="0" channel="email" initiator="movieAgency"/>
@@ -31,4 +31,5 @@
     <touchpoints ID="D41" name="customer is expeled from the theater" date="2012-03-05T00:00:00.000+0100" DT1="2" type="adhoc" comment="customer is drunk and misbehaves" evaluation="empty" channel="faceToFace" initiator="movieEmployee"/>
     <touchpoints ID="D42" name="customer calls help desk to get ticket refunded" date="2012-03-07T00:00:00.000+0100" DT1="4" type="adhoc" comment="customer wants money back" evaluation="na" channel="phone"/>
   </journeys>
-</customerjourney:JourneySet>
+  <journeys name="Expected Journey"/>
+</journeymodel:JourneySet>

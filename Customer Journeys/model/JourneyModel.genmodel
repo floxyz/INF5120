@@ -60,6 +60,7 @@
     <genClasses ecoreClass="JourneyModel.ecore#//JourneySet">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JourneyModel.ecore#//JourneySet/journeys"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JourneyModel.ecore#//JourneySet/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference JourneyModel.ecore#//JourneySet/expectedJoruney"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

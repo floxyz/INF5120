@@ -48,7 +48,14 @@ public class Analyzer {
 	}
 	
 	private void printJourneySet(JourneySet set){
-		System.out.println("journey set:" + set.getName());
+		if(set.getExpectedJoruney()!=null){
+			System.out.println("Expected journey:");
+			printJourney(set.getExpectedJoruney());
+		} else {
+			System.out.println("No expected journey available.");
+		}
+		
+		System.out.println("Set name: " + set.getName());
 		for (Journey j: (List<Journey>) set.getJourneys()){
 			printJourney(j);
 		}

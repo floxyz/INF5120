@@ -272,13 +272,22 @@ public interface JourneymodelPackage extends EPackage {
 	int JOURNEY_SET__NAME = 1;
 
 	/**
+	 * The feature id for the '<em><b>Expected Joruney</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOURNEY_SET__EXPECTED_JORUNEY = 2;
+
+	/**
 	 * The number of structural features of the '<em>Journey Set</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOURNEY_SET_FEATURE_COUNT = 2;
+	int JOURNEY_SET_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link journeymodel.EStatus <em>EStatus</em>}' enum.
@@ -580,6 +589,17 @@ public interface JourneymodelPackage extends EPackage {
 	EAttribute getJourneySet_Name();
 
 	/**
+	 * Returns the meta object for the reference '{@link journeymodel.JourneySet#getExpectedJoruney <em>Expected Joruney</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Expected Joruney</em>'.
+	 * @see journeymodel.JourneySet#getExpectedJoruney()
+	 * @see #getJourneySet()
+	 * @generated
+	 */
+	EReference getJourneySet_ExpectedJoruney();
+
+	/**
 	 * Returns the meta object for enum '{@link journeymodel.EStatus <em>EStatus</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -845,6 +865,14 @@ public interface JourneymodelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute JOURNEY_SET__NAME = eINSTANCE.getJourneySet_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Expected Joruney</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference JOURNEY_SET__EXPECTED_JORUNEY = eINSTANCE.getJourneySet_ExpectedJoruney();
 
 		/**
 		 * The meta object literal for the '{@link journeymodel.EStatus <em>EStatus</em>}' enum.

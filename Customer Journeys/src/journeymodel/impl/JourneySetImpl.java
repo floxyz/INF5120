@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link journeymodel.impl.JourneySetImpl#getJourneys <em>Journeys</em>}</li>
  *   <li>{@link journeymodel.impl.JourneySetImpl#getName <em>Name</em>}</li>
+ *   <li>{@link journeymodel.impl.JourneySetImpl#getExpectedJoruney <em>Expected Joruney</em>}</li>
  * </ul>
  * </p>
  *
@@ -70,6 +71,16 @@ public class JourneySetImpl extends EObjectImpl implements JourneySet {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getExpectedJoruney() <em>Expected Joruney</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExpectedJoruney()
+	 * @generated
+	 * @ordered
+	 */
+	protected Journey expectedJoruney;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -128,6 +139,44 @@ public class JourneySetImpl extends EObjectImpl implements JourneySet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Journey getExpectedJoruney() {
+		if (expectedJoruney != null && expectedJoruney.eIsProxy()) {
+			InternalEObject oldExpectedJoruney = (InternalEObject)expectedJoruney;
+			expectedJoruney = (Journey)eResolveProxy(oldExpectedJoruney);
+			if (expectedJoruney != oldExpectedJoruney) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, JourneymodelPackage.JOURNEY_SET__EXPECTED_JORUNEY, oldExpectedJoruney, expectedJoruney));
+			}
+		}
+		return expectedJoruney;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Journey basicGetExpectedJoruney() {
+		return expectedJoruney;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setExpectedJoruney(Journey newExpectedJoruney) {
+		Journey oldExpectedJoruney = expectedJoruney;
+		expectedJoruney = newExpectedJoruney;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JourneymodelPackage.JOURNEY_SET__EXPECTED_JORUNEY, oldExpectedJoruney, expectedJoruney));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -149,6 +198,9 @@ public class JourneySetImpl extends EObjectImpl implements JourneySet {
 				return getJourneys();
 			case JourneymodelPackage.JOURNEY_SET__NAME:
 				return getName();
+			case JourneymodelPackage.JOURNEY_SET__EXPECTED_JORUNEY:
+				if (resolve) return getExpectedJoruney();
+				return basicGetExpectedJoruney();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,6 +221,9 @@ public class JourneySetImpl extends EObjectImpl implements JourneySet {
 			case JourneymodelPackage.JOURNEY_SET__NAME:
 				setName((String)newValue);
 				return;
+			case JourneymodelPackage.JOURNEY_SET__EXPECTED_JORUNEY:
+				setExpectedJoruney((Journey)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -187,6 +242,9 @@ public class JourneySetImpl extends EObjectImpl implements JourneySet {
 			case JourneymodelPackage.JOURNEY_SET__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case JourneymodelPackage.JOURNEY_SET__EXPECTED_JORUNEY:
+				setExpectedJoruney((Journey)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -203,6 +261,8 @@ public class JourneySetImpl extends EObjectImpl implements JourneySet {
 				return journeys != null && !journeys.isEmpty();
 			case JourneymodelPackage.JOURNEY_SET__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case JourneymodelPackage.JOURNEY_SET__EXPECTED_JORUNEY:
+				return expectedJoruney != null;
 		}
 		return super.eIsSet(featureID);
 	}

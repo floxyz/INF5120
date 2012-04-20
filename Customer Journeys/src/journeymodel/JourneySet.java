@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link journeymodel.JourneySet#getJourneys <em>Journeys</em>}</li>
  *   <li>{@link journeymodel.JourneySet#getName <em>Name</em>}</li>
+ *   <li>{@link journeymodel.JourneySet#getExpectedJoruney <em>Expected Joruney</em>}</li>
  * </ul>
  * </p>
  *
@@ -69,5 +70,31 @@ public interface JourneySet extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Expected Joruney</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Expected Joruney</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Expected Joruney</em>' reference.
+	 * @see #setExpectedJoruney(Journey)
+	 * @see journeymodel.JourneymodelPackage#getJourneySet_ExpectedJoruney()
+	 * @model
+	 * @generated
+	 */
+	Journey getExpectedJoruney();
+
+	/**
+	 * Sets the value of the '{@link journeymodel.JourneySet#getExpectedJoruney <em>Expected Joruney</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Expected Joruney</em>' reference.
+	 * @see #getExpectedJoruney()
+	 * @generated
+	 */
+	void setExpectedJoruney(Journey value);
 
 } // JourneySet

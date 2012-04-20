@@ -34,7 +34,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_tIKgAYrsEeGA99DvRpD4VA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="JourneyModel.ecore#//Journey"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tIKgAorsEeGA99DvRpD4VA" x="180" y="279"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tIKgAorsEeGA99DvRpD4VA" x="270" y="243"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_tIOxcYrsEeGA99DvRpD4VA" type="1001">
     <children xmi:type="notation:Node" xmi:id="_tIOxdIrsEeGA99DvRpD4VA" type="4001"/>
@@ -86,7 +86,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_tIOxcorsEeGA99DvRpD4VA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="JourneyModel.ecore#//Touchpoint"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tIOxc4rsEeGA99DvRpD4VA" x="495" y="225"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tIOxc4rsEeGA99DvRpD4VA" x="495" y="234"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_tISb0IrsEeGA99DvRpD4VA" type="1004">
     <children xmi:type="notation:Node" xmi:id="_tITC4IrsEeGA99DvRpD4VA" type="4008"/>
@@ -255,13 +255,13 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_tIcz4IrsEeGA99DvRpD4VA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="JourneyModel.ecore#//JourneySet"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tIcz4YrsEeGA99DvRpD4VA" x="9" y="261"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tIcz4YrsEeGA99DvRpD4VA" x="27" y="261"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_tH7PcorsEeGA99DvRpD4VA"/>
   <element xmi:type="ecore:EPackage" href="JourneyModel.ecore#/"/>
   <edges xmi:type="notation:Edge" xmi:id="_tIf3MIrsEeGA99DvRpD4VA" type="3002" source="_tIKgAIrsEeGA99DvRpD4VA" target="_tIOxcYrsEeGA99DvRpD4VA">
     <children xmi:type="notation:Node" xmi:id="_tIf3NIrsEeGA99DvRpD4VA" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_tIf3NYrsEeGA99DvRpD4VA" x="-10" y="-10"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_tIf3NYrsEeGA99DvRpD4VA" x="-33" y="-6"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_tIf3NorsEeGA99DvRpD4VA" type="4012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_tIf3N4rsEeGA99DvRpD4VA" x="10" y="10"/>
@@ -269,8 +269,8 @@
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_tIf3MYrsEeGA99DvRpD4VA" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_tIf3MorsEeGA99DvRpD4VA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="JourneyModel.ecore#//Journey/touchpoints"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tIf3M4rsEeGA99DvRpD4VA" points="[0, 0, -328, -121]$[148, -90, -180, -211]$[256, 36, -72, -85]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tKxIEYrsEeGA99DvRpD4VA" id="(0.5,0.0)"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tIf3M4rsEeGA99DvRpD4VA" points="[59, 27, -296, -139]$[175, 81, -180, -85]$[283, 132, -72, -34]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tKxIEYrsEeGA99DvRpD4VA" id="(0.9916666666666667,0.7699115044247787)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tKxvIIrsEeGA99DvRpD4VA" id="(0.5,1.0)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_tIf3OIrsEeGA99DvRpD4VA" type="3002" source="_tIcM2IrsEeGA99DvRpD4VA" target="_tIKgAIrsEeGA99DvRpD4VA">
@@ -284,7 +284,19 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_tIf3OorsEeGA99DvRpD4VA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="JourneyModel.ecore#//JourneySet/journeys"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tIf3O4rsEeGA99DvRpD4VA" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tKv58IrsEeGA99DvRpD4VA" id="(0.5,0.0)"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tKv58IrsEeGA99DvRpD4VA" id="(0.9607843137254902,0.7346938775510204)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tKv58YrsEeGA99DvRpD4VA" id="(0.5,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_RBiFIIrvEeGA99DvRpD4VA" type="3002" source="_tIcM2IrsEeGA99DvRpD4VA" target="_tIKgAIrsEeGA99DvRpD4VA">
+    <children xmi:type="notation:Node" xmi:id="_RBisMIrvEeGA99DvRpD4VA" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_RBisMYrvEeGA99DvRpD4VA" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_RBisMorvEeGA99DvRpD4VA" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_RBisM4rvEeGA99DvRpD4VA" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_RBiFIYrvEeGA99DvRpD4VA" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_RBiFIorvEeGA99DvRpD4VA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="JourneyModel.ecore#//JourneySet/expectedJoruney"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_RBiFI4rvEeGA99DvRpD4VA" points="[55, -4, -183, 26]$[297, 4, 59, 34]"/>
   </edges>
 </notation:Diagram>
