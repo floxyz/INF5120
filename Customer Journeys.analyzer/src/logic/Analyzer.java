@@ -30,21 +30,35 @@ public class Analyzer {
 		resource = resourceSet.getResource(fileURI, true);		
 	}
 	
-	public void printJourney(){
+	private void printJourney(CustomerJourney journey){
+		System.out.println("  customer journey " + journey.getName());
+		System.out.println("    from: " + journey.getDate());
+		System.out.println("    status: " + journey.getStatus());
+		System.out.println("    commnt: " + journey.getComment());
+		System.out.println("    touchpoints:");
+		for (Touchpoint tp: (List<Touchpoint>) journey.getTouchpoints()){
+			System.out.println("      " + tp.getID() + " " + tp.getName() + " (" + tp.getEvaluation()+ ")");
+		}
+	}
+	
+	private void printJourneySet(JourneySet set){
+		System.out.println("journey set:" + set.getName());
+		for (CustomerJourney j: (List<CustomerJourney>) set.getJourneys()){
+			printJourney(j);
+		}
+	}
+	
+	public void dump(){
 		// get model elements from the resource
 		EObject resourceContent = resource.getContents().get(0); // get(0) might be dangerous. why?
 
 		// Do something with the model
-		if(resourceContent instanceof CustomerJourney){ // Model is the root class of your model
+		if(resourceContent instanceof CustomerJourney){
 			CustomerJourney journey = (CustomerJourney) resourceContent;
-			System.out.println("customer journey " + journey.getName());
-			System.out.println("   from: " + journey.getDate());
-			System.out.println(" status: " + journey.getStatus());
-			System.out.println(" commnt: " + journey.getComment());
-			System.out.println(" touchpoints:");
-			for (Touchpoint tp: (List<Touchpoint>) journey.getTouchpoints()){
-				System.out.println("   - " + tp.getID() + " " + tp.getName() + " (" + tp.getEvaluation()+ ")");
-			}
+			printJourney(journey);
+		} else if (resourceContent instanceof JourneySet){
+			JourneySet set = (JourneySet) resourceContent;
+			printJourneySet(set);
 		}
 	}
 	
