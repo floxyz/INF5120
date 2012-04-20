@@ -30,7 +30,7 @@ public enum EEvaluation implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	GOOD(0, "good", "good"),
+	GOOD(3, "good", "good"),
 
 	/**
 	 * The '<em><b>Bad</b></em>' literal object.
@@ -53,16 +53,14 @@ public enum EEvaluation implements Enumerator {
 	MEDIUM(2, "medium", "medium"),
 
 	/**
-	 * The '<em><b>Na</b></em>' literal object.
+	 * The '<em><b>Not available</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #NA_VALUE
+	 * @see #NOT_AVAILABLE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	NA(3, "na", "na"),
-
-	/**
+	NOT_AVAILABLE(-1, "not_available", "not_available"), /**
 	 * The '<em><b>Empty</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -70,7 +68,7 @@ public enum EEvaluation implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	EMPTY(4, "empty", "empty");
+	EMPTY(0, "empty", "empty");
 
 	/**
 	 * The '<em><b>Good</b></em>' literal value.
@@ -85,7 +83,7 @@ public enum EEvaluation implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int GOOD_VALUE = 0;
+	public static final int GOOD_VALUE = 3;
 
 	/**
 	 * The '<em><b>Bad</b></em>' literal value.
@@ -118,19 +116,19 @@ public enum EEvaluation implements Enumerator {
 	public static final int MEDIUM_VALUE = 2;
 
 	/**
-	 * The '<em><b>Na</b></em>' literal value.
+	 * The '<em><b>Not available</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Na</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Not available</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #NA
-	 * @model name="na"
+	 * @see #NOT_AVAILABLE
+	 * @model name="not_available"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int NA_VALUE = 3;
+	public static final int NOT_AVAILABLE_VALUE = -1;
 
 	/**
 	 * The '<em><b>Empty</b></em>' literal value.
@@ -145,7 +143,7 @@ public enum EEvaluation implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EMPTY_VALUE = 4;
+	public static final int EMPTY_VALUE = 0;
 
 	/**
 	 * An array of all the '<em><b>EEvaluation</b></em>' enumerators.
@@ -158,7 +156,7 @@ public enum EEvaluation implements Enumerator {
 			GOOD,
 			BAD,
 			MEDIUM,
-			NA,
+			NOT_AVAILABLE,
 			EMPTY,
 		};
 
@@ -213,7 +211,7 @@ public enum EEvaluation implements Enumerator {
 			case GOOD_VALUE: return GOOD;
 			case BAD_VALUE: return BAD;
 			case MEDIUM_VALUE: return MEDIUM;
-			case NA_VALUE: return NA;
+			case NOT_AVAILABLE_VALUE: return NOT_AVAILABLE;
 			case EMPTY_VALUE: return EMPTY;
 		}
 		return null;

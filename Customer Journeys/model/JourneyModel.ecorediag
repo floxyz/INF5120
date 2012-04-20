@@ -211,7 +211,7 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_tIblwYrsEeGA99DvRpD4VA"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_tIblworsEeGA99DvRpD4VA" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="JourneyModel.ecore#//EEvaluation/na"/>
+        <element xmi:type="ecore:EEnumLiteral" href="JourneyModel.ecore#//EEvaluation/not_available"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_tIblw4rsEeGA99DvRpD4VA"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_tIblxIrsEeGA99DvRpD4VA" type="2006">

@@ -52,7 +52,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JourneyModel.ecore#//Touchpoint/date"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JourneyModel.ecore#//Touchpoint/DT1"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JourneyModel.ecore#//Touchpoint/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JourneyModel.ecore#//Touchpoint/comment"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute JourneyModel.ecore#//Touchpoint/comment"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JourneyModel.ecore#//Touchpoint/evaluation"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JourneyModel.ecore#//Touchpoint/channel"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JourneyModel.ecore#//Touchpoint/initiator"/>

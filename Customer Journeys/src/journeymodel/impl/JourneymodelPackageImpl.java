@@ -575,7 +575,7 @@ public class JourneymodelPackageImpl extends EPackageImpl implements Journeymode
 		addEEnumLiteral(eEvaluationEEnum, EEvaluation.GOOD);
 		addEEnumLiteral(eEvaluationEEnum, EEvaluation.BAD);
 		addEEnumLiteral(eEvaluationEEnum, EEvaluation.MEDIUM);
-		addEEnumLiteral(eEvaluationEEnum, EEvaluation.NA);
+		addEEnumLiteral(eEvaluationEEnum, EEvaluation.NOT_AVAILABLE);
 		addEEnumLiteral(eEvaluationEEnum, EEvaluation.EMPTY);
 
 		initEEnum(eEnum0EEnum, EEnum0.class, "EEnum0");
