@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link customerjourney.impl.JourneySetImpl#getJourneys <em>Journeys</em>}</li>
- *   <li>{@link customerjourney.impl.JourneySetImpl#getSetName <em>Set Name</em>}</li>
+ *   <li>{@link customerjourney.impl.JourneySetImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,23 +52,24 @@ public class JourneySetImpl extends EObjectImpl implements JourneySet {
 	protected EList journeys;
 
 	/**
-	 * The default value of the '{@link #getSetName() <em>Set Name</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSetName()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SET_NAME_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = null;
+
 	/**
-	 * The cached value of the '{@link #getSetName() <em>Set Name</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSetName()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String setName = SET_NAME_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -105,8 +106,8 @@ public class JourneySetImpl extends EObjectImpl implements JourneySet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getSetName() {
-		return setName;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -114,11 +115,11 @@ public class JourneySetImpl extends EObjectImpl implements JourneySet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSetName(String newSetName) {
-		String oldSetName = setName;
-		setName = newSetName;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CustomerjourneyPackage.JOURNEY_SET__SET_NAME, oldSetName, setName));
+			eNotify(new ENotificationImpl(this, Notification.SET, CustomerjourneyPackage.JOURNEY_SET__NAME, oldName, name));
 	}
 
 	/**
@@ -143,8 +144,8 @@ public class JourneySetImpl extends EObjectImpl implements JourneySet {
 		switch (featureID) {
 			case CustomerjourneyPackage.JOURNEY_SET__JOURNEYS:
 				return getJourneys();
-			case CustomerjourneyPackage.JOURNEY_SET__SET_NAME:
-				return getSetName();
+			case CustomerjourneyPackage.JOURNEY_SET__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -160,8 +161,8 @@ public class JourneySetImpl extends EObjectImpl implements JourneySet {
 				getJourneys().clear();
 				getJourneys().addAll((Collection)newValue);
 				return;
-			case CustomerjourneyPackage.JOURNEY_SET__SET_NAME:
-				setSetName((String)newValue);
+			case CustomerjourneyPackage.JOURNEY_SET__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -177,8 +178,8 @@ public class JourneySetImpl extends EObjectImpl implements JourneySet {
 			case CustomerjourneyPackage.JOURNEY_SET__JOURNEYS:
 				getJourneys().clear();
 				return;
-			case CustomerjourneyPackage.JOURNEY_SET__SET_NAME:
-				setSetName(SET_NAME_EDEFAULT);
+			case CustomerjourneyPackage.JOURNEY_SET__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -193,8 +194,8 @@ public class JourneySetImpl extends EObjectImpl implements JourneySet {
 		switch (featureID) {
 			case CustomerjourneyPackage.JOURNEY_SET__JOURNEYS:
 				return journeys != null && !journeys.isEmpty();
-			case CustomerjourneyPackage.JOURNEY_SET__SET_NAME:
-				return SET_NAME_EDEFAULT == null ? setName != null : !SET_NAME_EDEFAULT.equals(setName);
+			case CustomerjourneyPackage.JOURNEY_SET__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -208,8 +209,8 @@ public class JourneySetImpl extends EObjectImpl implements JourneySet {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (setName: ");
-		result.append(setName);
+		result.append(" (name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

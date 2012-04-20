@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link customerjourney.JourneySet#getJourneys <em>Journeys</em>}</li>
- *   <li>{@link customerjourney.JourneySet#getSetName <em>Set Name</em>}</li>
+ *   <li>{@link customerjourney.JourneySet#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,29 +45,29 @@ public interface JourneySet extends EObject {
 	EList getJourneys();
 
 	/**
-	 * Returns the value of the '<em><b>Set Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Set Name</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Set Name</em>' attribute.
-	 * @see #setSetName(String)
-	 * @see customerjourney.CustomerjourneyPackage#getJourneySet_SetName()
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see customerjourney.CustomerjourneyPackage#getJourneySet_Name()
 	 * @model
 	 * @generated
 	 */
-	String getSetName();
+	String getName();
 
 	/**
-	 * Sets the value of the '{@link customerjourney.JourneySet#getSetName <em>Set Name</em>}' attribute.
+	 * Sets the value of the '{@link customerjourney.JourneySet#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Set Name</em>' attribute.
-	 * @see #getSetName()
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
 	 * @generated
 	 */
-	void setSetName(String value);
+	void setName(String value);
 
 } // JourneySet

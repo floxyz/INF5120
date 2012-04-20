@@ -64,25 +64,25 @@ public class JourneySetItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSetNamePropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Set Name feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSetNamePropertyDescriptor(Object object) {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_JourneySet_setName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_JourneySet_setName_feature", "_UI_JourneySet_type"),
-				 CustomerjourneyPackage.Literals.JOURNEY_SET__SET_NAME,
+				 getString("_UI_JourneySet_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_JourneySet_name_feature", "_UI_JourneySet_type"),
+				 CustomerjourneyPackage.Literals.JOURNEY_SET__NAME,
 				 true,
 				 false,
 				 false,
@@ -136,7 +136,7 @@ public class JourneySetItemProvider
 	 * @generated
 	 */
 	public String getText(Object object) {
-		String label = ((JourneySet)object).getSetName();
+		String label = ((JourneySet)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_JourneySet_type") :
 			getString("_UI_JourneySet_type") + " " + label;
@@ -153,7 +153,7 @@ public class JourneySetItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(JourneySet.class)) {
-			case CustomerjourneyPackage.JOURNEY_SET__SET_NAME:
+			case CustomerjourneyPackage.JOURNEY_SET__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case CustomerjourneyPackage.JOURNEY_SET__JOURNEYS:

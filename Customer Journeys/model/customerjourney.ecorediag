@@ -230,7 +230,7 @@
     <children xmi:type="notation:Node" xmi:id="_YIId4IlOEeGctfRy6p2nig" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_YIJE8IlOEeGctfRy6p2nig" type="5001">
       <children xmi:type="notation:Node" xmi:id="_RubUYIlPEeGctfRy6p2nig" type="2001">
-        <element xmi:type="ecore:EAttribute" href="customerjourney.ecore#//JourneySet/setName"/>
+        <element xmi:type="ecore:EAttribute" href="customerjourney.ecore#//JourneySet/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_RubUYYlPEeGctfRy6p2nig"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_YIJE8YlOEeGctfRy6p2nig"/>

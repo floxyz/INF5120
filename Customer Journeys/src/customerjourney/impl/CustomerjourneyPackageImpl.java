@@ -352,7 +352,7 @@ public class CustomerjourneyPackageImpl extends EPackageImpl implements Customer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getJourneySet_SetName() {
+	public EAttribute getJourneySet_Name() {
 		return (EAttribute)journeySetEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -469,7 +469,7 @@ public class CustomerjourneyPackageImpl extends EPackageImpl implements Customer
 
 		journeySetEClass = createEClass(JOURNEY_SET);
 		createEReference(journeySetEClass, JOURNEY_SET__JOURNEYS);
-		createEAttribute(journeySetEClass, JOURNEY_SET__SET_NAME);
+		createEAttribute(journeySetEClass, JOURNEY_SET__NAME);
 
 		// Create enums
 		eStatusEEnum = createEEnum(ESTATUS);
@@ -531,7 +531,7 @@ public class CustomerjourneyPackageImpl extends EPackageImpl implements Customer
 
 		initEClass(journeySetEClass, JourneySet.class, "JourneySet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getJourneySet_Journeys(), this.getCustomerJourney(), null, "journeys", null, 0, -1, JourneySet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getJourneySet_SetName(), ecorePackage.getEString(), "setName", null, 0, 1, JourneySet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getJourneySet_Name(), ecorePackage.getEString(), "name", null, 0, 1, JourneySet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(eStatusEEnum, EStatus.class, "EStatus");

@@ -263,13 +263,13 @@ public interface CustomerjourneyPackage extends EPackage {
 	int JOURNEY_SET__JOURNEYS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Set Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOURNEY_SET__SET_NAME = 1;
+	int JOURNEY_SET__NAME = 1;
 
 	/**
 	 * The number of structural features of the '<em>Journey Set</em>' class.
@@ -569,15 +569,15 @@ public interface CustomerjourneyPackage extends EPackage {
 	EReference getJourneySet_Journeys();
 
 	/**
-	 * Returns the meta object for the attribute '{@link customerjourney.JourneySet#getSetName <em>Set Name</em>}'.
+	 * Returns the meta object for the attribute '{@link customerjourney.JourneySet#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Set Name</em>'.
-	 * @see customerjourney.JourneySet#getSetName()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see customerjourney.JourneySet#getName()
 	 * @see #getJourneySet()
 	 * @generated
 	 */
-	EAttribute getJourneySet_SetName();
+	EAttribute getJourneySet_Name();
 
 	/**
 	 * Returns the meta object for enum '{@link customerjourney.EStatus <em>EStatus</em>}'.
@@ -839,12 +839,12 @@ public interface CustomerjourneyPackage extends EPackage {
 		EReference JOURNEY_SET__JOURNEYS = eINSTANCE.getJourneySet_Journeys();
 
 		/**
-		 * The meta object literal for the '<em><b>Set Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute JOURNEY_SET__SET_NAME = eINSTANCE.getJourneySet_SetName();
+		EAttribute JOURNEY_SET__NAME = eINSTANCE.getJourneySet_Name();
 
 		/**
 		 * The meta object literal for the '{@link customerjourney.EStatus <em>EStatus</em>}' enum.
