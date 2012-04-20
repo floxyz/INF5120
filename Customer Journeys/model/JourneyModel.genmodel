@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/Customer Journeys/src"
+    modelPluginID="Customer_Journeys" modelName="JourneyModel" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>JourneyModel.ecore</foreignModel>
+  <genPackages prefix="Journeymodel" disposableProviderFactory="true" ecorePackage="JourneyModel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="JourneyModel.ecore#//EStatus">
+      <genEnumLiterals ecoreEnumLiteral="JourneyModel.ecore#//EStatus/completed"/>
+      <genEnumLiterals ecoreEnumLiteral="JourneyModel.ecore#//EStatus/aborted"/>
+      <genEnumLiterals ecoreEnumLiteral="JourneyModel.ecore#//EStatus/inProgress"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="JourneyModel.ecore#//EChannel">
+      <genEnumLiterals ecoreEnumLiteral="JourneyModel.ecore#//EChannel/web"/>
+      <genEnumLiterals ecoreEnumLiteral="JourneyModel.ecore#//EChannel/email"/>
+      <genEnumLiterals ecoreEnumLiteral="JourneyModel.ecore#//EChannel/sms"/>
+      <genEnumLiterals ecoreEnumLiteral="JourneyModel.ecore#//EChannel/selfServiceMachine"/>
+      <genEnumLiterals ecoreEnumLiteral="JourneyModel.ecore#//EChannel/faceToFace"/>
+      <genEnumLiterals ecoreEnumLiteral="JourneyModel.ecore#//EChannel/phone"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="JourneyModel.ecore#//EType">
+      <genEnumLiterals ecoreEnumLiteral="JourneyModel.ecore#//EType/generic"/>
+      <genEnumLiterals ecoreEnumLiteral="JourneyModel.ecore#//EType/adhoc"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="JourneyModel.ecore#//EInitiator">
+      <genEnumLiterals ecoreEnumLiteral="JourneyModel.ecore#//EInitiator/customer"/>
+      <genEnumLiterals ecoreEnumLiteral="JourneyModel.ecore#//EInitiator/movieAgency"/>
+      <genEnumLiterals ecoreEnumLiteral="JourneyModel.ecore#//EInitiator/movieEmployee"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="JourneyModel.ecore#//EEvaluation">
+      <genEnumLiterals ecoreEnumLiteral="JourneyModel.ecore#//EEvaluation/good"/>
+      <genEnumLiterals ecoreEnumLiteral="JourneyModel.ecore#//EEvaluation/bad"/>
+      <genEnumLiterals ecoreEnumLiteral="JourneyModel.ecore#//EEvaluation/medium"/>
+      <genEnumLiterals ecoreEnumLiteral="JourneyModel.ecore#//EEvaluation/na"/>
+      <genEnumLiterals ecoreEnumLiteral="JourneyModel.ecore#//EEvaluation/empty"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="JourneyModel.ecore#//EEnum0"/>
+    <genDataTypes ecoreDataType="JourneyModel.ecore#//Calendar"/>
+    <genClasses ecoreClass="JourneyModel.ecore#//Journey">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JourneyModel.ecore#//Journey/ID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JourneyModel.ecore#//Journey/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JourneyModel.ecore#//Journey/date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JourneyModel.ecore#//Journey/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JourneyModel.ecore#//Journey/comment"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference JourneyModel.ecore#//Journey/EReference0"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JourneyModel.ecore#//Journey/touchpoints"/>
+    </genClasses>
+    <genClasses ecoreClass="JourneyModel.ecore#//Touchpoint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JourneyModel.ecore#//Touchpoint/ID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JourneyModel.ecore#//Touchpoint/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JourneyModel.ecore#//Touchpoint/date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JourneyModel.ecore#//Touchpoint/DT1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JourneyModel.ecore#//Touchpoint/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JourneyModel.ecore#//Touchpoint/comment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JourneyModel.ecore#//Touchpoint/evaluation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JourneyModel.ecore#//Touchpoint/channel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JourneyModel.ecore#//Touchpoint/initiator"/>
+    </genClasses>
+    <genClasses ecoreClass="JourneyModel.ecore#//JourneySet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JourneyModel.ecore#//JourneySet/journeys"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JourneyModel.ecore#//JourneySet/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

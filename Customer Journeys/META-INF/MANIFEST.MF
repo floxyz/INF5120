@@ -6,9 +6,9 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: customerjourney,
- customerjourney.impl,
- customerjourney.util
+Export-Package: journeymodel,
+ journeymodel.impl,
+ journeymodel.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Eclipse-LazyStart: true

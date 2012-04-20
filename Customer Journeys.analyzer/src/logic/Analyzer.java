@@ -8,7 +8,8 @@ import org.eclipse.emf.ecore.resource.*;
 import org.eclipse.emf.ecore.resource.impl.*;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import customerjourney.*;
+import journeymodel.*;
+import journeymodel.impl.JourneymodelPackageImpl;
 
 public class Analyzer {
 
@@ -21,7 +22,7 @@ public class Analyzer {
 		// Register the default resource factory and init the package!
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(
 		    Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
-		customerjourney.impl.CustomerjourneyPackageImpl.init();
+		JourneymodelPackageImpl.init();
 		
 		// Get the URI of the model file.
 		URI fileURI = URI.createFileURI(new File(filename).getAbsolutePath());
@@ -30,7 +31,7 @@ public class Analyzer {
 		resource = resourceSet.getResource(fileURI, true);		
 	}
 	
-	private void printJourney(CustomerJourney journey){
+	private void printJourney(Journey journey){
 		System.out.println("  customer journey " + journey.getName());
 		System.out.println("    from: " + journey.getDate());
 		System.out.println("    status: " + journey.getStatus());
@@ -43,7 +44,7 @@ public class Analyzer {
 	
 	private void printJourneySet(JourneySet set){
 		System.out.println("journey set:" + set.getName());
-		for (CustomerJourney j: (List<CustomerJourney>) set.getJourneys()){
+		for (Journey j: (List<Journey>) set.getJourneys()){
 			printJourney(j);
 		}
 	}
@@ -53,8 +54,8 @@ public class Analyzer {
 		EObject resourceContent = resource.getContents().get(0); // get(0) might be dangerous. why?
 
 		// Do something with the model
-		if(resourceContent instanceof CustomerJourney){
-			CustomerJourney journey = (CustomerJourney) resourceContent;
+		if(resourceContent instanceof Journey){
+			Journey journey = (Journey) resourceContent;
 			printJourney(journey);
 		} else if (resourceContent instanceof JourneySet){
 			JourneySet set = (JourneySet) resourceContent;

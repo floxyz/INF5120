@@ -13,7 +13,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
             uri="http://customerjourney/1.0"
-            class="customerjourney.provider.CustomerjourneyItemProviderAdapterFactory"
+            class="journeymodel.provider.JourneymodelItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

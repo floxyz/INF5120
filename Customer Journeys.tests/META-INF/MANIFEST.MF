@@ -6,10 +6,10 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: customerjourney.tests
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: journeymodel.tests
 Require-Bundle: org.eclipse.core.runtime,
  Customer_Journeys;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.junit;visibility:=reexport
-Eclipse-LazyStart: true
 Bundle-ActivationPolicy: lazy

@@ -4,15 +4,15 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: Customer_Journeys.editor;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: customerjourney.presentation.CustomerjourneyEditorPlugin$Implementation
+Bundle-Activator: journeymodel.presentation.JourneyModelEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: customerjourney.presentation
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: journeymodel.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  Customer_Journeys.edit;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport
-Eclipse-LazyStart: true
 Bundle-ActivationPolicy: lazy

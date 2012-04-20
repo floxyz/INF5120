@@ -15,24 +15,24 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="customerjourney.presentation.CustomerjourneyModelWizardID"
-            name="%_UI_CustomerjourneyModelWizard_label"
-            class="customerjourney.presentation.CustomerjourneyModelWizard"
+            id="journeymodel.presentation.JourneymodelModelWizardID"
+            name="%_UI_JourneymodelModelWizard_label"
+            class="journeymodel.presentation.JourneymodelModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/CustomerjourneyModelFile.gif">
-         <description>%_UI_CustomerjourneyModelWizard_description</description>
+            icon="icons/full/obj16/JourneymodelModelFile.gif">
+         <description>%_UI_JourneymodelModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
 
    <extension point="org.eclipse.ui.editors">
       <editor
-            id="customerjourney.presentation.CustomerjourneyEditorID"
-            name="%_UI_CustomerjourneyEditor_label"
-            icon="icons/full/obj16/CustomerjourneyModelFile.gif"
-            extensions="customerjourney"
-            class="customerjourney.presentation.CustomerjourneyEditor"
-            contributorClass="customerjourney.presentation.CustomerjourneyActionBarContributor">
+            id="journeymodel.presentation.JourneymodelEditorID"
+            name="%_UI_JourneymodelEditor_label"
+            icon="icons/full/obj16/JourneymodelModelFile.gif"
+            extensions="journeymodel"
+            class="journeymodel.presentation.JourneymodelEditor"
+            contributorClass="journeymodel.presentation.JourneymodelActionBarContributor">
       </editor>
    </extension>
 
