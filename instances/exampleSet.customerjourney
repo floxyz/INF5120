@@ -12,7 +12,7 @@
     <touchpoints ID="T2" name="confirmation received by SMS" date="2012-03-03T00:00:00.000+0100" DT1="0" channel="sms" initiator="movieAgency"/>
     <touchpoints ID="D2" name="customer calls help desk because of confusing information in the e-mail" date="2012-03-04T00:00:00.000+0100" DT1="1" type="adhoc" evaluation="empty" channel="phone"/>
     <touchpoints ID="T3" name="print ticket via self-service machine at the movie" date="2012-03-07T00:00:00.000+0100" DT1="4" evaluation="medium" channel="selfServiceMachine"/>
-    <touchpoints ID="T4" name="customer shows ticket at entrance" date="2012-03-07T00:00:00.000+0100" DT1="4" evaluation="na" channel="faceToFace"/>
+    <touchpoints ID="T4" name="customer shows ticket at entrance" date="2012-03-07T00:00:00.000+0100" DT1="4" evaluation="not_available" channel="faceToFace"/>
   </journeys>
   <journeys ID="" name="Customer Journey - Example 3" date="2012-03-03T00:00:00.000+0100" comment="Medium case, one deviation, one timing issue">
     <touchpoints ID="T0" name="customer orders and pays movie ticket via web site" date="2012-03-03T00:00:00.000+0100" DT1="0" evaluation="medium"/>
@@ -20,16 +20,16 @@
     <touchpoints ID="D2" name="customer calls helpdesk because of confusing information in the [...?]" date="2012-03-04T00:00:00.000+0100" DT1="1" type="adhoc" evaluation="empty" channel="phone" initiator="movieAgency"/>
     <touchpoints ID="T1" name="confirmation received by e-mail" date="2012-03-05T00:00:00.000+0100" DT1="2" comment="e-mail received 2 days late" evaluation="bad" channel="email" initiator="movieAgency"/>
     <touchpoints ID="T3" name="print ticket via self-service machine at the movie" date="2012-03-07T00:00:00.000+0100" DT1="4" evaluation="medium" channel="selfServiceMachine"/>
-    <touchpoints ID="T4" name="customer shows ticket at entrance" date="2012-03-07T00:00:00.000+0100" DT1="4" evaluation="na" channel="faceToFace"/>
+    <touchpoints ID="T4" name="customer shows ticket at entrance" date="2012-03-07T00:00:00.000+0100" DT1="4" evaluation="not_available" channel="faceToFace"/>
   </journeys>
   <journeys ID="" name="Customer Journey - Example 4" date="2012-03-03T00:00:00.000+0100" status="aborted" comment="Complicated case, journey canceled, several deviations">
     <touchpoints ID="T0" name="customer orders and pays movie ticket via web site" date="2012-03-05T00:00:00.000+0100" DT1="2" evaluation="medium"/>
     <touchpoints ID="D0" name="confirmation not received by e-mail" date="2012-03-05T00:00:00.000+0100" DT1="2" type="adhoc" comment="customer wrote incorrect e-mail address when ordering" evaluation="bad" channel="email" initiator="movieAgency"/>
     <touchpoints ID="T2" name="confirmation received by SMS" date="2012-03-05T00:00:00.000+0100" DT1="2" channel="sms" initiator="movieAgency"/>
     <touchpoints ID="D3" name="customer visits ticket office to clarify that the date is correct" date="2012-03-05T00:00:00.000+0100" DT1="2" type="adhoc" comment="customer happy with the service" channel="faceToFace"/>
-    <touchpoints ID="T4" name="customer shows ticket at entrance" date="2012-03-05T00:00:00.000+0100" DT1="2" evaluation="na" channel="faceToFace"/>
+    <touchpoints ID="T4" name="customer shows ticket at entrance" date="2012-03-05T00:00:00.000+0100" DT1="2" evaluation="not_available" channel="faceToFace"/>
     <touchpoints ID="D41" name="customer is expeled from the theater" date="2012-03-05T00:00:00.000+0100" DT1="2" type="adhoc" comment="customer is drunk and misbehaves" evaluation="empty" channel="faceToFace" initiator="movieEmployee"/>
-    <touchpoints ID="D42" name="customer calls help desk to get ticket refunded" date="2012-03-07T00:00:00.000+0100" DT1="4" type="adhoc" comment="customer wants money back" evaluation="na" channel="phone"/>
+    <touchpoints ID="D42" name="customer calls help desk to get ticket refunded" date="2012-03-07T00:00:00.000+0100" DT1="4" type="adhoc" comment="customer wants money back" evaluation="not_available" channel="phone"/>
   </journeys>
   <journeys name="Expected Journey"/>
 </journeymodel:JourneySet>
