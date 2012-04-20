@@ -31,6 +31,11 @@ public class Analyzer {
 		resource = resourceSet.getResource(fileURI, true);		
 	}
 	
+	/**
+	 * Print one journey to stdout.
+	 * TODO: Maybe implement this directly in the generated model as toString?
+	 * @param journey
+	 */
 	private void printJourney(Journey journey){
 		System.out.println("  customer journey " + journey.getName());
 		System.out.println("    from: " + journey.getDate());
@@ -49,6 +54,9 @@ public class Analyzer {
 		}
 	}
 	
+	/**
+	 * Prints the loaded file to stdout.
+	 */
 	public void dump(){
 		// get model elements from the resource
 		EObject resourceContent = resource.getContents().get(0); // get(0) might be dangerous. why?
