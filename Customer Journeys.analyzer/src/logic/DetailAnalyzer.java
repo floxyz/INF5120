@@ -2,12 +2,19 @@ package logic;
 
 import java.util.List;
 
+import journeymodel.EChannel;
 import journeymodel.EEvaluation;
 import journeymodel.Journey;
 import journeymodel.JourneySet;
 import journeymodel.Touchpoint;
 import logic.interfaces.IDetailAnalyzer;
 
+/**
+ * The implementation of the interface {@link IDetailAnalyzer}.
+ * 
+ * @author Florian Hagenauer
+ * 
+ */
 public class DetailAnalyzer implements IDetailAnalyzer {
 
 	private JourneySet journeySet;
@@ -38,11 +45,16 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 
 	private String generateJourneyStatistics(Journey journey) {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Detail Statistics for journey " + journey.getName() + " (" + journey.getID() + ")\n");
+		builder.append("####################\nDetail Statistics for journey " + journey.getName() + " (" + journey.getID() + ")\n");
+		builder.append(this.getRatingStatistics(journey));
+		builder.append(this.getChannelStatistics(journey));
+		return builder.append("####################\n\n").toString();
+	}
 
+	private String getRatingStatistics(Journey journey) {
 		Integer totalRatings = journey.getTouchpoints().size();
+		StringBuilder builder = new StringBuilder("----------\nRating Statistics for a total number of " + totalRatings + " ratings:\n");
 
-		builder.append("Rating Statistics for a total number of " + totalRatings + " ratings:\n");
 		Integer goodRatingCount = this.getRatingCount(journey, EEvaluation.GOOD);
 		builder.append("Good Ratings: " + goodRatingCount + " (" + ((float) (goodRatingCount) / (float) (totalRatings)) + "%)\n");
 		Integer badRatingCount = this.getRatingCount(journey, EEvaluation.BAD);
@@ -55,7 +67,6 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 		Integer emptyRatingCount = this.getRatingCount(journey, EEvaluation.EMPTY);
 		builder.append("Empty Ratings: " + emptyRatingCount + " (" + ((float) (emptyRatingCount) / (float) (totalRatings)) + "%)\n");
 
-		builder.append("\n");
 		return builder.toString();
 	}
 
@@ -70,4 +81,23 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 		return counter;
 	}
 
+	private String getChannelStatistics(Journey journey) {
+		List<EChannel> channelList = EChannel.VALUES;
+		StringBuilder builder = new StringBuilder("----------\nChannel Statistics for  " + channelList.size() + " channels:\n");
+
+		for (EChannel channel : channelList) {
+			builder.append(this.getSingleChannelStatistic(journey, channel));
+		}
+		return builder.toString();
+	}
+
+	private String getSingleChannelStatistic(Journey journey, EChannel channel) {
+		Integer channelCount = 0;
+		for (Touchpoint touchpoint : journey.getTouchpoints()) {
+			if (touchpoint.getChannel() == channel) {
+				channelCount++;
+			}
+		}
+		return (channel.toString() + ": " + channelCount + " (" + ((float) channelCount / (float) journey.getTouchpoints().size()) + "%)\n");
+	}
 }
