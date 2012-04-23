@@ -66,6 +66,7 @@ public class JourneymodelFactoryImpl extends EFactoryImpl implements Journeymode
 			case JourneymodelPackage.JOURNEY: return createJourney();
 			case JourneymodelPackage.TOUCHPOINT: return createTouchpoint();
 			case JourneymodelPackage.JOURNEY_SET: return createJourneySet();
+			case JourneymodelPackage.JOURNEY_DIFF: return createJourneyDiff();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -153,6 +154,16 @@ public class JourneymodelFactoryImpl extends EFactoryImpl implements Journeymode
 	public JourneySet createJourneySet() {
 		JourneySetImpl journeySet = new JourneySetImpl();
 		return journeySet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public JourneyDiff createJourneyDiff() {
+		JourneyDiffImpl journeyDiff = new JourneyDiffImpl();
+		return journeyDiff;
 	}
 
 	/**

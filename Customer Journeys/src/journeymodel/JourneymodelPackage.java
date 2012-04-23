@@ -290,6 +290,52 @@ public interface JourneymodelPackage extends EPackage {
 	int JOURNEY_SET_FEATURE_COUNT = 3;
 
 	/**
+	 * The meta object id for the '{@link journeymodel.impl.JourneyDiffImpl <em>Journey Diff</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see journeymodel.impl.JourneyDiffImpl
+	 * @see journeymodel.impl.JourneymodelPackageImpl#getJourneyDiff()
+	 * @generated
+	 */
+	int JOURNEY_DIFF = 3;
+
+	/**
+	 * The feature id for the '<em><b>Common TP</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOURNEY_DIFF__COMMON_TP = 0;
+
+	/**
+	 * The feature id for the '<em><b>Unused TP</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOURNEY_DIFF__UNUSED_TP = 1;
+
+	/**
+	 * The feature id for the '<em><b>New TP</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOURNEY_DIFF__NEW_TP = 2;
+
+	/**
+	 * The number of structural features of the '<em>Journey Diff</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOURNEY_DIFF_FEATURE_COUNT = 3;
+
+	/**
 	 * The meta object id for the '{@link journeymodel.EStatus <em>EStatus</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -297,7 +343,7 @@ public interface JourneymodelPackage extends EPackage {
 	 * @see journeymodel.impl.JourneymodelPackageImpl#getEStatus()
 	 * @generated
 	 */
-	int ESTATUS = 3;
+	int ESTATUS = 4;
 
 	/**
 	 * The meta object id for the '{@link journeymodel.EChannel <em>EChannel</em>}' enum.
@@ -307,7 +353,7 @@ public interface JourneymodelPackage extends EPackage {
 	 * @see journeymodel.impl.JourneymodelPackageImpl#getEChannel()
 	 * @generated
 	 */
-	int ECHANNEL = 4;
+	int ECHANNEL = 5;
 
 	/**
 	 * The meta object id for the '{@link journeymodel.EType <em>EType</em>}' enum.
@@ -317,7 +363,7 @@ public interface JourneymodelPackage extends EPackage {
 	 * @see journeymodel.impl.JourneymodelPackageImpl#getEType()
 	 * @generated
 	 */
-	int ETYPE = 5;
+	int ETYPE = 6;
 
 	/**
 	 * The meta object id for the '{@link journeymodel.EInitiator <em>EInitiator</em>}' enum.
@@ -327,7 +373,7 @@ public interface JourneymodelPackage extends EPackage {
 	 * @see journeymodel.impl.JourneymodelPackageImpl#getEInitiator()
 	 * @generated
 	 */
-	int EINITIATOR = 6;
+	int EINITIATOR = 7;
 
 	/**
 	 * The meta object id for the '{@link journeymodel.EEvaluation <em>EEvaluation</em>}' enum.
@@ -337,7 +383,7 @@ public interface JourneymodelPackage extends EPackage {
 	 * @see journeymodel.impl.JourneymodelPackageImpl#getEEvaluation()
 	 * @generated
 	 */
-	int EEVALUATION = 7;
+	int EEVALUATION = 8;
 
 	/**
 	 * The meta object id for the '{@link journeymodel.EEnum0 <em>EEnum0</em>}' enum.
@@ -347,7 +393,7 @@ public interface JourneymodelPackage extends EPackage {
 	 * @see journeymodel.impl.JourneymodelPackageImpl#getEEnum0()
 	 * @generated
 	 */
-	int EENUM0 = 8;
+	int EENUM0 = 9;
 
 	/**
 	 * The meta object id for the '<em>Calendar</em>' data type.
@@ -357,7 +403,7 @@ public interface JourneymodelPackage extends EPackage {
 	 * @see journeymodel.impl.JourneymodelPackageImpl#getCalendar()
 	 * @generated
 	 */
-	int CALENDAR = 9;
+	int CALENDAR = 10;
 
 
 	/**
@@ -598,6 +644,49 @@ public interface JourneymodelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getJourneySet_ExpectedJoruney();
+
+	/**
+	 * Returns the meta object for class '{@link journeymodel.JourneyDiff <em>Journey Diff</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Journey Diff</em>'.
+	 * @see journeymodel.JourneyDiff
+	 * @generated
+	 */
+	EClass getJourneyDiff();
+
+	/**
+	 * Returns the meta object for the attribute '{@link journeymodel.JourneyDiff#getCommonTP <em>Common TP</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Common TP</em>'.
+	 * @see journeymodel.JourneyDiff#getCommonTP()
+	 * @see #getJourneyDiff()
+	 * @generated
+	 */
+	EAttribute getJourneyDiff_CommonTP();
+
+	/**
+	 * Returns the meta object for the attribute '{@link journeymodel.JourneyDiff#getUnusedTP <em>Unused TP</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Unused TP</em>'.
+	 * @see journeymodel.JourneyDiff#getUnusedTP()
+	 * @see #getJourneyDiff()
+	 * @generated
+	 */
+	EAttribute getJourneyDiff_UnusedTP();
+
+	/**
+	 * Returns the meta object for the attribute '{@link journeymodel.JourneyDiff#getNewTP <em>New TP</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>New TP</em>'.
+	 * @see journeymodel.JourneyDiff#getNewTP()
+	 * @see #getJourneyDiff()
+	 * @generated
+	 */
+	EAttribute getJourneyDiff_NewTP();
 
 	/**
 	 * Returns the meta object for enum '{@link journeymodel.EStatus <em>EStatus</em>}'.
@@ -873,6 +962,40 @@ public interface JourneymodelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference JOURNEY_SET__EXPECTED_JORUNEY = eINSTANCE.getJourneySet_ExpectedJoruney();
+
+		/**
+		 * The meta object literal for the '{@link journeymodel.impl.JourneyDiffImpl <em>Journey Diff</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see journeymodel.impl.JourneyDiffImpl
+		 * @see journeymodel.impl.JourneymodelPackageImpl#getJourneyDiff()
+		 * @generated
+		 */
+		EClass JOURNEY_DIFF = eINSTANCE.getJourneyDiff();
+
+		/**
+		 * The meta object literal for the '<em><b>Common TP</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JOURNEY_DIFF__COMMON_TP = eINSTANCE.getJourneyDiff_CommonTP();
+
+		/**
+		 * The meta object literal for the '<em><b>Unused TP</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JOURNEY_DIFF__UNUSED_TP = eINSTANCE.getJourneyDiff_UnusedTP();
+
+		/**
+		 * The meta object literal for the '<em><b>New TP</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JOURNEY_DIFF__NEW_TP = eINSTANCE.getJourneyDiff_NewTP();
 
 		/**
 		 * The meta object literal for the '{@link journeymodel.EStatus <em>EStatus</em>}' enum.

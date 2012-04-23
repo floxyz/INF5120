@@ -5,6 +5,9 @@
     nsURI="http://customerjourney/1.0" nsPrefix="journeymodel">
   <eClassifiers xsi:type="ecore:EClass" name="Journey">
     <eOperations name="getScore"/>
+    <eOperations name="compare" eType="#//JourneyDiff">
+      <eParameters name="other" eType="#//Journey"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
@@ -61,5 +64,10 @@
         eType="#//Journey" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="expectedJoruney" eType="#//Journey"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JourneyDiff">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="commonTP" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unusedTP" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newTP" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
 </ecore:EPackage>

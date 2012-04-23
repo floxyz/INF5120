@@ -218,4 +218,12 @@ public interface Journey extends EObject {
 	 */
 	void getScore();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	JourneyDiff compare(Journey other);
+
 } // Journey

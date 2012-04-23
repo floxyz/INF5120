@@ -15,6 +15,7 @@ import journeymodel.EInitiator;
 import journeymodel.EStatus;
 import journeymodel.EType;
 import journeymodel.Journey;
+import journeymodel.JourneyDiff;
 import journeymodel.JourneySet;
 import journeymodel.JourneymodelFactory;
 import journeymodel.JourneymodelPackage;
@@ -24,6 +25,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -56,6 +58,13 @@ public class JourneymodelPackageImpl extends EPackageImpl implements Journeymode
 	 * @generated
 	 */
 	private EClass journeySetEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass journeyDiffEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -370,6 +379,42 @@ public class JourneymodelPackageImpl extends EPackageImpl implements Journeymode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getJourneyDiff() {
+		return journeyDiffEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getJourneyDiff_CommonTP() {
+		return (EAttribute)journeyDiffEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getJourneyDiff_UnusedTP() {
+		return (EAttribute)journeyDiffEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getJourneyDiff_NewTP() {
+		return (EAttribute)journeyDiffEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getEStatus() {
 		return eStatusEEnum;
 	}
@@ -481,6 +526,11 @@ public class JourneymodelPackageImpl extends EPackageImpl implements Journeymode
 		createEAttribute(journeySetEClass, JOURNEY_SET__NAME);
 		createEReference(journeySetEClass, JOURNEY_SET__EXPECTED_JORUNEY);
 
+		journeyDiffEClass = createEClass(JOURNEY_DIFF);
+		createEAttribute(journeyDiffEClass, JOURNEY_DIFF__COMMON_TP);
+		createEAttribute(journeyDiffEClass, JOURNEY_DIFF__UNUSED_TP);
+		createEAttribute(journeyDiffEClass, JOURNEY_DIFF__NEW_TP);
+
 		// Create enums
 		eStatusEEnum = createEEnum(ESTATUS);
 		eChannelEEnum = createEEnum(ECHANNEL);
@@ -534,6 +584,9 @@ public class JourneymodelPackageImpl extends EPackageImpl implements Journeymode
 
 		addEOperation(journeyEClass, null, "getScore", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		EOperation op = addEOperation(journeyEClass, this.getJourneyDiff(), "compare", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getJourney(), "other", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(touchpointEClass, Touchpoint.class, "Touchpoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTouchpoint_ID(), ecorePackage.getEString(), "ID", null, 0, 1, Touchpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTouchpoint_Name(), ecorePackage.getEString(), "name", null, 0, 1, Touchpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -549,6 +602,11 @@ public class JourneymodelPackageImpl extends EPackageImpl implements Journeymode
 		initEReference(getJourneySet_Journeys(), this.getJourney(), null, "journeys", null, 0, -1, JourneySet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJourneySet_Name(), ecorePackage.getEString(), "name", null, 0, 1, JourneySet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJourneySet_ExpectedJoruney(), this.getJourney(), null, "expectedJoruney", null, 0, 1, JourneySet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(journeyDiffEClass, JourneyDiff.class, "JourneyDiff", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getJourneyDiff_CommonTP(), ecorePackage.getEInt(), "commonTP", null, 0, 1, JourneyDiff.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getJourneyDiff_UnusedTP(), ecorePackage.getEInt(), "unusedTP", null, 0, 1, JourneyDiff.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getJourneyDiff_NewTP(), ecorePackage.getEInt(), "newTP", null, 0, 1, JourneyDiff.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(eStatusEEnum, EStatus.class, "EStatus");

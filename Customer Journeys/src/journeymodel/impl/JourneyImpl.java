@@ -8,9 +8,12 @@ package journeymodel.impl;
 
 import java.util.Collection;
 import java.util.Date;
+import java.util.Set;
+import java.util.HashSet;
 
 import journeymodel.EStatus;
 import journeymodel.Journey;
+import journeymodel.JourneyDiff;
 import journeymodel.JourneymodelPackage;
 import journeymodel.Touchpoint;
 
@@ -351,6 +354,46 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * Compare Journey's Touchpoint lists.
+	 * 
+	 * newTP: Count of TouchpointIDs that exist in OTHER Journey
+	 * 	and not in THIS Journey.
+	 * unusedTP: Count of TouchpointIDs that exist in THIS Journey
+	 * 	and not in OTHER Journey.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public JourneyDiff compare(Journey other) {
+		Set<String> thisSet = new HashSet<String>();
+		Set<String> otherSet = new HashSet<String>();
+		for (Touchpoint tp: getTouchpoints())
+			thisSet.add(tp.getID());
+		for (Touchpoint tp: other.getTouchpoints())
+			otherSet.add(tp.getID());
+		
+		int commonTP = 0, unusedTP = 0, newTP = 0;
+		for (String tpID: thisSet) {
+			if (otherSet.contains(tpID))
+				++commonTP;
+			else
+				++unusedTP;
+		}
+		
+		for (String tpID: otherSet) {
+			if (!thisSet.contains(tpID))
+				++newTP;
+		}
+		
+		JourneyDiff diff = new JourneyDiffImpl();
+		diff.setCommonTP(commonTP);
+		diff.setNewTP(newTP);
+		diff.setUnusedTP(unusedTP);
+		
+		return diff;
 	}
 
 	/**

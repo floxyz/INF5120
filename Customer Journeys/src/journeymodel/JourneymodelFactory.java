@@ -53,6 +53,15 @@ public interface JourneymodelFactory extends EFactory {
 	JourneySet createJourneySet();
 
 	/**
+	 * Returns a new object of class '<em>Journey Diff</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Journey Diff</em>'.
+	 * @generated
+	 */
+	JourneyDiff createJourneyDiff();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
