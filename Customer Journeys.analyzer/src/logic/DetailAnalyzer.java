@@ -5,6 +5,7 @@ import java.util.List;
 import journeymodel.EChannel;
 import journeymodel.EEvaluation;
 import journeymodel.Journey;
+import journeymodel.JourneyDiff;
 import journeymodel.JourneySet;
 import journeymodel.Touchpoint;
 import logic.interfaces.IDetailAnalyzer;
@@ -48,6 +49,7 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 		builder.append("####################\nDetail Statistics for journey " + journey.getName() + " (" + journey.getID() + ")\n");
 		builder.append(this.getRatingStatistics(journey));
 		builder.append(this.getChannelStatistics(journey));
+		builder.append(this.getCompareToExpected(journey));
 		return builder.append("####################\n\n").toString();
 	}
 
@@ -100,4 +102,14 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 		}
 		return (channel.toString() + ": " + channelCount + " (" + ((float) channelCount / (float) journey.getTouchpoints().size()) + "%)\n");
 	}
+	
+	private String getCompareToExpected(Journey journey) {
+		JourneyDiff diff = journeySet.getExpectedJoruney().compare(journey);
+		StringBuilder builder = new StringBuilder("----------\nCompare to Expected Journey:\n");
+		builder.append("Common touchpoints: " + diff.getCommonTP() + "\n");
+		builder.append("New touchpoints:    " + diff.getNewTP() + "\n");
+		builder.append("Unused touchpoints: " + diff.getUnusedTP() + "\n");
+		return builder.toString();
+	}
+	
 }
