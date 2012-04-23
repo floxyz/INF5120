@@ -46,7 +46,7 @@ public interface Journey extends EObject {
 	 * @return the value of the '<em>ID</em>' attribute.
 	 * @see #setID(String)
 	 * @see journeymodel.JourneymodelPackage#getJourney_ID()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getID();

@@ -53,7 +53,7 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 		builder.append(this.getRatingStatistics(journey));
 		builder.append(this.getChannelStatistics(journey));
 		builder.append(this.getInitiatorStatistics(journey));
-		builder.append(this.getCompareToExpected(journey));
+		builder.append(this.getComparedToExpected(journey));
 		return builder.append("\n\n").toString();
 	}
 
@@ -129,7 +129,9 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 				+ ((float) initiatorCount / (float) journey.getTouchpoints().size()) * 100 + "%)\n");
 	}
 
-	private String getCompareToExpected(Journey journey) {
+	private String getComparedToExpected(Journey journey) {
+		if (journeySet.getExpectedJoruney() == null)
+			return "## No Expected Journey to compare with\n";
 		JourneyDiff diff = journeySet.getExpectedJoruney().compare(journey);
 		StringBuilder builder = new StringBuilder("## Compared to Expected Journey:\n");
 		builder.append("* Common touchpoints: " + diff.getCommonTP() + "\n");
@@ -137,4 +139,6 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 		builder.append("* Unused touchpoints: " + diff.getUnusedTP() + "\n");
 		return builder.toString();
 	}
+	
+	
 }
