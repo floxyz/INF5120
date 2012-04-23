@@ -23,5 +23,6 @@
 	</classpathentry>
 	<classpathentry kind="var" path="ECLIPSE_HOME/plugins/org.eclipse.emf.ecore.xmi_2.7.0.v20120127-1122.jar" sourcepath="ECLIPSE_HOME/plugins/org.eclipse.emf.ecore.xmi.source_2.7.0.v20120127-1122.jar"/>
 	<classpathentry kind="var" path="ECLIPSE_HOME/plugins/org.eclipse.emf.common_2.7.0.v20120127-1122.jar" sourcepath="ECLIPSE_HOME/plugins/org.eclipse.emf.common.source_2.7.0.v20120127-1122.jar"/>
+	<classpathentry kind="lib" path="../libs/markdownj-1.0.2b4-0.3.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

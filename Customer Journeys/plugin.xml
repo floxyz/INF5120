@@ -13,7 +13,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://customerjourney/1.0"
-            class="customerjourney.CustomerjourneyPackage"/>
+            class="journeymodel.JourneymodelPackage"/>
    </extension>
 
 </plugin>
