@@ -32,13 +32,17 @@
         <element xmi:type="ecore:EOperation" href="JourneyModel.ecore#//Journey/getScore"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_r_dccYr1EeGA99DvRpD4VA"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_EOaiUI08EeGy38gzx_RmfQ" type="2002">
+        <element xmi:type="ecore:EOperation" href="JourneyModel.ecore#//Journey/compare"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_EOaiUY08EeGy38gzx_RmfQ"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_tINjUIrsEeGA99DvRpD4VA"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_tINjUYrsEeGA99DvRpD4VA"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_tINjUorsEeGA99DvRpD4VA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_tIKgAYrsEeGA99DvRpD4VA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="JourneyModel.ecore#//Journey"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tIKgAorsEeGA99DvRpD4VA" x="270" y="243"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tIKgAorsEeGA99DvRpD4VA" x="228" y="216"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_tIOxcYrsEeGA99DvRpD4VA" type="1001">
     <children xmi:type="notation:Node" xmi:id="_tIOxdIrsEeGA99DvRpD4VA" type="4001"/>
@@ -260,6 +264,34 @@
     <styles xmi:type="notation:ShapeStyle" xmi:id="_tIcz4IrsEeGA99DvRpD4VA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="JourneyModel.ecore#//JourneySet"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tIcz4YrsEeGA99DvRpD4VA" x="27" y="261"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_Pt9HwI08EeGy38gzx_RmfQ" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_PuD1cI08EeGy38gzx_RmfQ" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_PuJVAI08EeGy38gzx_RmfQ" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_R1A64I08EeGy38gzx_RmfQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="JourneyModel.ecore#//JourneyDiff/commonTP"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_R1A64Y08EeGy38gzx_RmfQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_Xz_awI08EeGy38gzx_RmfQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="JourneyModel.ecore#//JourneyDiff/unusedTP"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Xz_awY08EeGy38gzx_RmfQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_a7TJ8I08EeGy38gzx_RmfQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="JourneyModel.ecore#//JourneyDiff/newTP"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_a7TJ8Y08EeGy38gzx_RmfQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_PuJVAY08EeGy38gzx_RmfQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_PuJVAo08EeGy38gzx_RmfQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_PuJVA408EeGy38gzx_RmfQ"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_PuLKMI08EeGy38gzx_RmfQ" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_PuLKMY08EeGy38gzx_RmfQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_PuLKMo08EeGy38gzx_RmfQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_PuLKM408EeGy38gzx_RmfQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_Pt9HwY08EeGy38gzx_RmfQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="JourneyModel.ecore#//JourneyDiff"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Pt9Hwo08EeGy38gzx_RmfQ" x="384" y="12"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_tH7PcorsEeGA99DvRpD4VA"/>
   <element xmi:type="ecore:EPackage" href="JourneyModel.ecore#/"/>

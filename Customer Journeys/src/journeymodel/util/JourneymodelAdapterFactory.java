@@ -84,6 +84,10 @@ public class JourneymodelAdapterFactory extends AdapterFactoryImpl {
 				return createJourneySetAdapter();
 			}
 			@Override
+			public Adapter caseJourneyDiff(JourneyDiff object) {
+				return createJourneyDiffAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -142,6 +146,20 @@ public class JourneymodelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createJourneySetAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link journeymodel.JourneyDiff <em>Journey Diff</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see journeymodel.JourneyDiff
+	 * @generated
+	 */
+	public Adapter createJourneyDiffAdapter() {
 		return null;
 	}
 

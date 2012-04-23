@@ -145,6 +145,29 @@ public class JourneymodelItemProviderAdapterFactory extends JourneymodelAdapterF
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link journeymodel.JourneyDiff} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected JourneyDiffItemProvider journeyDiffItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link journeymodel.JourneyDiff}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createJourneyDiffAdapter() {
+		if (journeyDiffItemProvider == null) {
+			journeyDiffItemProvider = new JourneyDiffItemProvider(this);
+		}
+
+		return journeyDiffItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -246,6 +269,7 @@ public class JourneymodelItemProviderAdapterFactory extends JourneymodelAdapterF
 		if (journeyItemProvider != null) journeyItemProvider.dispose();
 		if (touchpointItemProvider != null) touchpointItemProvider.dispose();
 		if (journeySetItemProvider != null) journeySetItemProvider.dispose();
+		if (journeyDiffItemProvider != null) journeyDiffItemProvider.dispose();
 	}
 
 }
