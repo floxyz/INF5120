@@ -29,7 +29,9 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 	public String getDetailSetStatistic() {
 		StringBuilder builder = new StringBuilder();
 		for (Journey journey : this.journeySet.getJourneys()) {
-			builder.append(generateJourneyStatistics(journey));
+			if (!journey.getID().equalsIgnoreCase("reference")) {
+				builder.append(generateJourneyStatistics(journey));
+			}
 		}
 		return builder.append("\n").toString();
 	}

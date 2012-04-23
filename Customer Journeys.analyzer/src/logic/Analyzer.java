@@ -67,7 +67,9 @@ public class Analyzer {
 
 		System.out.println("\n# Set name: " + set.getName());
 		for (Journey j : (List<Journey>) set.getJourneys()) {
-			printJourney(j);
+			if (!j.getID().equalsIgnoreCase("reference")) {
+				printJourney(j);
+			}
 		}
 		IDetailAnalyzer analyzer = new DetailAnalyzer(set);
 		System.out.println(analyzer.getDetailSetStatistic());
