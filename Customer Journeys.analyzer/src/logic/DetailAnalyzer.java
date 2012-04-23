@@ -4,6 +4,7 @@ import java.util.List;
 
 import journeymodel.EChannel;
 import journeymodel.EEvaluation;
+import journeymodel.EInitiator;
 import journeymodel.Journey;
 import journeymodel.JourneySet;
 import journeymodel.Touchpoint;
@@ -48,6 +49,7 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 		builder.append("####################\nDetail Statistics for journey " + journey.getName() + " (" + journey.getID() + ")\n");
 		builder.append(this.getRatingStatistics(journey));
 		builder.append(this.getChannelStatistics(journey));
+		builder.append(this.getInitiatorStatistics(journey));
 		return builder.append("####################\n\n").toString();
 	}
 
@@ -99,5 +101,25 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 			}
 		}
 		return (channel.toString() + ": " + channelCount + " (" + ((float) channelCount / (float) journey.getTouchpoints().size()) + "%)\n");
+	}
+
+	private String getInitiatorStatistics(Journey journey) {
+		List<EInitiator> initiatorList = EInitiator.VALUES;
+		StringBuilder builder = new StringBuilder("----------\nInitiator Statistics for  " + initiatorList.size() + " initiators:\n");
+
+		for (EInitiator initiator : initiatorList) {
+			builder.append(this.getSingleInitiatorStatistic(journey, initiator));
+		}
+		return builder.toString();
+	}
+
+	private String getSingleInitiatorStatistic(Journey journey, EInitiator initiator) {
+		Integer initiatorCount = 0;
+		for (Touchpoint touchpoint : journey.getTouchpoints()) {
+			if (touchpoint.getInitiator() == initiator) {
+				initiatorCount++;
+			}
+		}
+		return (initiator.toString() + ": " + initiatorCount + " (" + ((float) initiatorCount / (float) journey.getTouchpoints().size()) + "%)\n");
 	}
 }
