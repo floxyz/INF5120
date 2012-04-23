@@ -12,6 +12,7 @@ import journeymodel.Journey;
 import journeymodel.JourneySet;
 import journeymodel.Touchpoint;
 import journeymodel.impl.JourneymodelPackageImpl;
+import logic.interfaces.IDetailAnalyzer;
 
 public class Analyzer {
 
@@ -34,7 +35,7 @@ public class Analyzer {
 	}
 	
 	/**
-	 * Print one journey to stdout.
+	 * Print one journey to standard output.
 	 * TODO: Maybe implement this directly in the generated model as toString?
 	 * @param journey
 	 */
@@ -61,10 +62,12 @@ public class Analyzer {
 		for (Journey j: (List<Journey>) set.getJourneys()){
 			printJourney(j);
 		}
+		IDetailAnalyzer analyzer = new DetailAnalyzer(set);
+		System.out.println(analyzer.getDetailSetStatistic());
 	}
 	
 	/**
-	 * Prints the loaded file to stdout.
+	 * Prints the loaded file to standard output.
 	 */
 	public void dump(){
 		// get model elements from the resource
