@@ -108,7 +108,7 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 
 	private String getInitiatorStatistics(Journey journey) {
 		List<EInitiator> initiatorList = EInitiator.VALUES;
-		StringBuilder builder = new StringBuilder("## nInitiator Statistics for  " + initiatorList.size() + " initiators:\n");
+		StringBuilder builder = new StringBuilder("## Initiator Statistics for  " + initiatorList.size() + " initiators:\n");
 
 		for (EInitiator initiator : initiatorList) {
 			builder.append(this.getSingleInitiatorStatistic(journey, initiator));
