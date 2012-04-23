@@ -31,5 +31,11 @@
     <touchpoints ID="D41" name="customer is expeled from the theater" date="2012-03-05T00:00:00.000+0100" DT1="2" type="adhoc" comment="customer is drunk and misbehaves" evaluation="empty" channel="faceToFace" initiator="movieEmployee"/>
     <touchpoints ID="D42" name="customer calls help desk to get ticket refunded" date="2012-03-07T00:00:00.000+0100" DT1="4" type="adhoc" comment="customer wants money back" evaluation="not_available" channel="phone"/>
   </journeys>
-  <journeys ID="reference" name ="Expected Journey"/>
+  <journeys ID="reference" name="Generic Journey" date="2012-03-01T00:00:00.000+0100">
+    <touchpoints ID="T0" name="customer orders and pay movie ticket via web site" date="2012-03-01T00:00:00.000+0100" DT1="0" evaluation="not_available"/>
+    <touchpoints ID="T1" name="confirmation received by e-mail" date="2012-03-01T00:00:00.000+0100" DT1="0" evaluation="not_available" channel="email" initiator="movieAgency"/>
+    <touchpoints ID="T2" name="confirmation received by SMS" date="2012-03-01T00:00:00.000+0100" DT1="0" evaluation="not_available" channel="sms" initiator="movieAgency"/>
+    <touchpoints ID="T4" name="print ticket via self-service machine at the movie" date="2012-03-02T00:00:00.000+0100" DT1="1" evaluation="not_available" channel="selfServiceMachine"/>
+    <touchpoints ID="T4" name="customer shows ticket at entrance" date="2012-03-02T00:00:00.000+0100" DT1="1" evaluation="not_available" channel="faceToFace"/>
+  </journeys>
 </journeymodel:JourneySet>

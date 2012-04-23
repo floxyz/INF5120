@@ -9,9 +9,9 @@ public class CLI {
 	 */
 	public static void main(String[] args) {
 
-		Analyzer analyzer = new Analyzer("../instances/exampleSet.customerjourney");
+		Analyzer analyzer = new Analyzer("../instances/exampleSet.journeymodel");
 		analyzer.dump();
-		
+
 	}
 
 }

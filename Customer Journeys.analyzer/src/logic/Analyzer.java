@@ -80,12 +80,8 @@ public class Analyzer {
 	 */
 	public void dump() {
 		// get model elements from the resource
-		EObject resourceContent = resource.getContents().get(0); // get(0) might
-																	// be
-																	// dangerous.
-																	// why?
+		EObject resourceContent = resource.getContents().get(0);
 
-		// Do something with the model
 		if (resourceContent instanceof Journey) {
 			Journey journey = (Journey) resourceContent;
 			printJourney(journey);
