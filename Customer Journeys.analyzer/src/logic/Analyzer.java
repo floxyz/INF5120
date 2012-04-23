@@ -44,11 +44,11 @@ public class Analyzer {
 	 * @param journey
 	 */
 	private void printJourney(Journey journey) {
-		System.out.println("##  customer journey " + journey.getName());
+		System.out.println("\n##  customer journey " + journey.getName() + '\n');
 		System.out.println("*    from: " + journey.getDate());
 		System.out.println("*    status: " + journey.getStatus());
 		System.out.println("*    commnt: " + journey.getComment());
-		System.out.println("###    touchpoints:");
+		System.out.println("\n###    touchpoints:");
 		int i = 0;
 		for (Touchpoint tp : (List<Touchpoint>) journey.getTouchpoints()) {
 			i++;
@@ -59,13 +59,13 @@ public class Analyzer {
 
 	private void printJourneySet(JourneySet set) {
 		if (set.getExpectedJoruney() != null) {
-			System.out.println("# Expected journey:");
+			System.out.println("\n# Expected journey:\n");
 			printJourney(set.getExpectedJoruney());
 		} else {
 			System.out.println("**No expected journey available.**");
 		}
 
-		System.out.println("# Set name: " + set.getName());
+		System.out.println("\n# Set name: " + set.getName());
 		for (Journey j : (List<Journey>) set.getJourneys()) {
 			printJourney(j);
 		}
