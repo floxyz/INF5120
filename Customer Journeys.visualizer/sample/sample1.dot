@@ -1,0 +1,33 @@
+digraph customerJourney {
+	rankdir=LR;
+	
+	// Touchpoints with rating
+	"T0" [ label="T0 medium"];
+	"T3" [label="T3 medium"]; 
+	"D0" [label="D0 bad"]; 
+	"T2" [label="T2 good"];
+	"T3" [label="D3 good"];
+	
+	// Reference journey
+	subgraph cluster_0 {
+		style=filled;
+		color=lightgrey;
+		node [style=filled,color=white];
+		T0 -> T1 -> T2 -> T3 -> T4
+		label = "Reference Journey";
+	}
+	
+	Start -> T0;
+	
+	// The compared journey
+	edge [color="#FF0000"]
+
+	Start -> T0;
+	T0 -> D0;
+	D0 -> T2;
+	T2 -> T3;
+	T3 -> D3;
+	D3 -> T4;
+	T4 -> D41;
+	D41 -> D42;
+}
