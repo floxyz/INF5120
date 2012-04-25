@@ -14,7 +14,7 @@ import logic.interfaces.IDetailAnalyzer;
 /**
  * The implementation of the interface {@link IDetailAnalyzer}.
  * 
- * @author Florian Hagenauer
+ * @author Florian Hagenauer, modified by Kacper Surdy
  * 
  */
 public class DetailAnalyzer implements IDetailAnalyzer {
@@ -50,7 +50,7 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 	@Override
 	public String getGlobalStatistics() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("# Global Statistics for journey set " + journeySet.getName() + "\n");
+		builder.append("# Global Statistics for " + journeySet.getName() + ":\n\n");
 		builder.append(getGlobalComparedToExpected());
 		return builder.append("\n\n").toString();
 	}
@@ -141,7 +141,7 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 		if (journeySet.getExpectedJoruney() == null)
 			return "## No Expected Journey to compare with\n";
 		JourneyDiff diff = journeySet.getExpectedJoruney().compare(journey);
-		StringBuilder builder = new StringBuilder("## Compared to Expected Journey:\n");
+		StringBuilder builder = new StringBuilder("## Compared to the Expected Journey:\n");
 		builder.append("* Common touchpoints: " + diff.getCommonTP() + "\n");
 		builder.append("* New touchpoints:    " + diff.getNewTP() + "\n");
 		builder.append("* Unused touchpoints: " + diff.getUnusedTP() + "\n");
@@ -152,7 +152,43 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 		Journey expected = journeySet.getExpectedJoruney();
 		if (expected == null)
 			return "## No Expected Journey to compare with\n";
-		//TODO: work in progress;
-		return "";
+		int total = 0, common = 0, newtp = 0, unused = 0,
+				minCommon = Integer.MAX_VALUE, maxCommon = Integer.MIN_VALUE,
+				minNew = Integer.MAX_VALUE, maxNew = Integer.MIN_VALUE,
+				minUnused = Integer.MAX_VALUE, maxUnused = Integer.MIN_VALUE;
+		
+		for (Journey journey: journeySet.getJourneys()) {
+			if (journey == expected) continue;
+			
+			JourneyDiff diff = expected.compare(journey);
+			++total;
+			
+			common += diff.getCommonTP();
+			newtp += diff.getNewTP();
+			unused += diff.getUnusedTP();
+			
+			minCommon = minCommon < diff.getCommonTP() ? minCommon : diff.getCommonTP();
+			minNew = minNew < diff.getNewTP() ? minNew : diff.getNewTP();
+			minUnused = minUnused < diff.getUnusedTP() ? minUnused : diff.getUnusedTP();
+			
+			maxCommon = maxCommon > diff.getCommonTP() ? maxCommon : diff.getCommonTP();
+			maxNew = maxNew > diff.getNewTP() ? maxNew : diff.getNewTP();
+			maxUnused = maxUnused > diff.getUnusedTP() ? maxUnused : diff.getUnusedTP();
+		}
+		
+		StringBuilder builder = new StringBuilder("## Customer journeys compared to the Expected Journey:\n");
+		builder.append("\n### Common touchpoints:\n");
+		builder.append("* Avarage: " + (float) common / (float) total + "\n");
+		builder.append("* Min: " + minCommon + "\n");
+		builder.append("* Max: " + maxCommon + "\n");
+		builder.append("\n### New touchpoints:\n");
+		builder.append("* Avarage: " + (float) newtp / (float) total + "\n");
+		builder.append("* Min: " + minNew + "\n");
+		builder.append("* Max: " + maxNew + "\n");
+		builder.append("\n### Unused touchpoints:\n");
+		builder.append("* Avarage: " + (float) unused / (float) total + "\n");
+		builder.append("* Min: " + minUnused + "\n");
+		builder.append("* Max: " + maxUnused + "\n");
+		return builder.toString();
 	}
 }
