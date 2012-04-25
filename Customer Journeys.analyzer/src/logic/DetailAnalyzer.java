@@ -49,7 +49,7 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 
 	private String generateJourneyStatistics(Journey journey) {
 		StringBuilder builder = new StringBuilder();
-		builder.append("# Detail Statistics for journey " + journey.getName() + " (" + journey.getID() + ")\n");
+		builder.append("# Detail Statistics for journey " + journey.getName() + " (" + journey.getID() + ")\n\n");
 		builder.append(this.getRatingStatistics(journey));
 		builder.append(this.getChannelStatistics(journey));
 		builder.append(this.getInitiatorStatistics(journey));
@@ -59,7 +59,7 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 
 	private String getRatingStatistics(Journey journey) {
 		Integer totalRatings = journey.getTouchpoints().size();
-		StringBuilder builder = new StringBuilder("## Rating Statistics for a total number of " + totalRatings + " ratings:\n");
+		StringBuilder builder = new StringBuilder("## Rating Statistics for a total number of " + totalRatings + " ratings:\n\n");
 
 		Integer goodRatingCount = this.getRatingCount(journey, EEvaluation.GOOD);
 		builder.append("* Good Ratings: " + goodRatingCount + " (" + ((float) (goodRatingCount) / (float) (totalRatings)) * 100 + "%)\n");
@@ -72,7 +72,7 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 		builder.append("* Na Ratings: " + naRatingCount + " (" + ((float) (naRatingCount) / (float) (totalRatings)) * 100 + "%)\n");
 		Integer emptyRatingCount = this.getRatingCount(journey, EEvaluation.EMPTY);
 		builder.append("* Empty Ratings: " + emptyRatingCount + " (" + ((float) (emptyRatingCount) / (float) (totalRatings)) * 100 + "%)\n");
-
+		builder.append("\n\n");
 		return builder.toString();
 	}
 
@@ -89,11 +89,12 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 
 	private String getChannelStatistics(Journey journey) {
 		List<EChannel> channelList = EChannel.VALUES;
-		StringBuilder builder = new StringBuilder("## Channel Statistics for  " + channelList.size() + " channels:\n");
+		StringBuilder builder = new StringBuilder("## Channel Statistics for  " + channelList.size() + " channels:\n\n");
 
 		for (EChannel channel : channelList) {
 			builder.append(this.getSingleChannelStatistic(journey, channel));
 		}
+		builder.append("\n\n");
 		return builder.toString();
 	}
 
@@ -110,11 +111,12 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 
 	private String getInitiatorStatistics(Journey journey) {
 		List<EInitiator> initiatorList = EInitiator.VALUES;
-		StringBuilder builder = new StringBuilder("## Initiator Statistics for  " + initiatorList.size() + " initiators:\n");
+		StringBuilder builder = new StringBuilder("## Initiator Statistics for  " + initiatorList.size() + " initiators:\n\n");
 
 		for (EInitiator initiator : initiatorList) {
 			builder.append(this.getSingleInitiatorStatistic(journey, initiator));
 		}
+		builder.append("\n\n");
 		return builder.toString();
 	}
 
@@ -131,12 +133,13 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 
 	private String getComparedToExpected(Journey journey) {
 		if (journeySet.getExpectedJoruney() == null)
-			return "## No Expected Journey to compare with\n";
+			return "## No Expected Journey to compare with\n\n";
 		JourneyDiff diff = journeySet.getExpectedJoruney().compare(journey);
 		StringBuilder builder = new StringBuilder("## Compared to Expected Journey:\n");
 		builder.append("* Common touchpoints: " + diff.getCommonTP() + "\n");
 		builder.append("* New touchpoints:    " + diff.getNewTP() + "\n");
 		builder.append("* Unused touchpoints: " + diff.getUnusedTP() + "\n");
+		builder.append("\n\n");
 		return builder.toString();
 	}
 	
