@@ -16,9 +16,12 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
+import renderer.Website;
+
 public class Analyzer {
 
 	private Resource resource;
+	private EObject resourceContent;
 
 	public Analyzer(String filename) {
 		// Create a resource set.
@@ -35,6 +38,8 @@ public class Analyzer {
 		// Demand load the resource for this file, here the actual loading is
 		// done.
 		resource = resourceSet.getResource(fileURI, true);
+		resourceContent = resource.getContents().get(0);
+
 	}
 
 	/**
@@ -81,14 +86,19 @@ public class Analyzer {
 	 */
 	public void dump() {
 		// get model elements from the resource
-		EObject resourceContent = resource.getContents().get(0);
-
 		if (resourceContent instanceof Journey) {
 			Journey journey = (Journey) resourceContent;
 			printJourney(journey);
 		} else if (resourceContent instanceof JourneySet) {
 			JourneySet set = (JourneySet) resourceContent;
 			printJourneySet(set);
+		}
+	}
+
+	public void makeWebsite() {
+		if (resourceContent instanceof JourneySet){
+			Website generator = new Website((JourneySet) resourceContent);
+			System.out.println(generator.getHtml());
 		}
 	}
 
