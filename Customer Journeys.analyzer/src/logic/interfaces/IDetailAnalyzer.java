@@ -18,7 +18,7 @@ public interface IDetailAnalyzer {
 	 * @return A String with statistics
 	 */
 	String getDetailSetStatistic();
-
+	
 	/**
 	 * This method should be called if only the detailed statistics for a single
 	 * customer journey want to be seen.
@@ -29,4 +29,11 @@ public interface IDetailAnalyzer {
 	 */
 	String getDetailJourneyStatistic(String ID);
 
+	/**
+	 * This method returns a String with the global statistics of the the
+	 * customer journey set.
+	 * 
+	 * @return A String with statistics
+	 */
+	String getGlobalStatistics();
 }

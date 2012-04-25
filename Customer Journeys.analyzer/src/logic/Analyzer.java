@@ -72,6 +72,7 @@ public class Analyzer {
 			}
 		}
 		IDetailAnalyzer analyzer = new DetailAnalyzer(set);
+		System.out.println(analyzer.getGlobalStatistics());
 		System.out.println(analyzer.getDetailSetStatistic());
 	}
 

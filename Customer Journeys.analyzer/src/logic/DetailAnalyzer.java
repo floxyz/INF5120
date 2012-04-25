@@ -46,6 +46,14 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 		}
 		return "";
 	}
+	
+	@Override
+	public String getGlobalStatistics() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("# Global Statistics for journey set " + journeySet.getName() + "\n");
+		builder.append(getGlobalComparedToExpected());
+		return builder.append("\n\n").toString();
+	}
 
 	private String generateJourneyStatistics(Journey journey) {
 		StringBuilder builder = new StringBuilder();
@@ -140,5 +148,11 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 		return builder.toString();
 	}
 	
-	
+	private String getGlobalComparedToExpected() {
+		Journey expected = journeySet.getExpectedJoruney();
+		if (expected == null)
+			return "## No Expected Journey to compare with\n";
+		//TODO: work in progress;
+		return "";
+	}
 }
