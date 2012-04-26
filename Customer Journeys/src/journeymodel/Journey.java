@@ -266,4 +266,10 @@ public interface Journey extends EObject {
 	 */
 	Integer getRatingCount(EEvaluation evaluation);
 
+	/**
+	 * @model kind="operation"
+	 * @generated
+	 */
+	String getGraphviz();
+
 } // Journey

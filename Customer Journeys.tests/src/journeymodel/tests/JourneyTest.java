@@ -27,6 +27,7 @@ import junit.textui.TestRunner;
  *   <li>{@link journeymodel.Journey#getComparedToExpected() <em>Get Compared To Expected</em>}</li>
  *   <li>{@link journeymodel.Journey#getSingleInitiatorStatistics(journeymodel.EInitiator) <em>Get Single Initiator Statistics</em>}</li>
  *   <li>{@link journeymodel.Journey#getRatingCount(journeymodel.EEvaluation) <em>Get Rating Count</em>}</li>
+ *   <li>{@link journeymodel.Journey#getGraphviz() <em>Get Graphviz</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -188,6 +189,19 @@ public class JourneyTest extends TestCase {
 	 * @generated
 	 */
 	public void testGetRatingCount__EEvaluation() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link journeymodel.Journey#getGraphviz() <em>Get Graphviz</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see journeymodel.Journey#getGraphviz()
+	 * @generated
+	 */
+	public void testGetGraphviz() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

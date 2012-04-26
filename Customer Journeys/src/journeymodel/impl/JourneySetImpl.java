@@ -186,6 +186,26 @@ public class JourneySetImpl extends EObjectImpl implements JourneySet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String getGraphviz() {
+		StringBuilder builder = new StringBuilder("strict digraph JourneySet {\n");
+		
+		Journey expected = getExpectedJoruney();
+		builder.append(expected.getGraphviz());
+		for (Journey journey: getJourneys()) {
+			if (journey == expected) continue;
+			builder.append(journey.getGraphviz());
+		}
+		
+		builder.append("}\n"); //close JourneySet
+		
+		return builder.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

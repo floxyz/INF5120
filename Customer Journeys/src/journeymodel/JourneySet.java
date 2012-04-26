@@ -105,4 +105,12 @@ public interface JourneySet extends EObject {
 	 */
 	String getComparedToExpected();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	String getGraphviz();
+
 } // JourneySet

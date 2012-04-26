@@ -476,6 +476,36 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String getGraphviz() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("subgraph cluster_" + getID() +" {\n");
+		builder.append("label = \"" + getID() + "\"\n");
+		
+		boolean first = true;
+		for (Touchpoint tp: getTouchpoints()) {
+			if (first)
+				first = false;
+			else
+				builder.append(" -> ");
+			builder.append(tp.getID());
+		}
+		builder.append(";\n");
+		builder.append("}\n"); //close Subgraph
+		
+		EList<Touchpoint> touchpoints = getTouchpoints();
+		Touchpoint start = touchpoints.get(0);
+		Touchpoint end = touchpoints.get(touchpoints.size() - 1);
+		builder.append("start -> " + start.getID() + ";\n");
+		builder.append(end.getID() + " -> end;\n");
+		
+		return builder.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
