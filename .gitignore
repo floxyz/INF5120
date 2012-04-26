@@ -11,7 +11,7 @@ bin/
 
 # Article Folder #
 article/
-!article/img/
+!*.png
 !*.tex
 !*.pdf
 
