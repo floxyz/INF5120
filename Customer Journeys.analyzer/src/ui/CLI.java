@@ -2,7 +2,7 @@ package ui;
 
 import java.io.IOException;
 
-import logic.Analyzer;
+import logic.ModelLoader;
 
 public class CLI {
 
@@ -11,10 +11,10 @@ public class CLI {
 	 */
 	public static void main(String[] args) {
 
-		Analyzer analyzer = new Analyzer("../instances/exampleSet.journeymodel");
+		ModelLoader modelLoader = new ModelLoader("../instances/exampleSet.journeymodel");
 		//analyzer.dump();
 		try {
-			analyzer.makeWebsite("output.html");
+			modelLoader.makeWebsite("output.html");
 		} catch (IOException e) {
 			System.err.println("Error: " + e.getMessage());
 		}

@@ -4,13 +4,9 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.List;
 
-import journeymodel.Journey;
 import journeymodel.JourneySet;
-import journeymodel.Touchpoint;
 import journeymodel.impl.JourneymodelPackageImpl;
-import logic.interfaces.IDetailAnalyzer;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -21,12 +17,12 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import renderer.Website;
 
-public class Analyzer {
+public class ModelLoader {
 
 	private Resource resource;
 	private EObject resourceContent;
 
-	public Analyzer(String filename) {
+	public ModelLoader(String filename) {
 		// Create a resource set.
 		ResourceSet resourceSet = new ResourceSetImpl();
 
