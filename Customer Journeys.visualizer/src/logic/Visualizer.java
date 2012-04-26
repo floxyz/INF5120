@@ -48,6 +48,35 @@ public class Visualizer {
 			Journey journey = (Journey) resourceContent;
 		} else if (resourceContent instanceof JourneySet) {
 			JourneySet set = (JourneySet) resourceContent;
+			
+			GraphVizAPI gvApi = new GraphVizAPI();
+			String type = "svg";
+			gvApi.getGraph(set.getGraphviz(), type);
+			File out = new File("graphSet." + type);
+			gvApi.writeGraphToFile( gvApi.getGraph( set.getGraphviz(), type ), out );
+			
+			Journey expected = set.getExpectedJoruney();
+			String expGraph = expected.getGraphviz();
+			
+			for (Journey journey: set.getJourneys()) {
+				if (journey == expected) continue;
+				
+				StringBuilder builder = new StringBuilder("strict digraph " + journey.getID() + " {\n");
+				
+//				builder.append("edge [color=blue]\n");
+//				builder.append("T0 -> T1 -> T2 -> T3;\n");
+				builder.append("edge [color=darkslategrey]\n");
+				builder.append(expGraph);
+				builder.append("edge [color=darkorange];\n");
+				builder.append(journey.getGraphviz());
+				
+				builder.append("}\n"); //close JourneySet
+				
+				File out2 = new File("graph" + journey.getID() + "." + type);
+				gvApi.writeGraphToFile( gvApi.getGraph( builder.toString(), type ), out2 );
+			}
+			
+			
 			System.out.println(set.getGraphviz());
 		}
 	}

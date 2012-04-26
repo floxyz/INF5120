@@ -461,13 +461,23 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 			builder.append(tp.getID());
 		}
 		builder.append(";\n");
+		for (Touchpoint tp: getTouchpoints()) {
+			switch (tp.getEvaluation()) {
+			case GOOD: builder.append(tp.getID() + " [style=filled, fillcolor=green];\n"); break;
+			case MEDIUM: builder.append(tp.getID() + " [style=filled, fillcolor=blue];\n"); break;
+			case BAD: builder.append(tp.getID() + " [style=filled, fillcolor=orange];\n"); break;
+			case EMPTY: builder.append(tp.getID() + " [style=filled, fillcolor=white];\n"); break;
+			case NOT_AVAILABLE: builder.append(tp.getID() + " [style=filled, fillcolor=white];\n"); break;
+			}
+		}
 		builder.append("}\n"); //close Subgraph
 		
 		EList<Touchpoint> touchpoints = getTouchpoints();
 		Touchpoint start = touchpoints.get(0);
 		Touchpoint end = touchpoints.get(touchpoints.size() - 1);
 		builder.append("start -> " + start.getID() + ";\n");
-		builder.append(end.getID() + " -> end;\n");
+		if (status == EStatus.COMPLETED)
+			builder.append(end.getID() + " -> end;\n");
 		
 		return builder.toString();
 	}
