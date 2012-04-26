@@ -1,14 +1,7 @@
 package logic;
 
-import java.util.List;
-
-import journeymodel.EChannel;
-import journeymodel.EEvaluation;
-import journeymodel.EInitiator;
 import journeymodel.Journey;
-import journeymodel.JourneyDiff;
 import journeymodel.JourneySet;
-import journeymodel.Touchpoint;
 import logic.interfaces.IDetailAnalyzer;
 
 /**

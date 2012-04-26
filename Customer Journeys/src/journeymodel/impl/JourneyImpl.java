@@ -543,6 +543,27 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * Generates a Markdown representation of the model.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String toMarkdown() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("\n##  customer journey " + this.getName() + '\n');
+		builder.append("*    from: " + this.getDate());
+		builder.append("*    status: " + this.getStatus());
+		builder.append("*    commnt: " + this.getComment());
+		builder.append("\n###    touchpoints:");
+		int i = 0;
+		for (Touchpoint tp : (List<Touchpoint>) this.getTouchpoints()) {
+			i++;
+			builder.append(i + ".     " + tp.getID() + " " + tp.getName() + " (" + tp.getEvaluation() + ")");
+		}
+		return builder.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */

@@ -29,6 +29,7 @@ import junit.textui.TestRunner;
  *   <li>{@link journeymodel.Journey#getRatingCount(journeymodel.EEvaluation) <em>Get Rating Count</em>}</li>
  *   <li>{@link journeymodel.Journey#getGraphviz() <em>Get Graphviz</em>}</li>
  *   <li>{@link journeymodel.Journey#getSingleChannelStatistics(journeymodel.EChannel) <em>Get Single Channel Statistics</em>}</li>
+ *   <li>{@link journeymodel.Journey#toMarkdown() <em>To Markdown</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -216,6 +217,19 @@ public class JourneyTest extends TestCase {
 	 * @generated
 	 */
 	public void testGetSingleChannelStatistics__EChannel() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link journeymodel.Journey#toMarkdown() <em>To Markdown</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see journeymodel.Journey#toMarkdown()
+	 * @generated
+	 */
+	public void testToMarkdown() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

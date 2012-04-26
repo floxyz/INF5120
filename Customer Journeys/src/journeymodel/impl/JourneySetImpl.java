@@ -294,6 +294,20 @@ public class JourneySetImpl extends EObjectImpl implements JourneySet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String toMarkdown() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("## Journey Set\n\n");
+		for (Journey j : this.getJourneys()){
+			builder.append("* " + j.getID() + " " + j.getName());
+		}
+		return builder.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

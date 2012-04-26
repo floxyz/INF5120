@@ -121,4 +121,12 @@ public interface JourneySet extends EObject {
 	 */
 	String getGlobalComparedToExpected();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	String toMarkdown();
+
 } // JourneySet
