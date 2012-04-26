@@ -347,7 +347,6 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 		return touchpoints;
 	}
 
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * Compare Journey's Touchpoint lists.
@@ -359,7 +358,7 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public JourneyDiff compare(Journey other) {
+	public JourneyDiff compareTo(Journey other) {
 		Set<String> thisSet = new HashSet<String>();
 		Set<String> otherSet = new HashSet<String>();
 		for (Touchpoint tp: getTouchpoints())
@@ -449,7 +448,7 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 	 * @generated NOT
 	 */
 	public String getComparedToExpected(Journey expected) {
-		JourneyDiff diff = this.compare(expected);
+		JourneyDiff diff = this.compareTo(expected);
 		StringBuilder builder = new StringBuilder("## Compared to the Expected Journey:\n");
 		builder.append("* Common touchpoints: " + diff.getCommonTP() + "\n");
 		builder.append("* New touchpoints:    " + diff.getNewTP() + "\n");
@@ -530,9 +529,9 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 		//Add colors to the nodes
 		for (Touchpoint tp: getTouchpoints()) {
 			switch (tp.getEvaluation()) {
-			case GOOD: builder.append(tp.getID() + " [style=filled, fillcolor=green];\n"); break;
-			case MEDIUM: builder.append(tp.getID() + " [style=filled, fillcolor=blue];\n"); break;
-			case BAD: builder.append(tp.getID() + " [style=filled, fillcolor=orange];\n"); break;
+			case GOOD: builder.append(tp.getID() + " [style=filled, fillcolor=lawngreen];\n"); break;
+			case MEDIUM: builder.append(tp.getID() + " [style=filled, fillcolor=cornflowerblue];\n"); break;
+			case BAD: builder.append(tp.getID() + " [style=filled, fillcolor=tomato];\n"); break;
 			case EMPTY: builder.append(tp.getID() + " [style=filled, fillcolor=white];\n"); break;
 			case NOT_AVAILABLE: builder.append(tp.getID() + " [style=filled, fillcolor=white];\n"); break;
 			}
@@ -607,12 +606,10 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 		EList<String> list = new BasicEList<String>();
 		String last = "";
 		for (Touchpoint tp: getTouchpoints()) {
-			System.err.println(last + " -> " + tp.getID());
 			list.add(last + " -> " + tp.getID());
 			last = tp.getID();
 		}
 		if (status == EStatus.COMPLETED) {
-			System.err.println(last + " -> ");
 			list.add(last + " -> ");
 		}
 		return list;

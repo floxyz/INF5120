@@ -1,13 +1,17 @@
 package logic;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 
 import journeymodel.Journey;
 import journeymodel.JourneySet;
-import journeymodel.Touchpoint;
 import journeymodel.impl.JourneymodelPackageImpl;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -19,6 +23,8 @@ public class Visualizer {
 
 	private Resource resource;
 	private EObject resourceContent;
+	
+	private static String DOT = "dot";	// Assuming it's in the system path
 
 	public Visualizer(String filename) {
 		// Create a resource set.
@@ -41,46 +47,60 @@ public class Visualizer {
 
 	/**
 	 * Prints the loaded file to standard output.
+	 * @throws IOException 
+	 * @throws InterruptedException 
 	 */
-	public void dump() {
+	public void dump() throws IOException, InterruptedException {
 		// get model elements from the resource
 		if (resourceContent instanceof Journey) {
 			Journey journey = (Journey) resourceContent;
 		} else if (resourceContent instanceof JourneySet) {
 			JourneySet set = (JourneySet) resourceContent;
 			
-			GraphVizAPI gvApi = new GraphVizAPI();
-			String type = "svg";
-			gvApi.getGraph(set.getGraphviz(), type);
-			File out = new File("graphSet." + type);
-			gvApi.writeGraphToFile( gvApi.getGraph( set.getGraphviz(), type ), out );
+			PrintWriter out = new PrintWriter(new FileOutputStream("graphSet.svg"));
+			out.write(graphvizToSvg( set.getGraphviz() ));
+			out.close();
 			
 			Journey expected = set.getExpectedJoruney();
 			for (Journey journey: set.getJourneys()) {
 				if (journey == expected) continue;
 				
-				StringBuilder builder = new StringBuilder("strict digraph " + journey.getID() + " {\n");
-				builder.append("rankdir=LR;\n");
-				builder.append("edge [color=slategrey]\n");
-				
-//				builder.append("edge [color=blue]\n");
-//				builder.append("T0 -> T1 -> T2 -> T3;\n");
-//				builder.append("edge [color=darkslategrey]\n");
-				builder.append(expected.getGraphviz(false, journey.getEdges()));
-//				builder.append("edge [color=darkorange];\n");
-				builder.append(journey.getGraphviz(true, null));
-				
-				builder.append("}\n"); //close JourneySet
-				
-				File out2 = new File("graph" + journey.getID() + "." + type);
-				gvApi.writeGraphToFile( gvApi.getGraph( builder.toString(), type ), out2 );
-				
-				System.out.println(builder.toString());
+				out = new PrintWriter(new FileOutputStream("graph" + journey.getID() + ".svg"));
+				out.write(graphvizToSvg( set.getGraphviz(journey) ));
+				out.close();
 			}
 			
-			
-			//System.out.println(set.getGraphviz());
 		}
+	}
+	
+	/*
+	 * Toabi, this should be useful for you :)
+	 * It returns graph in SVG format. Take a look at dump() for example usage.
+	 */
+	private String graphvizToSvg(String graph) throws IOException, InterruptedException {
+		//Execute dot process
+		Runtime runTime = Runtime.getRuntime();
+		String[] args = {DOT, "-Tsvg"};
+		Process process = runTime.exec(args);
+
+		//Write input
+		PrintWriter writer = new PrintWriter(process.getOutputStream());
+		writer.write(graph);
+		writer.close();
+		
+		//Get output
+		InputStream in = process.getInputStream();
+    	BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+    	StringBuilder builder = new StringBuilder();
+    	String line;
+    	while ((line = reader.readLine()) != null) {
+    		builder.append(line);
+    	}
+    	reader.close();
+    	
+    	process.waitFor();
+    	
+    	return builder.toString();
 	}
 	
 }

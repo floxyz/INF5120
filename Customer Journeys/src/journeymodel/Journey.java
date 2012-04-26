@@ -216,7 +216,7 @@ public interface Journey extends EObject {
 	 * @model
 	 * @generated
 	 */
-	JourneyDiff compare(Journey other);
+	JourneyDiff compareTo(Journey other);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -294,7 +294,7 @@ public interface Journey extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation" many="false"
-	 * @generated
+	 * @generated NOT
 	 */
 	EList<String> getEdges();
 
