@@ -2,9 +2,16 @@
 
 # Package Files #
 *.jar
+!libs/*.jar	#exclude libs for the projects
 *.war
 *.ear
 
 .metadata
 bin/
-!libs/*.jar
+
+# Article Folder #
+article/
+!article/img/
+!*.tex
+!*.pdf
+
