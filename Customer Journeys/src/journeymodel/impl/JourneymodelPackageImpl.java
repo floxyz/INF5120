@@ -605,6 +605,8 @@ public class JourneymodelPackageImpl extends EPackageImpl implements Journeymode
 		op = addEOperation(journeyEClass, ecorePackage.getEString(), "getSingleChannelStatistics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEChannel(), "channel", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		addEOperation(journeyEClass, ecorePackage.getEString(), "toMarkdown", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(touchpointEClass, Touchpoint.class, "Touchpoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTouchpoint_ID(), ecorePackage.getEString(), "ID", null, 1, 1, Touchpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTouchpoint_Name(), ecorePackage.getEString(), "name", null, 0, 1, Touchpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -626,6 +628,8 @@ public class JourneymodelPackageImpl extends EPackageImpl implements Journeymode
 		addEOperation(journeySetEClass, ecorePackage.getEString(), "getGraphviz", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(journeySetEClass, ecorePackage.getEString(), "getGlobalComparedToExpected", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(journeySetEClass, ecorePackage.getEString(), "toMarkdown", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(journeyDiffEClass, JourneyDiff.class, "JourneyDiff", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getJourneyDiff_CommonTP(), ecorePackage.getEInt(), "commonTP", null, 0, 1, JourneyDiff.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

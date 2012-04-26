@@ -46,55 +46,14 @@ public class Analyzer {
 	}
 
 	/**
-	 * Print one journey to standard output. TODO: Maybe implement this directly
-	 * in the generated model as toString?
-	 * 
-	 * @param journey
-	 */
-	private void printJourney(Journey journey) {
-		System.out.println("\n##  customer journey " + journey.getName() + '\n');
-		System.out.println("*    from: " + journey.getDate());
-		System.out.println("*    status: " + journey.getStatus());
-		System.out.println("*    commnt: " + journey.getComment());
-		System.out.println("\n###    touchpoints:");
-		int i = 0;
-		for (Touchpoint tp : (List<Touchpoint>) journey.getTouchpoints()) {
-			i++;
-			System.out.println(i + ".     " + tp.getID() + " " + tp.getName() + " (" + tp.getEvaluation() + ")");
-		}
-		System.out.println();
-	}
-
-	private void printJourneySet(JourneySet set) {
-		if (set.getExpectedJoruney() != null) {
-			System.out.println("\n# Expected journey:\n");
-			printJourney(set.getExpectedJoruney());
-		} else {
-			System.out.println("**No expected journey available.**");
-		}
-
-		System.out.println("\n# Set name: " + set.getName());
-		for (Journey j : (List<Journey>) set.getJourneys()) {
-			if (!j.getID().equalsIgnoreCase("reference")) {
-				printJourney(j);
-			}
-		}
-		IDetailAnalyzer analyzer = new DetailAnalyzer(set);
-		System.out.println(analyzer.getGlobalStatistics());
-		System.out.println(analyzer.getDetailSetStatistic());
-	}
-
-	/**
 	 * Prints the loaded file to standard output.
 	 */
 	public void dump() {
-		// get model elements from the resource
-		if (resourceContent instanceof Journey) {
-			Journey journey = (Journey) resourceContent;
-			printJourney(journey);
-		} else if (resourceContent instanceof JourneySet) {
+		if (resourceContent instanceof JourneySet) {
 			JourneySet set = (JourneySet) resourceContent;
-			printJourneySet(set);
+			System.out.print(set.toMarkdown());
+		} else {
+			System.err.print("Not a valid model class!");
 		}
 	}
 

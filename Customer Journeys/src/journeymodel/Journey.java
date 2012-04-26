@@ -280,4 +280,12 @@ public interface Journey extends EObject {
 	 */
 	String getSingleChannelStatistics(EChannel channel);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	String toMarkdown();
+
 } // Journey

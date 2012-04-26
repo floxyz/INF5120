@@ -64,6 +64,10 @@
         <element xmi:type="ecore:EOperation" href="JourneyModel.ecore#//Journey/getSingleChannelStatistics"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_HzXIMY-LEeGLZORuu9L1fw"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_FPZkYI-QEeGLZORuu9L1fw" type="2002">
+        <element xmi:type="ecore:EOperation" href="JourneyModel.ecore#//Journey/toMarkdown"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_FPZkYY-QEeGLZORuu9L1fw"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_MwQVdY-KEeGLZORuu9L1fw"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_MwQVdo-KEeGLZORuu9L1fw"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_MwQVd4-KEeGLZORuu9L1fw"/>
@@ -285,6 +289,10 @@
       <children xmi:type="notation:Node" xmi:id="_MfHv4I-PEeGLZORuu9L1fw" type="2002">
         <element xmi:type="ecore:EOperation" href="JourneyModel.ecore#//JourneySet/getGlobalComparedToExpected"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_MfHv4Y-PEeGLZORuu9L1fw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_H1XhEI-QEeGLZORuu9L1fw" type="2002">
+        <element xmi:type="ecore:EOperation" href="JourneyModel.ecore#//JourneySet/toMarkdown"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_H1XhEY-QEeGLZORuu9L1fw"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_Mwcito-KEeGLZORuu9L1fw"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_Mwcit4-KEeGLZORuu9L1fw"/>
