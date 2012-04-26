@@ -42,8 +42,8 @@ public class Website {
 		+ "<div class='container'>"
 		+ m.markdown(analyzer.getDetailSetStatistic())
 		+ "<br >"
-		+ "<h2 id='toggle-source'>Source (Markdown)</h2>"
 		+ "<pre id='markdown-source'>" + analyzer.getDetailSetStatistic() + "</pre>"
+		+ "<a href='#' class='btn' id='toggle-source'>toggle markdown source</a>"
 		+ "</div>"
 		+  "<script type='text/javascript'>" + getResource("/resources/js/jquery.min.js") + "</script>"
 		+  "<script type='text/javascript'>" + getResource("/resources/bootstrap/js/bootstrap.min.js") + "</script>"
