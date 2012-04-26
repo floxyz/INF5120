@@ -7,4 +7,4 @@
 
 .metadata
 bin/
-
+!libs/*.jar
