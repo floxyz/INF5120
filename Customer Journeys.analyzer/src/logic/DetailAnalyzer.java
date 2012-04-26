@@ -55,6 +55,7 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 		return builder.append("\n\n").toString();
 	}
 
+	@Deprecated
 	private String generateJourneyStatistics(Journey journey) {
 		StringBuilder builder = new StringBuilder();
 		builder.append("# Detail Statistics for journey " + journey.getName() + " (" + journey.getID() + ")\n\n");
@@ -65,6 +66,7 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 		return builder.append("\n\n").toString();
 	}
 
+	@Deprecated
 	private String getRatingStatistics(Journey journey) {
 		Integer totalRatings = journey.getTouchpoints().size();
 		StringBuilder builder = new StringBuilder("## Rating Statistics for a total number of " + totalRatings + " ratings:\n\n");
@@ -84,6 +86,7 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 		return builder.toString();
 	}
 
+	@Deprecated
 	private Integer getRatingCount(Journey journey, EEvaluation rating) {
 		Integer counter = 0;
 		List<Touchpoint> touchpointList = journey.getTouchpoints();
@@ -95,6 +98,7 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 		return counter;
 	}
 
+	@Deprecated
 	private String getChannelStatistics(Journey journey) {
 		List<EChannel> channelList = EChannel.VALUES;
 		StringBuilder builder = new StringBuilder("## Channel Statistics for  " + channelList.size() + " channels:\n\n");
@@ -106,6 +110,7 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 		return builder.toString();
 	}
 
+	@Deprecated
 	private String getSingleChannelStatistic(Journey journey, EChannel channel) {
 		Integer channelCount = 0;
 		for (Touchpoint touchpoint : journey.getTouchpoints()) {
@@ -117,6 +122,7 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 				* 100 + "%)\n");
 	}
 
+	@Deprecated
 	private String getInitiatorStatistics(Journey journey) {
 		List<EInitiator> initiatorList = EInitiator.VALUES;
 		StringBuilder builder = new StringBuilder("## Initiator Statistics for  " + initiatorList.size() + " initiators:\n\n");
@@ -128,6 +134,7 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 		return builder.toString();
 	}
 
+	@Deprecated
 	private String getSingleInitiatorStatistic(Journey journey, EInitiator initiator) {
 		Integer initiatorCount = 0;
 		for (Touchpoint touchpoint : journey.getTouchpoints()) {
@@ -139,6 +146,7 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 				+ ((float) initiatorCount / (float) journey.getTouchpoints().size()) * 100 + "%)\n");
 	}
 
+	@Deprecated
 	private String getComparedToExpected(Journey journey) {
 		if (journeySet.getExpectedJoruney() == null)
 			return "## No Expected Journey to compare with\n\n";

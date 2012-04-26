@@ -14,6 +14,7 @@ import journeymodel.EInitiator;
 import java.util.Set;
 import java.util.HashSet;
 
+import journeymodel.EChannel;
 import journeymodel.EEvaluation;
 import journeymodel.EStatus;
 import journeymodel.Journey;
@@ -416,23 +417,33 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String getChannelStatistics() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		List<EChannel> channelList = EChannel.VALUES;
+		StringBuilder builder = new StringBuilder("## Channel Statistics for  " + channelList.size() + " channels:\n\n");
+
+		for (EChannel channel : channelList) {
+			builder.append(this.getSingleChannelStatistic(channel));
+		}
+		builder.append("\n\n");
+		return builder.toString();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String getInitiatorStatistics() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		List<EInitiator> initiatorList = EInitiator.VALUES;
+		StringBuilder builder = new StringBuilder("## Initiator Statistics for  " + initiatorList.size() + " initiators:\n\n");
+
+		for (EInitiator initiator : initiatorList) {
+			builder.append(this.getSingleInitiatorStatistics(initiator));
+		}
+		builder.append("\n\n");
+		return builder.toString();
 	}
 
 	/**
@@ -449,12 +460,18 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String getSingleInitiatorStatistics(EInitiator initiator) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Integer initiatorCount = 0;
+		for (Touchpoint touchpoint : this.getTouchpoints()) {
+			if (touchpoint.getInitiator() == initiator) {
+				initiatorCount++;
+			}
+		}
+		return ("* " + initiator.toString() + ": " + initiatorCount + " ("
+				+ ((float) initiatorCount / (float) this.getTouchpoints().size()) * 100 + "%)\n");
+
 	}
 
 	/**
@@ -501,6 +518,38 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 		builder.append(end.getID() + " -> end;\n");
 		
 		return builder.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String getSingleChannelStatistics(EChannel channel) {
+		Integer channelCount = 0;
+		for (Touchpoint touchpoint : this.getTouchpoints()) {
+			if (touchpoint.getChannel() == channel) {
+				channelCount++;
+			}
+		}
+		return ("* " + channel.toString() + ": " + channelCount + " (" + ((float) channelCount / (float) this.getTouchpoints().size())
+				* 100 + "%)\n");
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String getSingleChannelStatistic(EChannel channel) {
+		Integer channelCount = 0;
+		for (Touchpoint touchpoint : this.getTouchpoints()) {
+			if (touchpoint.getChannel() == channel) {
+				channelCount++;
+			}
+		}
+		return ("* " + channel.toString() + ": " + channelCount + " (" + ((float) channelCount / (float) this.getTouchpoints().size())
+				* 100 + "%)\n");
 	}
 
 	/**

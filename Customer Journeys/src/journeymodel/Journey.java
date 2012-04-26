@@ -272,4 +272,12 @@ public interface Journey extends EObject {
 	 */
 	String getGraphviz();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	String getSingleChannelStatistics(EChannel channel);
+
 } // Journey

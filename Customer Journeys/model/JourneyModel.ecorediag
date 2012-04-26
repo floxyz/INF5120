@@ -60,6 +60,10 @@
         <element xmi:type="ecore:EOperation" href="JourneyModel.ecore#//Journey/getGraphviz"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_MwSKpY-KEeGLZORuu9L1fw"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_HzXIMI-LEeGLZORuu9L1fw" type="2002">
+        <element xmi:type="ecore:EOperation" href="JourneyModel.ecore#//Journey/getSingleChannelStatistics"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_HzXIMY-LEeGLZORuu9L1fw"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_MwQVdY-KEeGLZORuu9L1fw"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_MwQVdo-KEeGLZORuu9L1fw"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_MwQVd4-KEeGLZORuu9L1fw"/>
