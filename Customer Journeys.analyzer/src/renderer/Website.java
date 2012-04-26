@@ -41,6 +41,7 @@ public class Website {
 		+ "</div>"
 		+ "<div class='container'>"
 		+ m.markdown(analyzer.getDetailSetStatistic())
+		+ m.markdown(analyzer.getGlobalStatistics())
 		+ "<br >"
 		+ "<pre id='markdown-source'>" + analyzer.getDetailSetStatistic() + "</pre>"
 		+ "<a href='#' class='btn' id='toggle-source'>toggle markdown source</a>"

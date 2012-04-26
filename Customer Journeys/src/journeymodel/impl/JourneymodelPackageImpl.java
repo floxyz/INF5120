@@ -625,6 +625,8 @@ public class JourneymodelPackageImpl extends EPackageImpl implements Journeymode
 
 		addEOperation(journeySetEClass, ecorePackage.getEString(), "getGraphviz", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		addEOperation(journeySetEClass, ecorePackage.getEString(), "getGlobalComparedToExpected", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(journeyDiffEClass, JourneyDiff.class, "JourneyDiff", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getJourneyDiff_CommonTP(), ecorePackage.getEInt(), "commonTP", null, 0, 1, JourneyDiff.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJourneyDiff_UnusedTP(), ecorePackage.getEInt(), "unusedTP", null, 0, 1, JourneyDiff.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

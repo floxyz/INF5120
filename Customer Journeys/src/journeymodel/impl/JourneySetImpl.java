@@ -245,6 +245,55 @@ public class JourneySetImpl extends EObjectImpl implements JourneySet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String getGlobalComparedToExpected() {
+		Journey expected = this.getExpectedJoruney();
+		if (expected == null)
+			return "## No Expected Journey to compare with\n";
+		int total = 0, common = 0, newtp = 0, unused = 0,
+				minCommon = Integer.MAX_VALUE, maxCommon = Integer.MIN_VALUE,
+				minNew = Integer.MAX_VALUE, maxNew = Integer.MIN_VALUE,
+				minUnused = Integer.MAX_VALUE, maxUnused = Integer.MIN_VALUE;
+		
+		for (Journey journey: this.getJourneys()) {
+			if (journey == expected) continue;
+			
+			JourneyDiff diff = expected.compare(journey);
+			++total;
+			
+			common += diff.getCommonTP();
+			newtp += diff.getNewTP();
+			unused += diff.getUnusedTP();
+			
+			minCommon = minCommon < diff.getCommonTP() ? minCommon : diff.getCommonTP();
+			minNew = minNew < diff.getNewTP() ? minNew : diff.getNewTP();
+			minUnused = minUnused < diff.getUnusedTP() ? minUnused : diff.getUnusedTP();
+			
+			maxCommon = maxCommon > diff.getCommonTP() ? maxCommon : diff.getCommonTP();
+			maxNew = maxNew > diff.getNewTP() ? maxNew : diff.getNewTP();
+			maxUnused = maxUnused > diff.getUnusedTP() ? maxUnused : diff.getUnusedTP();
+		}
+		
+		StringBuilder builder = new StringBuilder("## Customer journeys compared to the Expected Journey:\n");
+		builder.append("\n### Common touchpoints:\n");
+		builder.append("* Avarage: " + (float) common / (float) total + "\n");
+		builder.append("* Min: " + minCommon + "\n");
+		builder.append("* Max: " + maxCommon + "\n");
+		builder.append("\n### New touchpoints:\n");
+		builder.append("* Avarage: " + (float) newtp / (float) total + "\n");
+		builder.append("* Min: " + minNew + "\n");
+		builder.append("* Max: " + maxNew + "\n");
+		builder.append("\n### Unused touchpoints:\n");
+		builder.append("* Avarage: " + (float) unused / (float) total + "\n");
+		builder.append("* Min: " + minUnused + "\n");
+		builder.append("* Max: " + maxUnused + "\n");
+		return builder.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

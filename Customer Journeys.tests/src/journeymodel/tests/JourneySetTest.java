@@ -22,6 +22,7 @@ import junit.textui.TestRunner;
  * <ul>
  *   <li>{@link journeymodel.JourneySet#getComparedToExpected() <em>Get Compared To Expected</em>}</li>
  *   <li>{@link journeymodel.JourneySet#getGraphviz() <em>Get Graphviz</em>}</li>
+ *   <li>{@link journeymodel.JourneySet#getGlobalComparedToExpected() <em>Get Global Compared To Expected</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -118,6 +119,19 @@ public class JourneySetTest extends TestCase {
 	 * @generated
 	 */
 	public void testGetGraphviz() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link journeymodel.JourneySet#getGlobalComparedToExpected() <em>Get Global Compared To Expected</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see journeymodel.JourneySet#getGlobalComparedToExpected()
+	 * @generated
+	 */
+	public void testGetGlobalComparedToExpected() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
