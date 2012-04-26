@@ -6,12 +6,16 @@
 *.war
 *.ear
 
+Customer Journeys.analyzer/output.html
+instances/.project
 .metadata
 bin/
 
 # Article Folder #
-article/
-!*.png
-!*.tex
-!*.pdf
+article/*.aux
+article/*.bbl
+article/*.blg
+article/*.log
+article/*.synctex.gz
+article/*.toc
 
