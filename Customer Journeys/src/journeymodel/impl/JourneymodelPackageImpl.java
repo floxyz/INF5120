@@ -596,6 +596,9 @@ public class JourneymodelPackageImpl extends EPackageImpl implements Journeymode
 		op = addEOperation(journeyEClass, ecorePackage.getEString(), "getSingleInitiatorStatistics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEInitiator(), "initiator", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(journeyEClass, ecorePackage.getEIntegerObject(), "getRatingCount", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getEEvaluation(), "evaluation", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(touchpointEClass, Touchpoint.class, "Touchpoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTouchpoint_ID(), ecorePackage.getEString(), "ID", null, 1, 1, Touchpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTouchpoint_Name(), ecorePackage.getEString(), "name", null, 0, 1, Touchpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

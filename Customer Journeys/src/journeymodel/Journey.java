@@ -258,4 +258,12 @@ public interface Journey extends EObject {
 	 */
 	String getSingleInitiatorStatistics(EInitiator initiator);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	Integer getRatingCount(EEvaluation evaluation);
+
 } // Journey

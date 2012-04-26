@@ -26,6 +26,7 @@ import junit.textui.TestRunner;
  *   <li>{@link journeymodel.Journey#getInitiatorStatistics() <em>Get Initiator Statistics</em>}</li>
  *   <li>{@link journeymodel.Journey#getComparedToExpected() <em>Get Compared To Expected</em>}</li>
  *   <li>{@link journeymodel.Journey#getSingleInitiatorStatistics(journeymodel.EInitiator) <em>Get Single Initiator Statistics</em>}</li>
+ *   <li>{@link journeymodel.Journey#getRatingCount(journeymodel.EEvaluation) <em>Get Rating Count</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -174,6 +175,19 @@ public class JourneyTest extends TestCase {
 	 * @generated
 	 */
 	public void testGetSingleInitiatorStatistics__EInitiator() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link journeymodel.Journey#getRatingCount(journeymodel.EEvaluation) <em>Get Rating Count</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see journeymodel.Journey#getRatingCount(journeymodel.EEvaluation)
+	 * @generated
+	 */
+	public void testGetRatingCount__EEvaluation() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

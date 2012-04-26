@@ -8,10 +8,13 @@ package journeymodel.impl;
 
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
+
 import journeymodel.EInitiator;
 import java.util.Set;
 import java.util.HashSet;
 
+import journeymodel.EEvaluation;
 import journeymodel.EStatus;
 import journeymodel.Journey;
 import journeymodel.JourneyDiff;
@@ -390,13 +393,25 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String getRatingStatistics() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+		Integer totalRatings = this.getTouchpoints().size();
+		StringBuilder builder = new StringBuilder("## Rating Statistics for a total number of " + totalRatings + " ratings:\n\n");
+
+		Integer goodRatingCount = this.getRatingCount(EEvaluation.GOOD);
+		builder.append("* Good Ratings: " + goodRatingCount + " (" + ((float) (goodRatingCount) / (float) (totalRatings)) * 100 + "%)\n");
+		Integer badRatingCount = this.getRatingCount(EEvaluation.BAD);
+		builder.append("* Bad Ratings: " + badRatingCount + " (" + ((float) (badRatingCount) / (float) (totalRatings)) * 100 + "%)\n");
+		Integer mediumRatingCount = this.getRatingCount(EEvaluation.MEDIUM);
+		builder.append("* Medium Ratings: " + mediumRatingCount + " ("
+				+ ((float) (mediumRatingCount) / (float) (this.getTouchpoints().size())) * 100 + "%)\n");
+		Integer naRatingCount = this.getRatingCount(EEvaluation.NOT_AVAILABLE);
+		builder.append("* Na Ratings: " + naRatingCount + " (" + ((float) (naRatingCount) / (float) (totalRatings)) * 100 + "%)\n");
+		Integer emptyRatingCount = this.getRatingCount(EEvaluation.EMPTY);
+		builder.append("* Empty Ratings: " + emptyRatingCount + " (" + ((float) (emptyRatingCount) / (float) (totalRatings)) * 100 + "%)\n");
+		builder.append("\n\n");
+		return builder.toString();	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -440,6 +455,22 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public Integer getRatingCount(EEvaluation evaluation) {
+		Integer counter = 0;
+		List<Touchpoint> touchpointList = this.getTouchpoints();
+		for (Touchpoint touchpoint : touchpointList) {
+			if (touchpoint.getEvaluation() == evaluation) {
+				counter++;
+			}
+		}
+		return counter;
 	}
 
 	/**
