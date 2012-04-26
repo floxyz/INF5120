@@ -1,0 +1,52 @@
+% to compile this document use the following four commands: 
+% pdflatex worms.tex
+% bibtex worms.aux
+% pdflatex worms.tex
+% pdflatex worms.tex
+\documentclass[12pt]{scrartcl}
+
+% used packages
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{listings}
+
+% settings for listings
+\lstset{language=Java}
+\lstset{frame=single}
+\lstset{framesep=10pt}
+\lstset{basicstyle=\ttfamily}
+
+% title, authors and date
+\title{Oblig 2 \\ Creating a Domain Specific Language using the Eclipse Modelling Framework}
+\author{Tobias Birmili, Florian Hagenauer, Kacper Surdy}
+
+\date{07.05.2012}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Introduction}
+
+This article is part of the second assignment for the course Modelbased System Development. The article discusses
+how the three parts of the assignment have been solved. The basic task was to build a model for customer journeys,
+make it possible to extract statistics out of customer journeys and finally the option to choose between three
+additional tasks. It was possible to chose between a user-friendly editor, a graphical exporter or adding support
+for multiple journeys. For this article the graphical export option was chosen.
+
+Section \ref{section:model} describes how the model was built and discusses the different components. The second
+section \ref{section:statistic} depicts which statistics were generated and finally Section \ref{section:export}
+shows a solution for a graphical exporter which generates useful graphs.
+
+\section{Creating a DSL metamodel with EMF} \label{section:model}
+
+The first part of the work was to create a metamodel using the Eclipse Modelling Framework (EMF) for a customer
+journey.
+\section{Making a transformation to extract statistics} \label{section:statistic}
+
+\section{Graphical Export} \label{section:export}
+
+
+\end{document}
