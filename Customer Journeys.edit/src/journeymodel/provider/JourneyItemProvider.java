@@ -72,7 +72,7 @@ public class JourneyItemProvider
 			addDatePropertyDescriptor(object);
 			addStatusPropertyDescriptor(object);
 			addCommentPropertyDescriptor(object);
-			addEReference0PropertyDescriptor(object);
+			addJourneySetPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -188,19 +188,19 @@ public class JourneyItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the EReference0 feature.
+	 * This adds a property descriptor for the Journey Set feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addEReference0PropertyDescriptor(Object object) {
+	protected void addJourneySetPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Journey_EReference0_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Journey_EReference0_feature", "_UI_Journey_type"),
-				 JourneymodelPackage.Literals.JOURNEY__EREFERENCE0,
+				 getString("_UI_Journey_journeySet_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Journey_journeySet_feature", "_UI_Journey_type"),
+				 JourneymodelPackage.Literals.JOURNEY__JOURNEY_SET,
 				 true,
 				 false,
 				 true,

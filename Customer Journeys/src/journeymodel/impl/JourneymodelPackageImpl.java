@@ -235,7 +235,7 @@ public class JourneymodelPackageImpl extends EPackageImpl implements Journeymode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getJourney_EReference0() {
+	public EReference getJourney_JourneySet() {
 		return (EReference)journeyEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -507,7 +507,7 @@ public class JourneymodelPackageImpl extends EPackageImpl implements Journeymode
 		createEAttribute(journeyEClass, JOURNEY__DATE);
 		createEAttribute(journeyEClass, JOURNEY__STATUS);
 		createEAttribute(journeyEClass, JOURNEY__COMMENT);
-		createEReference(journeyEClass, JOURNEY__EREFERENCE0);
+		createEReference(journeyEClass, JOURNEY__JOURNEY_SET);
 		createEReference(journeyEClass, JOURNEY__TOUCHPOINTS);
 
 		touchpointEClass = createEClass(TOUCHPOINT);
@@ -579,7 +579,7 @@ public class JourneymodelPackageImpl extends EPackageImpl implements Journeymode
 		initEAttribute(getJourney_Date(), ecorePackage.getEDate(), "date", null, 0, 1, Journey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJourney_Status(), this.getEStatus(), "status", null, 0, 1, Journey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJourney_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, Journey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getJourney_EReference0(), this.getTouchpoint(), null, "EReference0", null, 0, 1, Journey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getJourney_JourneySet(), this.getJourneySet(), null, "journeySet", null, 0, 1, Journey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJourney_Touchpoints(), this.getTouchpoint(), null, "touchpoints", null, 1, -1, Journey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(journeyEClass, this.getJourneyDiff(), "compare", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -591,7 +591,8 @@ public class JourneymodelPackageImpl extends EPackageImpl implements Journeymode
 
 		addEOperation(journeyEClass, ecorePackage.getEString(), "getInitiatorStatistics", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(journeyEClass, ecorePackage.getEString(), "getComparedToExpected", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(journeyEClass, ecorePackage.getEString(), "getComparedToExpected", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getJourney(), "expected", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(journeyEClass, ecorePackage.getEString(), "getSingleInitiatorStatistics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEInitiator(), "initiator", 0, 1, IS_UNIQUE, IS_ORDERED);

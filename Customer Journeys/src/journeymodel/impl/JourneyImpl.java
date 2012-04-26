@@ -19,6 +19,7 @@ import journeymodel.EEvaluation;
 import journeymodel.EStatus;
 import journeymodel.Journey;
 import journeymodel.JourneyDiff;
+import journeymodel.JourneySet;
 import journeymodel.JourneymodelPackage;
 import journeymodel.Touchpoint;
 
@@ -48,7 +49,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link journeymodel.impl.JourneyImpl#getDate <em>Date</em>}</li>
  *   <li>{@link journeymodel.impl.JourneyImpl#getStatus <em>Status</em>}</li>
  *   <li>{@link journeymodel.impl.JourneyImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link journeymodel.impl.JourneyImpl#getEReference0 <em>EReference0</em>}</li>
+ *   <li>{@link journeymodel.impl.JourneyImpl#getJourneySet <em>Journey Set</em>}</li>
  *   <li>{@link journeymodel.impl.JourneyImpl#getTouchpoints <em>Touchpoints</em>}</li>
  * </ul>
  * </p>
@@ -157,14 +158,14 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 	protected String comment = COMMENT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getEReference0() <em>EReference0</em>}' reference.
+	 * The cached value of the '{@link #getJourneySet() <em>Journey Set</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference0()
+	 * @see #getJourneySet()
 	 * @generated
 	 * @ordered
 	 */
-	protected Touchpoint eReference0;
+	protected JourneySet journeySet;
 
 	/**
 	 * The cached value of the '{@link #getTouchpoints() <em>Touchpoints</em>}' containment reference list.
@@ -305,16 +306,16 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Touchpoint getEReference0() {
-		if (eReference0 != null && eReference0.eIsProxy()) {
-			InternalEObject oldEReference0 = (InternalEObject)eReference0;
-			eReference0 = (Touchpoint)eResolveProxy(oldEReference0);
-			if (eReference0 != oldEReference0) {
+	public JourneySet getJourneySet() {
+		if (journeySet != null && journeySet.eIsProxy()) {
+			InternalEObject oldJourneySet = (InternalEObject)journeySet;
+			journeySet = (JourneySet)eResolveProxy(oldJourneySet);
+			if (journeySet != oldJourneySet) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, JourneymodelPackage.JOURNEY__EREFERENCE0, oldEReference0, eReference0));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, JourneymodelPackage.JOURNEY__JOURNEY_SET, oldJourneySet, journeySet));
 			}
 		}
-		return eReference0;
+		return journeySet;
 	}
 
 	/**
@@ -322,8 +323,8 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Touchpoint basicGetEReference0() {
-		return eReference0;
+	public JourneySet basicGetJourneySet() {
+		return journeySet;
 	}
 
 	/**
@@ -331,11 +332,11 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference0(Touchpoint newEReference0) {
-		Touchpoint oldEReference0 = eReference0;
-		eReference0 = newEReference0;
+	public void setJourneySet(JourneySet newJourneySet) {
+		JourneySet oldJourneySet = journeySet;
+		journeySet = newJourneySet;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JourneymodelPackage.JOURNEY__EREFERENCE0, oldEReference0, eReference0));
+			eNotify(new ENotificationImpl(this, Notification.SET, JourneymodelPackage.JOURNEY__JOURNEY_SET, oldJourneySet, journeySet));
 	}
 
 	/**
@@ -449,12 +450,16 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public String getComparedToExpected() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public String getComparedToExpected(Journey expected) {
+		JourneyDiff diff = journeySet.getExpectedJoruney().compare(expected);
+		StringBuilder builder = new StringBuilder("## Compared to the Expected Journey:\n");
+		builder.append("* Common touchpoints: " + diff.getCommonTP() + "\n");
+		builder.append("* New touchpoints:    " + diff.getNewTP() + "\n");
+		builder.append("* Unused touchpoints: " + diff.getUnusedTP() + "\n");
+		builder.append("\n\n");
+		return builder.toString();
 	}
 
 	/**
@@ -584,9 +589,9 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 				return getStatus();
 			case JourneymodelPackage.JOURNEY__COMMENT:
 				return getComment();
-			case JourneymodelPackage.JOURNEY__EREFERENCE0:
-				if (resolve) return getEReference0();
-				return basicGetEReference0();
+			case JourneymodelPackage.JOURNEY__JOURNEY_SET:
+				if (resolve) return getJourneySet();
+				return basicGetJourneySet();
 			case JourneymodelPackage.JOURNEY__TOUCHPOINTS:
 				return getTouchpoints();
 		}
@@ -617,8 +622,8 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 			case JourneymodelPackage.JOURNEY__COMMENT:
 				setComment((String)newValue);
 				return;
-			case JourneymodelPackage.JOURNEY__EREFERENCE0:
-				setEReference0((Touchpoint)newValue);
+			case JourneymodelPackage.JOURNEY__JOURNEY_SET:
+				setJourneySet((JourneySet)newValue);
 				return;
 			case JourneymodelPackage.JOURNEY__TOUCHPOINTS:
 				getTouchpoints().clear();
@@ -651,8 +656,8 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 			case JourneymodelPackage.JOURNEY__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
-			case JourneymodelPackage.JOURNEY__EREFERENCE0:
-				setEReference0((Touchpoint)null);
+			case JourneymodelPackage.JOURNEY__JOURNEY_SET:
+				setJourneySet((JourneySet)null);
 				return;
 			case JourneymodelPackage.JOURNEY__TOUCHPOINTS:
 				getTouchpoints().clear();
@@ -679,8 +684,8 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 				return status != STATUS_EDEFAULT;
 			case JourneymodelPackage.JOURNEY__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case JourneymodelPackage.JOURNEY__EREFERENCE0:
-				return eReference0 != null;
+			case JourneymodelPackage.JOURNEY__JOURNEY_SET:
+				return journeySet != null;
 			case JourneymodelPackage.JOURNEY__TOUCHPOINTS:
 				return touchpoints != null && !touchpoints.isEmpty();
 		}

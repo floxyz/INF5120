@@ -10,7 +10,9 @@
     <eOperations name="getRatingStatistics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="getChannelStatistics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="getInitiatorStatistics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eOperations name="getComparedToExpected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="getComparedToExpected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eParameters name="expected" eType="#//Journey"/>
+    </eOperations>
     <eOperations name="getSingleInitiatorStatistics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eParameters name="initiator" eType="#//EInitiator"/>
     </eOperations>

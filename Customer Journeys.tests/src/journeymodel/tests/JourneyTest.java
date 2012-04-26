@@ -24,7 +24,7 @@ import junit.textui.TestRunner;
  *   <li>{@link journeymodel.Journey#getRatingStatistics() <em>Get Rating Statistics</em>}</li>
  *   <li>{@link journeymodel.Journey#getChannelStatistics() <em>Get Channel Statistics</em>}</li>
  *   <li>{@link journeymodel.Journey#getInitiatorStatistics() <em>Get Initiator Statistics</em>}</li>
- *   <li>{@link journeymodel.Journey#getComparedToExpected() <em>Get Compared To Expected</em>}</li>
+ *   <li>{@link journeymodel.Journey#getComparedToExpected(journeymodel.Journey) <em>Get Compared To Expected</em>}</li>
  *   <li>{@link journeymodel.Journey#getSingleInitiatorStatistics(journeymodel.EInitiator) <em>Get Single Initiator Statistics</em>}</li>
  *   <li>{@link journeymodel.Journey#getRatingCount(journeymodel.EEvaluation) <em>Get Rating Count</em>}</li>
  *   <li>{@link journeymodel.Journey#getGraphviz() <em>Get Graphviz</em>}</li>
@@ -157,13 +157,13 @@ public class JourneyTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link journeymodel.Journey#getComparedToExpected() <em>Get Compared To Expected</em>}' operation.
+	 * Tests the '{@link journeymodel.Journey#getComparedToExpected(journeymodel.Journey) <em>Get Compared To Expected</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see journeymodel.Journey#getComparedToExpected()
+	 * @see journeymodel.Journey#getComparedToExpected(journeymodel.Journey)
 	 * @generated
 	 */
-	public void testGetComparedToExpected() {
+	public void testGetComparedToExpected__Journey() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -215,7 +215,7 @@ public class JourneyTest extends TestCase {
 	 * @see journeymodel.Journey#getSingleChannelStatistics(journeymodel.EChannel)
 	 * @generated
 	 */
-	public void testGetSingleChannelStatistics__EChannel_1() {
+	public void testGetSingleChannelStatistics__EChannel() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

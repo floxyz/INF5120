@@ -159,6 +159,7 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 		return builder.toString();
 	}
 	
+	@Deprecated
 	private String getGlobalComparedToExpected() {
 		Journey expected = journeySet.getExpectedJoruney();
 		if (expected == null)
