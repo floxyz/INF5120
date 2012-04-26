@@ -12,12 +12,11 @@ public class CLI {
 	public static void main(String[] args) {
 
 		ModelLoader modelLoader = new ModelLoader("../instances/exampleSet.journeymodel");
-		//analyzer.dump();
 		try {
 			modelLoader.makeWebsite("output.html");
 		} catch (IOException e) {
-			System.err.println("Error: " + e.getMessage());
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
-
 }

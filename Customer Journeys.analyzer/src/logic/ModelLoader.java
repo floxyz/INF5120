@@ -41,6 +41,12 @@ public class ModelLoader {
 
 	}
 
+	public JourneySet getJourneySet(){
+		if (resourceContent instanceof JourneySet)
+			return (JourneySet) resourceContent;
+		else return null;
+	}
+	
 	/**
 	 * Prints the loaded file to standard output.
 	 */
@@ -58,8 +64,7 @@ public class ModelLoader {
 			Website generator = new Website((JourneySet) resourceContent);
 			FileWriter fstream = new FileWriter(filename);
 			BufferedWriter out = new BufferedWriter(fstream);
-			out.write(generator.getHtml());
-			out.close();
+			generator.make(filename);
 		}
 	}
 

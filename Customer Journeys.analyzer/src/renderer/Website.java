@@ -1,8 +1,15 @@
 package renderer;
 
 import java.io.*;
+import java.util.*;
 
 import com.petebevin.markdown.MarkdownProcessor;
+
+import freemarker.cache.ClassTemplateLoader;
+import freemarker.cache.FileTemplateLoader;
+import freemarker.template.Configuration;
+import freemarker.template.Template;
+import freemarker.template.TemplateException;
 
 import journeymodel.JourneySet;
 import logic.DetailAnalyzer;
@@ -17,10 +24,45 @@ public class Website {
 		this.set = set;
 	}
 	
+	public void make(String filename){
+		HashMap<String, Object> model = new HashMap<String, Object>();
+
+		// layout and js lib things
+		model.put("css_bootstrap", getResource("/resources/bootstrap/css/bootstrap.min.css"));
+		model.put("css_custom", getResource("/resources/css/custom.css"));
+		model.put("js_jquery", getResource("/resources/js/jquery.min.js"));
+		model.put("js_bootstrap", getResource("/resources/bootstrap/js/bootstrap.min.js"));
+		model.put("js_custom",  getResource("/resources/js/custom.coffee"));
+		model.put("js_coffee", getResource("/resources/js/coffee-script.js"));
+		model.put("m", new MarkdownProcessor());
+		// the real deal
+		model.put("set", this.set);
+		model.put("journeys", this.set.getJourneys());
+		
+		// render and save the stuff
+		try {
+			FileWriter fstream = new FileWriter(filename);
+			BufferedWriter out = new BufferedWriter(fstream);
+			Configuration cfg = new Configuration();
+			// FIXME, TODO: get the right path!
+			cfg.setTemplateLoader(new FileTemplateLoader(new File("src/resources")));
+			Template tpl = cfg.getTemplate("index.html");
+			tpl.process(model, out);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (TemplateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.err.println("TPL Error: " + e.getMessage());
+		}
+		
+		
+	}
+	
 	public String getHtml(){
 		MarkdownProcessor m = new MarkdownProcessor();
 		StringBuilder builder = new StringBuilder();
-		DetailAnalyzer analyzer = new DetailAnalyzer(set);
 		builder.append("<!DOCTYPE html>"
 		+ "<html lang='en'>"
 		+ "<head>"
@@ -40,10 +82,8 @@ public class Website {
 		+   "</div>"
 		+ "</div>"
 		+ "<div class='container'>"
-		+ m.markdown(analyzer.getDetailSetStatistic())
-		+ m.markdown(analyzer.getGlobalStatistics())
-		+ "<br >"
-		+ "<pre id='markdown-source'>" + analyzer.getDetailSetStatistic() + "</pre>"
+		+ "Hello World!"
+		+ "<pre id='markdown-source'>" + "</pre>"
 		+ "<a href='#' class='btn' id='toggle-source'>toggle markdown source</a>"
 		+ "</div>"
 		+  "<script type='text/javascript'>" + getResource("/resources/js/jquery.min.js") + "</script>"

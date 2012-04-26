@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>${set.getName()}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+		${css_bootstrap}
+		${css_custom}
+    </style>
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#">Journey Analyzer</a>
+            <ul class="nav">
+              <li class="active"><a href="#global">Global</a></li>
+              <li><a href="#perjourney">Per Journey</a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <h1>Journey Analyzer</h1>
+      <p>Hello World!</p>
+      
+
+      <ul id="journeyTab" class="nav nav-tabs">
+        <#list journeys as journey>
+          <li><a href="#journey-tab-${journey.getID()}" data-toggle="tab" rel="noreferrer">${journey.getName()}</a></li>
+        </#list>
+      </ul>
+      <div id="journeyTabContent" class="tab-content">
+        <#list journeys as journey>
+          <div class="tab-pane fade active in" id="journey-tab-${journey.getID()}">
+            <#assign x = journey.getRatingStatistics()>
+            <p>${m.markdown(x)}</p>          </div>        
+        </#list>
+      </div>
+      
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+	<script type="text/javascript">${js_jquery}</script>
+	<script type="text/javascript">${js_bootstrap}</script>
+	<script type="text/coffeescript">${js_custom}</script>
+	<script type="text/javascript">${js_coffee}</script>
+  </body>
+</html>

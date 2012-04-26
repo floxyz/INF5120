@@ -35,6 +35,7 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore.xmi_2.7.0.v20120127-1122.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.common_2.7.0.v20120127-1122.jar"/>
         <pathelement location="../libs/markdownj-1.0.2b4-0.3.0.jar"/>
+        <pathelement location="../libs/freemarker.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
