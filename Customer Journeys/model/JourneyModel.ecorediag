@@ -68,6 +68,10 @@
         <element xmi:type="ecore:EOperation" href="JourneyModel.ecore#//Journey/toMarkdown"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_FPZkYY-QEeGLZORuu9L1fw"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_D6YnUI-SEeGp-cJWPVnczA" type="2002">
+        <element xmi:type="ecore:EOperation" href="JourneyModel.ecore#//Journey/getEdges"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_D6YnUY-SEeGp-cJWPVnczA"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_MwQVdY-KEeGLZORuu9L1fw"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_MwQVdo-KEeGLZORuu9L1fw"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_MwQVd4-KEeGLZORuu9L1fw"/>

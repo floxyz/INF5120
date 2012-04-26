@@ -229,12 +229,14 @@ public class JourneySetImpl extends EObjectImpl implements JourneySet {
 	 */
 	public String getGraphviz() {
 		StringBuilder builder = new StringBuilder("strict digraph JourneySet {\n");
+		builder.append("rankdir=LR;\n");
 		
 		Journey expected = getExpectedJoruney();
-		builder.append(expected.getGraphviz());
+		//EList<String> expEdges = expected.getEdges(); 
+		builder.append(expected.getGraphviz(false, null));
 		for (Journey journey: getJourneys()) {
 			if (journey == expected) continue;
-			builder.append(journey.getGraphviz());
+			builder.append(journey.getGraphviz(false, null));
 		}
 		
 		builder.append("}\n"); //close JourneySet

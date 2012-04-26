@@ -27,9 +27,10 @@ import junit.textui.TestRunner;
  *   <li>{@link journeymodel.Journey#getComparedToExpected(journeymodel.Journey) <em>Get Compared To Expected</em>}</li>
  *   <li>{@link journeymodel.Journey#getSingleInitiatorStatistics(journeymodel.EInitiator) <em>Get Single Initiator Statistics</em>}</li>
  *   <li>{@link journeymodel.Journey#getRatingCount(journeymodel.EEvaluation) <em>Get Rating Count</em>}</li>
- *   <li>{@link journeymodel.Journey#getGraphviz() <em>Get Graphviz</em>}</li>
+ *   <li>{@link journeymodel.Journey#getGraphviz(org.eclipse.emf.common.util.EList, boolean) <em>Get Graphviz</em>}</li>
  *   <li>{@link journeymodel.Journey#getSingleChannelStatistics(journeymodel.EChannel) <em>Get Single Channel Statistics</em>}</li>
  *   <li>{@link journeymodel.Journey#toMarkdown() <em>To Markdown</em>}</li>
+ *   <li>{@link journeymodel.Journey#getEdges() <em>Get Edges</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -197,13 +198,13 @@ public class JourneyTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link journeymodel.Journey#getGraphviz() <em>Get Graphviz</em>}' operation.
+	 * Tests the '{@link journeymodel.Journey#getGraphviz(org.eclipse.emf.common.util.EList, boolean) <em>Get Graphviz</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see journeymodel.Journey#getGraphviz()
+	 * @see journeymodel.Journey#getGraphviz(org.eclipse.emf.common.util.EList, boolean)
 	 * @generated
 	 */
-	public void testGetGraphviz() {
+	public void testGetGraphviz__EList() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -230,6 +231,19 @@ public class JourneyTest extends TestCase {
 	 * @generated
 	 */
 	public void testToMarkdown() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link journeymodel.Journey#getEdges() <em>Get Edges</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see journeymodel.Journey#getEdges()
+	 * @generated
+	 */
+	public void testGetEdges() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

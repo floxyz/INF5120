@@ -267,10 +267,12 @@ public interface Journey extends EObject {
 	Integer getRatingCount(EEvaluation evaluation);
 
 	/**
-	 * @model kind="operation"
-	 * @generated
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model activeEdgesMany="false"
+	 * @generated NOT
 	 */
-	String getGraphviz();
+	String getGraphviz(boolean isActive, EList<String> activeEdges);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -287,5 +289,13 @@ public interface Journey extends EObject {
 	 * @generated
 	 */
 	String toMarkdown();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" many="false"
+	 * @generated
+	 */
+	EList<String> getEdges();
 
 } // Journey

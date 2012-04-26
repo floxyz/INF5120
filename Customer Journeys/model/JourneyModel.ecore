@@ -19,11 +19,15 @@
     <eOperations name="getRatingCount" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject">
       <eParameters name="evaluation" eType="#//EEvaluation"/>
     </eOperations>
-    <eOperations name="getGraphviz" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="getGraphviz" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eParameters name="activeEdges" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList"/>
+      <eParameters name="isActive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
     <eOperations name="getSingleChannelStatistics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eParameters name="channel" eType="#//EChannel"/>
     </eOperations>
     <eOperations name="toMarkdown" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="getEdges" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
