@@ -30,22 +30,12 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 		StringBuilder builder = new StringBuilder();
 		for (Journey journey : this.journeySet.getJourneys()) {
 			if (!journey.getID().equalsIgnoreCase("reference")) {
-				builder.append(generateJourneyStatistics(journey));
+				builder.append(generateJourneyStatistics(journey, journeySet.getExpectedJoruney()));
 			}
 		}
 		return builder.append("\n").toString();
 	}
 
-	@Override
-	public String getDetailJourneyStatistic(String ID) {
-		List<Journey> journeys = this.journeySet.getJourneys();
-		for (Journey journey : journeys) {
-			if (journey.getID().equalsIgnoreCase(ID)) { // TODO or only equals?
-				return this.generateJourneyStatistics(journey);
-			}
-		}
-		return "";
-	}
 	
 	@Override
 	public String getGlobalStatistics() {
@@ -55,14 +45,13 @@ public class DetailAnalyzer implements IDetailAnalyzer {
 		return builder.append("\n\n").toString();
 	}
 
-	@Deprecated
-	private String generateJourneyStatistics(Journey journey) {
+	private String generateJourneyStatistics(Journey journey, Journey expected) {
 		StringBuilder builder = new StringBuilder();
 		builder.append("# Detail Statistics for journey " + journey.getName() + " (" + journey.getID() + ")\n\n");
-		builder.append(this.getRatingStatistics(journey));
-		builder.append(this.getChannelStatistics(journey));
-		builder.append(this.getInitiatorStatistics(journey));
-		builder.append(this.getComparedToExpected(journey));
+		builder.append(journey.getRatingStatistics());
+		builder.append(journey.getChannelStatistics());
+		builder.append(journey.getInitiatorStatistics());
+		builder.append(journey.getComparedToExpected(expected));
 		return builder.append("\n\n").toString();
 	}
 

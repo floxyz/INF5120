@@ -453,7 +453,7 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 	 * @generated NOT
 	 */
 	public String getComparedToExpected(Journey expected) {
-		JourneyDiff diff = journeySet.getExpectedJoruney().compare(expected);
+		JourneyDiff diff = this.compare(expected);
 		StringBuilder builder = new StringBuilder("## Compared to the Expected Journey:\n");
 		builder.append("* Common touchpoints: " + diff.getCommonTP() + "\n");
 		builder.append("* New touchpoints:    " + diff.getNewTP() + "\n");
