@@ -14,6 +14,7 @@
     <eOperations name="getSingleInitiatorStatistics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eParameters name="initiator" eType="#//EInitiator"/>
     </eOperations>
+    <eOperations name="getGraphviz" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
@@ -67,6 +68,7 @@
   <eClassifiers xsi:type="ecore:EEnum" name="EEnum0"/>
   <eClassifiers xsi:type="ecore:EClass" name="JourneySet">
     <eOperations name="getComparedToExpected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="getGraphviz" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="journeys" upperBound="-1"
         eType="#//Journey" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
