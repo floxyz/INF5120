@@ -36,6 +36,7 @@ public class JourneymodelTests extends TestSuite {
 	public static Test suite() {
 		TestSuite suite = new JourneymodelTests("journeymodel Tests");
 		suite.addTestSuite(JourneyTest.class);
+		suite.addTestSuite(JourneySetTest.class);
 		return suite;
 	}
 

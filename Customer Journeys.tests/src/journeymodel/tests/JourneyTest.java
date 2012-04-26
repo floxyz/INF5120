@@ -20,8 +20,12 @@ import junit.textui.TestRunner;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link journeymodel.Journey#getScore() <em>Get Score</em>}</li>
  *   <li>{@link journeymodel.Journey#compare(journeymodel.Journey) <em>Compare</em>}</li>
+ *   <li>{@link journeymodel.Journey#getRatingStatistics() <em>Get Rating Statistics</em>}</li>
+ *   <li>{@link journeymodel.Journey#getChannelStatistics() <em>Get Channel Statistics</em>}</li>
+ *   <li>{@link journeymodel.Journey#getInitiatorStatistics() <em>Get Initiator Statistics</em>}</li>
+ *   <li>{@link journeymodel.Journey#getComparedToExpected() <em>Get Compared To Expected</em>}</li>
+ *   <li>{@link journeymodel.Journey#getSingleInitiatorStatistics(journeymodel.EInitiator) <em>Get Single Initiator Statistics</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -98,19 +102,6 @@ public class JourneyTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link journeymodel.Journey#getScore() <em>Get Score</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see journeymodel.Journey#getScore()
-	 * @generated
-	 */
-	public void testGetScore() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link journeymodel.Journey#compare(journeymodel.Journey) <em>Compare</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -118,6 +109,71 @@ public class JourneyTest extends TestCase {
 	 * @generated
 	 */
 	public void testCompare__Journey() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link journeymodel.Journey#getRatingStatistics() <em>Get Rating Statistics</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see journeymodel.Journey#getRatingStatistics()
+	 * @generated
+	 */
+	public void testGetRatingStatistics() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link journeymodel.Journey#getChannelStatistics() <em>Get Channel Statistics</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see journeymodel.Journey#getChannelStatistics()
+	 * @generated
+	 */
+	public void testGetChannelStatistics() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link journeymodel.Journey#getInitiatorStatistics() <em>Get Initiator Statistics</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see journeymodel.Journey#getInitiatorStatistics()
+	 * @generated
+	 */
+	public void testGetInitiatorStatistics() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link journeymodel.Journey#getComparedToExpected() <em>Get Compared To Expected</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see journeymodel.Journey#getComparedToExpected()
+	 * @generated
+	 */
+	public void testGetComparedToExpected() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link journeymodel.Journey#getSingleInitiatorStatistics(journeymodel.EInitiator) <em>Get Single Initiator Statistics</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see journeymodel.Journey#getSingleInitiatorStatistics(journeymodel.EInitiator)
+	 * @generated
+	 */
+	public void testGetSingleInitiatorStatistics__EInitiator() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

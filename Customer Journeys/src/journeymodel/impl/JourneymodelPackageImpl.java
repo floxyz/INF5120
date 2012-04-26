@@ -582,10 +582,19 @@ public class JourneymodelPackageImpl extends EPackageImpl implements Journeymode
 		initEReference(getJourney_EReference0(), this.getTouchpoint(), null, "EReference0", null, 0, 1, Journey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJourney_Touchpoints(), this.getTouchpoint(), null, "touchpoints", null, 1, -1, Journey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(journeyEClass, null, "getScore", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		EOperation op = addEOperation(journeyEClass, this.getJourneyDiff(), "compare", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getJourney(), "other", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(journeyEClass, ecorePackage.getEString(), "getRatingStatistics", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(journeyEClass, ecorePackage.getEString(), "getChannelStatistics", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(journeyEClass, ecorePackage.getEString(), "getInitiatorStatistics", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(journeyEClass, ecorePackage.getEString(), "getComparedToExpected", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(journeyEClass, ecorePackage.getEString(), "getSingleInitiatorStatistics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getEInitiator(), "initiator", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(touchpointEClass, Touchpoint.class, "Touchpoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTouchpoint_ID(), ecorePackage.getEString(), "ID", null, 1, 1, Touchpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -602,6 +611,8 @@ public class JourneymodelPackageImpl extends EPackageImpl implements Journeymode
 		initEReference(getJourneySet_Journeys(), this.getJourney(), null, "journeys", null, 0, -1, JourneySet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJourneySet_Name(), ecorePackage.getEString(), "name", null, 0, 1, JourneySet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJourneySet_ExpectedJoruney(), this.getJourney(), null, "expectedJoruney", null, 0, 1, JourneySet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(journeySetEClass, ecorePackage.getEString(), "getComparedToExpected", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(journeyDiffEClass, JourneyDiff.class, "JourneyDiff", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getJourneyDiff_CommonTP(), ecorePackage.getEInt(), "commonTP", null, 0, 1, JourneyDiff.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

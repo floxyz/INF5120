@@ -213,10 +213,42 @@ public interface Journey extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	JourneyDiff compare(Journey other);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model kind="operation"
 	 * @generated
 	 */
-	void getScore();
+	String getRatingStatistics();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	String getChannelStatistics();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	String getInitiatorStatistics();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	String getComparedToExpected();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -224,6 +256,6 @@ public interface Journey extends EObject {
 	 * @model
 	 * @generated
 	 */
-	JourneyDiff compare(Journey other);
+	String getSingleInitiatorStatistics(EInitiator initiator);
 
 } // Journey

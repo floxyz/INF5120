@@ -28,13 +28,29 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_tIM8Q4rsEeGA99DvRpD4VA"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_tIM8RIrsEeGA99DvRpD4VA" type="5002">
-      <children xmi:type="notation:Node" xmi:id="_r_dccIr1EeGA99DvRpD4VA" type="2002">
-        <element xmi:type="ecore:EOperation" href="JourneyModel.ecore#//Journey/getScore"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_r_dccYr1EeGA99DvRpD4VA"/>
-      </children>
       <children xmi:type="notation:Node" xmi:id="_EOaiUI08EeGy38gzx_RmfQ" type="2002">
         <element xmi:type="ecore:EOperation" href="JourneyModel.ecore#//Journey/compare"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_EOaiUY08EeGy38gzx_RmfQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_PLBWcI-EEeGLZORuu9L1fw" type="2002">
+        <element xmi:type="ecore:EOperation" href="JourneyModel.ecore#//Journey/getRatingStatistics"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_PLBWcY-EEeGLZORuu9L1fw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_bW3oQI-EEeGLZORuu9L1fw" type="2002">
+        <element xmi:type="ecore:EOperation" href="JourneyModel.ecore#//Journey/getChannelStatistics"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_bW3oQY-EEeGLZORuu9L1fw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_j4XvQI-EEeGLZORuu9L1fw" type="2002">
+        <element xmi:type="ecore:EOperation" href="JourneyModel.ecore#//Journey/getInitiatorStatistics"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_j4XvQY-EEeGLZORuu9L1fw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_0QfXwI-FEeGLZORuu9L1fw" type="2002">
+        <element xmi:type="ecore:EOperation" href="JourneyModel.ecore#//Journey/getSingleInitiatorStatistics"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_0QfXwY-FEeGLZORuu9L1fw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_mCgEgI-EEeGLZORuu9L1fw" type="2002">
+        <element xmi:type="ecore:EOperation" href="JourneyModel.ecore#//Journey/getComparedToExpected"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_mCgEgY-EEeGLZORuu9L1fw"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_tINjUIrsEeGA99DvRpD4VA"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_tINjUYrsEeGA99DvRpD4VA"/>
@@ -42,7 +58,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_tIKgAYrsEeGA99DvRpD4VA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="JourneyModel.ecore#//Journey"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tIKgAorsEeGA99DvRpD4VA" x="228" y="216"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tIKgAorsEeGA99DvRpD4VA" x="225" y="216"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_tIOxcYrsEeGA99DvRpD4VA" type="1001">
     <children xmi:type="notation:Node" xmi:id="_tIOxdIrsEeGA99DvRpD4VA" type="4001"/>
@@ -94,7 +110,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_tIOxcorsEeGA99DvRpD4VA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="JourneyModel.ecore#//Touchpoint"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tIOxc4rsEeGA99DvRpD4VA" x="495" y="234"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tIOxc4rsEeGA99DvRpD4VA" x="549" y="207"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_tISb0IrsEeGA99DvRpD4VA" type="1004">
     <children xmi:type="notation:Node" xmi:id="_tITC4IrsEeGA99DvRpD4VA" type="4008"/>
@@ -257,13 +273,17 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_tIcz5orsEeGA99DvRpD4VA"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_tIcz54rsEeGA99DvRpD4VA" type="5002">
+      <children xmi:type="notation:Node" xmi:id="_mszwUI-FEeGLZORuu9L1fw" type="2002">
+        <element xmi:type="ecore:EOperation" href="JourneyModel.ecore#//JourneySet/getComparedToExpected"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_mszwUY-FEeGLZORuu9L1fw"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_tIcz6IrsEeGA99DvRpD4VA"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_tIcz6YrsEeGA99DvRpD4VA"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_tIcz6orsEeGA99DvRpD4VA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_tIcz4IrsEeGA99DvRpD4VA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="JourneyModel.ecore#//JourneySet"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tIcz4YrsEeGA99DvRpD4VA" x="27" y="261"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tIcz4YrsEeGA99DvRpD4VA" x="-72" y="315"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_Pt9HwI08EeGy38gzx_RmfQ" type="1001">
     <children xmi:type="notation:Node" xmi:id="_PuD1cI08EeGy38gzx_RmfQ" type="4001"/>

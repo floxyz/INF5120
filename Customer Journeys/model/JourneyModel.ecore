@@ -4,9 +4,15 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="journeymodel"
     nsURI="http://customerjourney/1.0" nsPrefix="journeymodel">
   <eClassifiers xsi:type="ecore:EClass" name="Journey">
-    <eOperations name="getScore"/>
     <eOperations name="compare" eType="#//JourneyDiff">
       <eParameters name="other" eType="#//Journey"/>
+    </eOperations>
+    <eOperations name="getRatingStatistics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="getChannelStatistics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="getInitiatorStatistics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="getComparedToExpected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="getSingleInitiatorStatistics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eParameters name="initiator" eType="#//EInitiator"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -60,6 +66,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="EEnum0"/>
   <eClassifiers xsi:type="ecore:EClass" name="JourneySet">
+    <eOperations name="getComparedToExpected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="journeys" upperBound="-1"
         eType="#//Journey" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
