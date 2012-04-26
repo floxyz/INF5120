@@ -202,7 +202,7 @@ public class TouchpointItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_Touchpoint_comment_feature", "_UI_Touchpoint_type"),
 				 JourneymodelPackage.Literals.TOUCHPOINT__COMMENT,
 				 true,
-				 true,
+				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,

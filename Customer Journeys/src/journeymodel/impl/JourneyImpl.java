@@ -8,13 +8,18 @@ package journeymodel.impl;
 
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
+
 import journeymodel.EInitiator;
 import java.util.Set;
 import java.util.HashSet;
 
+import journeymodel.EChannel;
+import journeymodel.EEvaluation;
 import journeymodel.EStatus;
 import journeymodel.Journey;
 import journeymodel.JourneyDiff;
+import journeymodel.JourneySet;
 import journeymodel.JourneymodelPackage;
 import journeymodel.Touchpoint;
 
@@ -44,7 +49,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link journeymodel.impl.JourneyImpl#getDate <em>Date</em>}</li>
  *   <li>{@link journeymodel.impl.JourneyImpl#getStatus <em>Status</em>}</li>
  *   <li>{@link journeymodel.impl.JourneyImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link journeymodel.impl.JourneyImpl#getEReference0 <em>EReference0</em>}</li>
+ *   <li>{@link journeymodel.impl.JourneyImpl#getJourneySet <em>Journey Set</em>}</li>
  *   <li>{@link journeymodel.impl.JourneyImpl#getTouchpoints <em>Touchpoints</em>}</li>
  * </ul>
  * </p>
@@ -153,14 +158,14 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 	protected String comment = COMMENT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getEReference0() <em>EReference0</em>}' reference.
+	 * The cached value of the '{@link #getJourneySet() <em>Journey Set</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEReference0()
+	 * @see #getJourneySet()
 	 * @generated
 	 * @ordered
 	 */
-	protected Touchpoint eReference0;
+	protected JourneySet journeySet;
 
 	/**
 	 * The cached value of the '{@link #getTouchpoints() <em>Touchpoints</em>}' containment reference list.
@@ -301,16 +306,16 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Touchpoint getEReference0() {
-		if (eReference0 != null && eReference0.eIsProxy()) {
-			InternalEObject oldEReference0 = (InternalEObject)eReference0;
-			eReference0 = (Touchpoint)eResolveProxy(oldEReference0);
-			if (eReference0 != oldEReference0) {
+	public JourneySet getJourneySet() {
+		if (journeySet != null && journeySet.eIsProxy()) {
+			InternalEObject oldJourneySet = (InternalEObject)journeySet;
+			journeySet = (JourneySet)eResolveProxy(oldJourneySet);
+			if (journeySet != oldJourneySet) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, JourneymodelPackage.JOURNEY__EREFERENCE0, oldEReference0, eReference0));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, JourneymodelPackage.JOURNEY__JOURNEY_SET, oldJourneySet, journeySet));
 			}
 		}
-		return eReference0;
+		return journeySet;
 	}
 
 	/**
@@ -318,8 +323,8 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Touchpoint basicGetEReference0() {
-		return eReference0;
+	public JourneySet basicGetJourneySet() {
+		return journeySet;
 	}
 
 	/**
@@ -327,11 +332,11 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEReference0(Touchpoint newEReference0) {
-		Touchpoint oldEReference0 = eReference0;
-		eReference0 = newEReference0;
+	public void setJourneySet(JourneySet newJourneySet) {
+		JourneySet oldJourneySet = journeySet;
+		journeySet = newJourneySet;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JourneymodelPackage.JOURNEY__EREFERENCE0, oldEReference0, eReference0));
+			eNotify(new ENotificationImpl(this, Notification.SET, JourneymodelPackage.JOURNEY__JOURNEY_SET, oldJourneySet, journeySet));
 	}
 
 	/**
@@ -390,56 +395,104 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String getRatingStatistics() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+		Integer totalRatings = this.getTouchpoints().size();
+		StringBuilder builder = new StringBuilder("## Rating Statistics for a total number of " + totalRatings + " ratings:\n\n");
+
+		Integer goodRatingCount = this.getRatingCount(EEvaluation.GOOD);
+		builder.append("* Good Ratings: " + goodRatingCount + " (" + ((float) (goodRatingCount) / (float) (totalRatings)) * 100 + "%)\n");
+		Integer badRatingCount = this.getRatingCount(EEvaluation.BAD);
+		builder.append("* Bad Ratings: " + badRatingCount + " (" + ((float) (badRatingCount) / (float) (totalRatings)) * 100 + "%)\n");
+		Integer mediumRatingCount = this.getRatingCount(EEvaluation.MEDIUM);
+		builder.append("* Medium Ratings: " + mediumRatingCount + " ("
+				+ ((float) (mediumRatingCount) / (float) (this.getTouchpoints().size())) * 100 + "%)\n");
+		Integer naRatingCount = this.getRatingCount(EEvaluation.NOT_AVAILABLE);
+		builder.append("* Na Ratings: " + naRatingCount + " (" + ((float) (naRatingCount) / (float) (totalRatings)) * 100 + "%)\n");
+		Integer emptyRatingCount = this.getRatingCount(EEvaluation.EMPTY);
+		builder.append("* Empty Ratings: " + emptyRatingCount + " (" + ((float) (emptyRatingCount) / (float) (totalRatings)) * 100 + "%)\n");
+		builder.append("\n\n");
+		return builder.toString();	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String getChannelStatistics() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		List<EChannel> channelList = EChannel.VALUES;
+		StringBuilder builder = new StringBuilder("## Channel Statistics for  " + channelList.size() + " channels:\n\n");
+
+		for (EChannel channel : channelList) {
+			builder.append(this.getSingleChannelStatistic(channel));
+		}
+		builder.append("\n\n");
+		return builder.toString();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String getInitiatorStatistics() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		List<EInitiator> initiatorList = EInitiator.VALUES;
+		StringBuilder builder = new StringBuilder("## Initiator Statistics for  " + initiatorList.size() + " initiators:\n\n");
+
+		for (EInitiator initiator : initiatorList) {
+			builder.append(this.getSingleInitiatorStatistics(initiator));
+		}
+		builder.append("\n\n");
+		return builder.toString();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public String getComparedToExpected() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public String getComparedToExpected(Journey expected) {
+		JourneyDiff diff = this.compare(expected);
+		StringBuilder builder = new StringBuilder("## Compared to the Expected Journey:\n");
+		builder.append("* Common touchpoints: " + diff.getCommonTP() + "\n");
+		builder.append("* New touchpoints:    " + diff.getNewTP() + "\n");
+		builder.append("* Unused touchpoints: " + diff.getUnusedTP() + "\n");
+		builder.append("\n\n");
+		return builder.toString();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String getSingleInitiatorStatistics(EInitiator initiator) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Integer initiatorCount = 0;
+		for (Touchpoint touchpoint : this.getTouchpoints()) {
+			if (touchpoint.getInitiator() == initiator) {
+				initiatorCount++;
+			}
+		}
+		return ("* " + initiator.toString() + ": " + initiatorCount + " ("
+				+ ((float) initiatorCount / (float) this.getTouchpoints().size()) * 100 + "%)\n");
+
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public Integer getRatingCount(EEvaluation evaluation) {
+		Integer counter = 0;
+		List<Touchpoint> touchpointList = this.getTouchpoints();
+		for (Touchpoint touchpoint : touchpointList) {
+			if (touchpoint.getEvaluation() == evaluation) {
+				counter++;
+			}
+		}
+		return counter;
 	}
 
 	/**
@@ -485,6 +538,38 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String getSingleChannelStatistics(EChannel channel) {
+		Integer channelCount = 0;
+		for (Touchpoint touchpoint : this.getTouchpoints()) {
+			if (touchpoint.getChannel() == channel) {
+				channelCount++;
+			}
+		}
+		return ("* " + channel.toString() + ": " + channelCount + " (" + ((float) channelCount / (float) this.getTouchpoints().size())
+				* 100 + "%)\n");
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String getSingleChannelStatistic(EChannel channel) {
+		Integer channelCount = 0;
+		for (Touchpoint touchpoint : this.getTouchpoints()) {
+			if (touchpoint.getChannel() == channel) {
+				channelCount++;
+			}
+		}
+		return ("* " + channel.toString() + ": " + channelCount + " (" + ((float) channelCount / (float) this.getTouchpoints().size())
+				* 100 + "%)\n");
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -514,9 +599,9 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 				return getStatus();
 			case JourneymodelPackage.JOURNEY__COMMENT:
 				return getComment();
-			case JourneymodelPackage.JOURNEY__EREFERENCE0:
-				if (resolve) return getEReference0();
-				return basicGetEReference0();
+			case JourneymodelPackage.JOURNEY__JOURNEY_SET:
+				if (resolve) return getJourneySet();
+				return basicGetJourneySet();
 			case JourneymodelPackage.JOURNEY__TOUCHPOINTS:
 				return getTouchpoints();
 		}
@@ -547,8 +632,8 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 			case JourneymodelPackage.JOURNEY__COMMENT:
 				setComment((String)newValue);
 				return;
-			case JourneymodelPackage.JOURNEY__EREFERENCE0:
-				setEReference0((Touchpoint)newValue);
+			case JourneymodelPackage.JOURNEY__JOURNEY_SET:
+				setJourneySet((JourneySet)newValue);
 				return;
 			case JourneymodelPackage.JOURNEY__TOUCHPOINTS:
 				getTouchpoints().clear();
@@ -581,8 +666,8 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 			case JourneymodelPackage.JOURNEY__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
-			case JourneymodelPackage.JOURNEY__EREFERENCE0:
-				setEReference0((Touchpoint)null);
+			case JourneymodelPackage.JOURNEY__JOURNEY_SET:
+				setJourneySet((JourneySet)null);
 				return;
 			case JourneymodelPackage.JOURNEY__TOUCHPOINTS:
 				getTouchpoints().clear();
@@ -609,8 +694,8 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 				return status != STATUS_EDEFAULT;
 			case JourneymodelPackage.JOURNEY__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case JourneymodelPackage.JOURNEY__EREFERENCE0:
-				return eReference0 != null;
+			case JourneymodelPackage.JOURNEY__JOURNEY_SET:
+				return journeySet != null;
 			case JourneymodelPackage.JOURNEY__TOUCHPOINTS:
 				return touchpoints != null && !touchpoints.isEmpty();
 		}

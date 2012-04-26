@@ -117,13 +117,13 @@ public interface JourneymodelPackage extends EPackage {
 	int JOURNEY__COMMENT = 4;
 
 	/**
-	 * The feature id for the '<em><b>EReference0</b></em>' reference.
+	 * The feature id for the '<em><b>Journey Set</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOURNEY__EREFERENCE0 = 5;
+	int JOURNEY__JOURNEY_SET = 5;
 
 	/**
 	 * The feature id for the '<em><b>Touchpoints</b></em>' containment reference list.
@@ -472,15 +472,15 @@ public interface JourneymodelPackage extends EPackage {
 	EAttribute getJourney_Comment();
 
 	/**
-	 * Returns the meta object for the reference '{@link journeymodel.Journey#getEReference0 <em>EReference0</em>}'.
+	 * Returns the meta object for the reference '{@link journeymodel.Journey#getJourneySet <em>Journey Set</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference0</em>'.
-	 * @see journeymodel.Journey#getEReference0()
+	 * @return the meta object for the reference '<em>Journey Set</em>'.
+	 * @see journeymodel.Journey#getJourneySet()
 	 * @see #getJourney()
 	 * @generated
 	 */
-	EReference getJourney_EReference0();
+	EReference getJourney_JourneySet();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link journeymodel.Journey#getTouchpoints <em>Touchpoints</em>}'.
@@ -832,12 +832,12 @@ public interface JourneymodelPackage extends EPackage {
 		EAttribute JOURNEY__COMMENT = eINSTANCE.getJourney_Comment();
 
 		/**
-		 * The meta object literal for the '<em><b>EReference0</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Journey Set</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference JOURNEY__EREFERENCE0 = eINSTANCE.getJourney_EReference0();
+		EReference JOURNEY__JOURNEY_SET = eINSTANCE.getJourney_JourneySet();
 
 		/**
 		 * The meta object literal for the '<em><b>Touchpoints</b></em>' containment reference list feature.

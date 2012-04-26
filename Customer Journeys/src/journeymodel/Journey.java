@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link journeymodel.Journey#getDate <em>Date</em>}</li>
  *   <li>{@link journeymodel.Journey#getStatus <em>Status</em>}</li>
  *   <li>{@link journeymodel.Journey#getComment <em>Comment</em>}</li>
- *   <li>{@link journeymodel.Journey#getEReference0 <em>EReference0</em>}</li>
+ *   <li>{@link journeymodel.Journey#getJourneySet <em>Journey Set</em>}</li>
  *   <li>{@link journeymodel.Journey#getTouchpoints <em>Touchpoints</em>}</li>
  * </ul>
  * </p>
@@ -169,30 +169,30 @@ public interface Journey extends EObject {
 	void setComment(String value);
 
 	/**
-	 * Returns the value of the '<em><b>EReference0</b></em>' reference.
+	 * Returns the value of the '<em><b>Journey Set</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>EReference0</em>' reference isn't clear,
+	 * If the meaning of the '<em>Journey Set</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference0</em>' reference.
-	 * @see #setEReference0(Touchpoint)
-	 * @see journeymodel.JourneymodelPackage#getJourney_EReference0()
+	 * @return the value of the '<em>Journey Set</em>' reference.
+	 * @see #setJourneySet(JourneySet)
+	 * @see journeymodel.JourneymodelPackage#getJourney_JourneySet()
 	 * @model
 	 * @generated
 	 */
-	Touchpoint getEReference0();
+	JourneySet getJourneySet();
 
 	/**
-	 * Sets the value of the '{@link journeymodel.Journey#getEReference0 <em>EReference0</em>}' reference.
+	 * Sets the value of the '{@link journeymodel.Journey#getJourneySet <em>Journey Set</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference0</em>' reference.
-	 * @see #getEReference0()
+	 * @param value the new value of the '<em>Journey Set</em>' reference.
+	 * @see #getJourneySet()
 	 * @generated
 	 */
-	void setEReference0(Touchpoint value);
+	void setJourneySet(JourneySet value);
 
 	/**
 	 * Returns the value of the '<em><b>Touchpoints</b></em>' containment reference list.
@@ -245,10 +245,10 @@ public interface Journey extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @model
 	 * @generated
 	 */
-	String getComparedToExpected();
+	String getComparedToExpected(Journey expected);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -261,9 +261,23 @@ public interface Journey extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	Integer getRatingCount(EEvaluation evaluation);
+
+	/**
 	 * @model kind="operation"
 	 * @generated
 	 */
 	String getGraphviz();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	String getSingleChannelStatistics(EChannel channel);
 
 } // Journey
