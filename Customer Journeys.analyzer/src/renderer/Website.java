@@ -59,41 +59,6 @@ public class Website {
 		
 		
 	}
-	
-	public String getHtml(){
-		MarkdownProcessor m = new MarkdownProcessor();
-		StringBuilder builder = new StringBuilder();
-		builder.append("<!DOCTYPE html>"
-		+ "<html lang='en'>"
-		+ "<head>"
-		+  "<meta charset='utf-8'>"
-		+  "<meta name='description' content='Customerjourney Analysis'>"
-		+  "<title>Customer Journey Analysis: " + ((set.getName() == null) ? "" : set.getName()) + "</title>"
-		+  "<style type='text/css'>"
-		+     getResource("/resources/bootstrap/css/bootstrap.min.css")
-		+  "</style>"
-		+ "</head>"
-		+ "<body>"
-		+ "<div class='navbar navbar-fixed-top'>"
-		+   "<div class='navbar-inner'>"
-		+      "<div class='container'>"
-		+        "<a class='brand' href='#'>CJAnalyzer</a>"
-		+      "</div>"
-		+   "</div>"
-		+ "</div>"
-		+ "<div class='container'>"
-		+ "Hello World!"
-		+ "<pre id='markdown-source'>" + "</pre>"
-		+ "<a href='#' class='btn' id='toggle-source'>toggle markdown source</a>"
-		+ "</div>"
-		+  "<script type='text/javascript'>" + getResource("/resources/js/jquery.min.js") + "</script>"
-		+  "<script type='text/javascript'>" + getResource("/resources/bootstrap/js/bootstrap.min.js") + "</script>"
-		+  "<script type='text/coffeescript'>" + getResource("/resources/js/custom.coffee") + "</script>"
-		+  "<script type='text/javascript'>" + getResource("/resources/js/coffee-script.js") + "</script>"
-		+ "</body>"
-		+ "</html>");
-		return builder.toString();
-	}
 
 	private String getResource(String name){
 		System.out.println("Loading resource: " + name);
