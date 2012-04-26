@@ -1,6 +1,9 @@
 package logic;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 
 import journeymodel.Journey;
@@ -95,10 +98,13 @@ public class Analyzer {
 		}
 	}
 
-	public void makeWebsite() {
+	public void makeWebsite(String filename) throws IOException {
 		if (resourceContent instanceof JourneySet){
 			Website generator = new Website((JourneySet) resourceContent);
-			System.out.println(generator.getHtml());
+			FileWriter fstream = new FileWriter(filename);
+			BufferedWriter out = new BufferedWriter(fstream);
+			out.write(generator.getHtml());
+			out.close();
 		}
 	}
 
