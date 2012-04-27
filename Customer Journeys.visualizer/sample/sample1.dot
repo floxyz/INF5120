@@ -6,7 +6,7 @@ digraph customerJourney {
 	"T3" [label="T3 medium"]; 
 	"D0" [label="D0 bad"]; 
 	"T2" [label="T2 good"];
-	"T3" [label="D3 good"];
+	"D3" [label="D3 good"];
 	
 	// Reference journey
 	subgraph cluster_0 {
