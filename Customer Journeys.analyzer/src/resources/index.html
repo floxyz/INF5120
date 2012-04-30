@@ -42,9 +42,27 @@
 		        <#list journeys as journey>
 		          <div class="tab-pane fade <#if journey_index = 0>active</#if> in" id="journey-tab-${journey.getID()}">
 					  <div class="row">
-						<div class="span4">
-				            <#assign x = journey.toMarkdown()>
-				            <p>${m.markdown(x)}</p>
+						<div class="span4 touchpoint-details">
+							<h3>${journey.getName()}</h3>
+							<ul>
+								<li>started: ${journey.getDate()?datetime?string.short}</li>
+								<li>status: ${journey.getStatus()}</li>
+							</ul>
+							<h4>Touchpoints:</h4>
+							<ul>
+							<#list journey.getTouchpoints() as tp>
+								<li>
+									<div class="well">
+										<h5>${tp.getName()}</h5>
+										<ul>
+											<li>Evaluation: <span class="label <#if tp.getEvaluation() = 'bad'>label-important</#if>">${tp.getEvaluation()}</span></li>
+											<li>Initiator: ${tp.getInitiator()}</li>
+											<li>Channel: ${tp.getChannel()}</li>
+										</ul>
+									</div>
+								</li>
+							</#list>
+							</ul>
 						</div>
 						<div class="span6 offset2">
 				            <#assign x = journey.getRatingStatistics()>
