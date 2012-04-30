@@ -29,6 +29,7 @@ public class Website {
 
 		// layout and js lib things
 		model.put("css_bootstrap", getResource("/resources/bootstrap/css/bootstrap.min.css"));
+		model.put("css_bootstrap_resp", getResource("/resources/bootstrap/css/bootstrap-responsive.min.css"));
 		model.put("css_custom", getResource("/resources/css/custom.css"));
 		model.put("js_jquery", getResource("/resources/js/jquery.min.js"));
 		model.put("js_bootstrap", getResource("/resources/bootstrap/js/bootstrap.min.js"));
