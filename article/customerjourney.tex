@@ -37,8 +37,8 @@ additional tasks. For the third part it was possible to choose between a user-fr
 or adding support for multiple journeys. For this article the graphical export option was chosen.
 
 Section \ref{section:model} describes how the model was built and discusses the different components. The second
-section \ref{section:statistic} depicts which statistics were generated and Section \ref{section:export}
-compares the initial graph idea to the final graphs produced by the exporter. Finally, Section \ref{section:impl} shows
+section \ref{section:statistic} depicts which statistics were generated. Section \ref{section:export}
+compares the initial graph idea to the final graphs produced by the exporter. Finally, section \ref{section:impl} shows
 some details about the implementation and how we used the EMF tools.
 
 \section{Creating a DSL metamodel with EMF} 
@@ -48,17 +48,17 @@ The first part of the work was to create a metamodel using the Eclipse Modelling
 journey. A customer journey describes a collection of touchpoints a customer has with a product. Such a journey
 usually consists of a reference which is the ideal way. After finalizing this journey some customer are asked
 to take the journey and rate the different touchpoints and mybe add new ones. Every touchpoint should be rated
-and if possible commented. For this metamodel some example journeys consisting of a reference journeys and four
+and, if possible, commented. For this metamodel, we had some example journeys consisting of a reference journey and four
 different customer journeys which differ in some ways from the reference. 
 
 \subsection{Domain Specific Language Metamodel}
-The model itself consists of three main components. The first one is the \lstinline!JourneySet!. This component
+The model itself consists of three main components: The first one is the \lstinline!JourneySet!. This component
 includes the reference journey and a set of examples. A reference journey has to be set to allow comparison
 between the example journeys and the reference. This component also has a method which allows the comparison
 of the journeys to the reference journey. 
 
 The second component is the \lstinline!Journey! which depicts the Customer journey itself. This journey consists of 
-an ID, a more descriptive name, a date, the status and  an optional comment. If the ID of a journey is 
+an ID, a more descriptive name, a date, the status and an optional comment. If the ID of a journey is 
 \lstinline!reference! then the journey is considered to be the reference journey. The model also contains some 
 methods which allow to compare the journeys and generate statistics for a special journey or generate the graphical
 representation. A more detailed description of this can be found in the Sections \ref{section:statistic} and
@@ -91,12 +91,12 @@ statistics for the journey. These statistics are:
 	journey.
 \end{description}
 
-One part of the assignment was to print the statistics in a convenient and useful way. We choose to use the 
-Markdown \footnote{\url{http://daringfireball.net/projects/markdown/}} to generate html files. Markdown allows
-to write pretty simple statements to get well formatted text for html. Even the source code of Markdown is 
-human readable and therefore useful. After generating the the markdown also a html website is built which allows
-to see the statistics in a web-browser. With the choice of Markdown it is possible to generate a readable text
-output and a very nice html output.
+One part of the assignment was to print the statistics in a convenient and useful way.
+We choose the generate a HTML report which contains all data in a standalone file for easy sharing. The report
+contains all the journeys with their touchpoints, the generated graphs and statistics. The list of touchpoints
+is linked with the graphical representation by clientside scripting.
+
+A reasonably modern browser with SVG support is necessary to display the HTML report.
 
 \section{Graphical Export} 
 \label{section:export}
