@@ -80,7 +80,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="EEnum0"/>
   <eClassifiers xsi:type="ecore:EClass" name="JourneySet">
-    <eOperations name="getComparedToExpected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="getComparedToExpected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eParameters name="journey" eType="#//Journey"/>
+    </eOperations>
     <eOperations name="getGraphviz" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="getGraphviz" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eParameters name="activeJourney" eType="#//Journey"/>

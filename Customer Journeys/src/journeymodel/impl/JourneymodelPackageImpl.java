@@ -627,7 +627,8 @@ public class JourneymodelPackageImpl extends EPackageImpl implements Journeymode
 		initEAttribute(getJourneySet_Name(), ecorePackage.getEString(), "name", null, 0, 1, JourneySet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJourneySet_ExpectedJoruney(), this.getJourney(), null, "expectedJoruney", null, 0, 1, JourneySet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(journeySetEClass, ecorePackage.getEString(), "getComparedToExpected", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(journeySetEClass, ecorePackage.getEString(), "getComparedToExpected", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getJourney(), "journey", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(journeySetEClass, ecorePackage.getEString(), "getGraphviz", 0, 1, IS_UNIQUE, IS_ORDERED);
 

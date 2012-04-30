@@ -18,31 +18,63 @@
         <div class="container">
           <a class="brand" href="#">Journey Analyzer</a>
             <ul class="nav">
-              <li class="active"><a href="#global">Global</a></li>
-              <li><a href="#perjourney">Per Journey</a></li>
+              <li><a href="#h1_global">Global</a></li>
+              <li><a href="#h1_per_journey">Per Journey</a></li>
             </ul>
         </div>
       </div>
     </div>
 
     <div class="container">
+	
+	<div class="row">
+		<div class="span12">
+			  <h1 id="h1_per_journey">Statistics per journey</h1>
+		      <ul id="journeyTab" class="nav nav-pills">
+		        <#list journeys as journey>
+		          <li class="<#if journey_index = 0>active</#if>">
+		          	<a href="#journey-tab-${journey.getID()}" data-toggle="tab" rel="noreferrer">${journey.getName()}</a>
+		          </li>
+		        </#list>
+		      </ul>
+	  
+		      <div id="journeyTabContent" class="tab-content">
+		        <#list journeys as journey>
+		          <div class="tab-pane fade <#if journey_index = 0>active</#if> in" id="journey-tab-${journey.getID()}">
+					  <div class="row">
+						<div class="span4">
+				            <#assign x = journey.toMarkdown()>
+				            <p>${m.markdown(x)}</p>
+						</div>
+						<div class="span6 offset2">
+				            <#assign x = journey.getRatingStatistics()>
+				            <p>${m.markdown(x)}</p>
 
-      <h1>Journey Analyzer</h1>
-      <p>Hello World!</p>
-      
+				            <#assign x = journey.getChannelStatistics()>
+				            <p>${m.markdown(x)}</p>
 
-      <ul id="journeyTab" class="nav nav-tabs">
-        <#list journeys as journey>
-          <li><a href="#journey-tab-${journey.getID()}" data-toggle="tab" rel="noreferrer">${journey.getName()}</a></li>
-        </#list>
-      </ul>
-      <div id="journeyTabContent" class="tab-content">
-        <#list journeys as journey>
-          <div class="tab-pane fade active in" id="journey-tab-${journey.getID()}">
-            <#assign x = journey.getRatingStatistics()>
-            <p>${m.markdown(x)}</p>          </div>        
-        </#list>
-      </div>
+				            <#assign x = journey.getInitiatorStatistics()>
+				            <p>${m.markdown(x)}</p>
+	        
+					        <h3>Compared to the expected journey:</h3>
+					        <#assign x = set.getComparedToExpected(journey)>
+				            <p>${m.markdown(x)}</p>						
+						</div>					  	
+					  </div>
+		          </div>        
+		        </#list>
+		      </div>					
+		</div>
+	</div>
+    
+	<div class="row">
+		<div class="span12">
+	      <h1 id="h1_global">Global statistics</h1>
+	      <#assign x = set.getGlobalComparedToExpected()>
+	      <p>${m.markdown(x)}</p>			
+		</div>
+	</div>
+	  
       
     </div> <!-- /container -->
 

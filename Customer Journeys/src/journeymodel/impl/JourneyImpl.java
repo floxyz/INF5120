@@ -394,7 +394,7 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 	 */
 	public String getRatingStatistics() {
 		Integer totalRatings = this.getTouchpoints().size();
-		StringBuilder builder = new StringBuilder("## Rating Statistics for a total number of " + totalRatings + " ratings:\n\n");
+		StringBuilder builder = new StringBuilder("### Rating Statistics for a total number of " + totalRatings + " ratings:\n\n");
 
 		Integer goodRatingCount = this.getRatingCount(EEvaluation.GOOD);
 		builder.append("* Good Ratings: " + goodRatingCount + " (" + ((float) (goodRatingCount) / (float) (totalRatings)) * 100 + "%)\n");
@@ -417,7 +417,7 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 	 */
 	public String getChannelStatistics() {
 		List<EChannel> channelList = EChannel.VALUES;
-		StringBuilder builder = new StringBuilder("## Channel Statistics for  " + channelList.size() + " channels:\n\n");
+		StringBuilder builder = new StringBuilder("### Channel Statistics for  " + channelList.size() + " channels:\n\n");
 
 		for (EChannel channel : channelList) {
 			builder.append(this.getSingleChannelStatistic(channel));
@@ -433,7 +433,7 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 	 */
 	public String getInitiatorStatistics() {
 		List<EInitiator> initiatorList = EInitiator.VALUES;
-		StringBuilder builder = new StringBuilder("## Initiator Statistics for  " + initiatorList.size() + " initiators:\n\n");
+		StringBuilder builder = new StringBuilder("### Initiator Statistics for  " + initiatorList.size() + " initiators:\n\n");
 
 		for (EInitiator initiator : initiatorList) {
 			builder.append(this.getSingleInitiatorStatistics(initiator));
@@ -449,7 +449,7 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 	 */
 	public String getComparedToExpected(Journey expected) {
 		JourneyDiff diff = this.compareTo(expected);
-		StringBuilder builder = new StringBuilder("## Compared to the Expected Journey:\n");
+		StringBuilder builder = new StringBuilder("### Compared to the Expected Journey:\n");
 		builder.append("* Common touchpoints: " + diff.getCommonTP() + "\n");
 		builder.append("* New touchpoints:    " + diff.getNewTP() + "\n");
 		builder.append("* Unused touchpoints: " + diff.getUnusedTP() + "\n");
@@ -582,15 +582,15 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 	 */
 	public String toMarkdown() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("\n##  customer journey " + this.getName() + '\n');
-		builder.append("*    from: " + this.getDate());
-		builder.append("*    status: " + this.getStatus());
-		builder.append("*    commnt: " + this.getComment());
-		builder.append("\n###    touchpoints:");
+		builder.append("\n#### " + this.getName() + "\n\n");
+		builder.append("*    from: " + this.getDate() + "\n");
+		builder.append("*    status: " + this.getStatus() + "\n");
+		builder.append("*    commnt: " + this.getComment() + "\n");
+		builder.append("\n####    touchpoints:\n\n");
 		int i = 0;
 		for (Touchpoint tp : (List<Touchpoint>) this.getTouchpoints()) {
 			i++;
-			builder.append(i + ".     " + tp.getID() + " " + tp.getName() + " (" + tp.getEvaluation() + ")");
+			builder.append(i + ".     " + tp.getID() + " " + tp.getName() + " (" + tp.getEvaluation() + ")\n");
 		}
 		return builder.toString();
 	}

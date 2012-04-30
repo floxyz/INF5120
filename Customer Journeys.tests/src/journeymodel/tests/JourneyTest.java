@@ -198,19 +198,6 @@ public class JourneyTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link journeymodel.Journey#getGraphviz(boolean, org.eclipse.emf.common.util.EList) <em>Get Graphviz</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see journeymodel.Journey#getGraphviz(boolean, org.eclipse.emf.common.util.EList)
-	 * @generated
-	 */
-	public void testGetGraphviz__EList_boolean() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link journeymodel.Journey#getSingleChannelStatistics(journeymodel.EChannel) <em>Get Single Channel Statistics</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -244,6 +231,19 @@ public class JourneyTest extends TestCase {
 	 * @generated
 	 */
 	public void testGetEdges() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link journeymodel.Journey#getGraphviz(boolean, org.eclipse.emf.common.util.EList) <em>Get Graphviz</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see journeymodel.Journey#getGraphviz(boolean, org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	public void testGetGraphviz__boolean_EList() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

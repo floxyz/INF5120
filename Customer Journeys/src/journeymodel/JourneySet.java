@@ -100,10 +100,10 @@ public interface JourneySet extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @model
 	 * @generated
 	 */
-	String getComparedToExpected();
+	String getComparedToExpected(Journey journey);
 
 	/**
 	 * <!-- begin-user-doc -->

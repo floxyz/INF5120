@@ -20,7 +20,7 @@ import junit.textui.TestRunner;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link journeymodel.JourneySet#getComparedToExpected() <em>Get Compared To Expected</em>}</li>
+ *   <li>{@link journeymodel.JourneySet#getComparedToExpected(journeymodel.Journey) <em>Get Compared To Expected</em>}</li>
  *   <li>{@link journeymodel.JourneySet#getGraphviz() <em>Get Graphviz</em>}</li>
  *   <li>{@link journeymodel.JourneySet#getGraphviz(journeymodel.Journey) <em>Get Graphviz</em>}</li>
  *   <li>{@link journeymodel.JourneySet#getGlobalComparedToExpected() <em>Get Global Compared To Expected</em>}</li>
@@ -101,10 +101,10 @@ public class JourneySetTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link journeymodel.JourneySet#getComparedToExpected() <em>Get Compared To Expected</em>}' operation.
+	 * Tests the '{@link journeymodel.JourneySet#getComparedToExpected(journeymodel.Journey) <em>Get Compared To Expected</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see journeymodel.JourneySet#getComparedToExpected()
+	 * @see journeymodel.JourneySet#getComparedToExpected(journeymodel.Journey)
 	 * @generated
 	 */
 	public void testGetComparedToExpected() {
