@@ -404,7 +404,7 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 		builder.append("* Medium Ratings: " + mediumRatingCount + " ("
 				+ ((float) (mediumRatingCount) / (float) (this.getTouchpoints().size())) * 100 + "%)\n");
 		Integer naRatingCount = this.getRatingCount(EEvaluation.NOT_AVAILABLE);
-		builder.append("* Na Ratings: " + naRatingCount + " (" + ((float) (naRatingCount) / (float) (totalRatings)) * 100 + "%)\n");
+		builder.append("* N/a Ratings: " + naRatingCount + " (" + ((float) (naRatingCount) / (float) (totalRatings)) * 100 + "%)\n");
 		Integer emptyRatingCount = this.getRatingCount(EEvaluation.EMPTY);
 		builder.append("* Empty Ratings: " + emptyRatingCount + " (" + ((float) (emptyRatingCount) / (float) (totalRatings)) * 100 + "%)\n");
 		builder.append("\n\n");
