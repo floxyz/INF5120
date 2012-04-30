@@ -62,8 +62,6 @@ public class ModelLoader {
 	public void makeWebsite(String filename) throws IOException {
 		if (resourceContent instanceof JourneySet){
 			Website generator = new Website((JourneySet) resourceContent);
-			FileWriter fstream = new FileWriter(filename);
-			BufferedWriter out = new BufferedWriter(fstream);
 			generator.make(filename);
 		}
 	}
