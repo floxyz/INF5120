@@ -582,7 +582,7 @@ public class JourneymodelPackageImpl extends EPackageImpl implements Journeymode
 		initEReference(getJourney_JourneySet(), this.getJourneySet(), null, "journeySet", null, 0, 1, Journey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJourney_Touchpoints(), this.getTouchpoint(), null, "touchpoints", null, 1, -1, Journey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = addEOperation(journeyEClass, this.getJourneyDiff(), "compare", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = addEOperation(journeyEClass, this.getJourneyDiff(), "compareTo", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getJourney(), "other", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(journeyEClass, ecorePackage.getEString(), "getRatingStatistics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -600,10 +600,14 @@ public class JourneymodelPackageImpl extends EPackageImpl implements Journeymode
 		op = addEOperation(journeyEClass, ecorePackage.getEIntegerObject(), "getRatingCount", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEEvaluation(), "evaluation", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(journeyEClass, ecorePackage.getEString(), "getGraphviz", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		op = addEOperation(journeyEClass, ecorePackage.getEString(), "getSingleChannelStatistics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEChannel(), "channel", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(journeyEClass, ecorePackage.getEEList(), "getEdges", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(journeyEClass, ecorePackage.getEString(), "getGraphviz", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "isActive", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEEList(), "activeEdges", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(journeyEClass, ecorePackage.getEString(), "toMarkdown", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -626,6 +630,9 @@ public class JourneymodelPackageImpl extends EPackageImpl implements Journeymode
 		addEOperation(journeySetEClass, ecorePackage.getEString(), "getComparedToExpected", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(journeySetEClass, ecorePackage.getEString(), "getGraphviz", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(journeySetEClass, ecorePackage.getEString(), "getGraphviz", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getJourney(), "activeJourney", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(journeySetEClass, ecorePackage.getEString(), "getGlobalComparedToExpected", 0, 1, IS_UNIQUE, IS_ORDERED);
 

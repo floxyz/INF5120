@@ -20,15 +20,16 @@ import junit.textui.TestRunner;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link journeymodel.Journey#compare(journeymodel.Journey) <em>Compare</em>}</li>
+ *   <li>{@link journeymodel.Journey#compareTo(journeymodel.Journey) <em>Compare To</em>}</li>
  *   <li>{@link journeymodel.Journey#getRatingStatistics() <em>Get Rating Statistics</em>}</li>
  *   <li>{@link journeymodel.Journey#getChannelStatistics() <em>Get Channel Statistics</em>}</li>
  *   <li>{@link journeymodel.Journey#getInitiatorStatistics() <em>Get Initiator Statistics</em>}</li>
  *   <li>{@link journeymodel.Journey#getComparedToExpected(journeymodel.Journey) <em>Get Compared To Expected</em>}</li>
  *   <li>{@link journeymodel.Journey#getSingleInitiatorStatistics(journeymodel.EInitiator) <em>Get Single Initiator Statistics</em>}</li>
  *   <li>{@link journeymodel.Journey#getRatingCount(journeymodel.EEvaluation) <em>Get Rating Count</em>}</li>
- *   <li>{@link journeymodel.Journey#getGraphviz() <em>Get Graphviz</em>}</li>
  *   <li>{@link journeymodel.Journey#getSingleChannelStatistics(journeymodel.EChannel) <em>Get Single Channel Statistics</em>}</li>
+ *   <li>{@link journeymodel.Journey#getEdges() <em>Get Edges</em>}</li>
+ *   <li>{@link journeymodel.Journey#getGraphviz(boolean, org.eclipse.emf.common.util.EList) <em>Get Graphviz</em>}</li>
  *   <li>{@link journeymodel.Journey#toMarkdown() <em>To Markdown</em>}</li>
  * </ul>
  * </p>
@@ -106,13 +107,13 @@ public class JourneyTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link journeymodel.Journey#compare(journeymodel.Journey) <em>Compare</em>}' operation.
+	 * Tests the '{@link journeymodel.Journey#compareTo(journeymodel.Journey) <em>Compare To</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see journeymodel.Journey#compare(journeymodel.Journey)
+	 * @see journeymodel.Journey#compareTo(journeymodel.Journey)
 	 * @generated
 	 */
-	public void testCompare__Journey() {
+	public void testCompareTo__Journey() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -197,13 +198,13 @@ public class JourneyTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link journeymodel.Journey#getGraphviz() <em>Get Graphviz</em>}' operation.
+	 * Tests the '{@link journeymodel.Journey#getGraphviz(boolean, org.eclipse.emf.common.util.EList) <em>Get Graphviz</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see journeymodel.Journey#getGraphviz()
+	 * @see journeymodel.Journey#getGraphviz(boolean, org.eclipse.emf.common.util.EList)
 	 * @generated
 	 */
-	public void testGetGraphviz() {
+	public void testGetGraphviz__EList_boolean() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -230,6 +231,19 @@ public class JourneyTest extends TestCase {
 	 * @generated
 	 */
 	public void testToMarkdown() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link journeymodel.Journey#getEdges() <em>Get Edges</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see journeymodel.Journey#getEdges()
+	 * @generated
+	 */
+	public void testGetEdges() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

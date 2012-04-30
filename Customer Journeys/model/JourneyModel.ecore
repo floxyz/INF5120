@@ -4,7 +4,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="journeymodel"
     nsURI="http://customerjourney/1.0" nsPrefix="journeymodel">
   <eClassifiers xsi:type="ecore:EClass" name="Journey">
-    <eOperations name="compare" eType="#//JourneyDiff">
+    <eOperations name="compareTo" eType="#//JourneyDiff">
       <eParameters name="other" eType="#//Journey"/>
     </eOperations>
     <eOperations name="getRatingStatistics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -19,9 +19,13 @@
     <eOperations name="getRatingCount" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject">
       <eParameters name="evaluation" eType="#//EEvaluation"/>
     </eOperations>
-    <eOperations name="getGraphviz" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="getSingleChannelStatistics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eParameters name="channel" eType="#//EChannel"/>
+    </eOperations>
+    <eOperations name="getEdges" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList"/>
+    <eOperations name="getGraphviz" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eParameters name="isActive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eParameters name="activeEdges" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList"/>
     </eOperations>
     <eOperations name="toMarkdown" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -78,6 +82,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="JourneySet">
     <eOperations name="getComparedToExpected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="getGraphviz" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="getGraphviz" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eParameters name="activeJourney" eType="#//Journey"/>
+    </eOperations>
     <eOperations name="getGlobalComparedToExpected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="toMarkdown" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="journeys" upperBound="-1"

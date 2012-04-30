@@ -190,7 +190,7 @@ public class JourneySetImpl extends EObjectImpl implements JourneySet {
 		for (Journey journey: this.getJourneys()) {
 			if (journey == expected) continue;
 			
-			JourneyDiff diff = expected.compare(journey);
+			JourneyDiff diff = expected.compareTo(journey);
 			++total;
 			
 			common += diff.getCommonTP();
@@ -229,16 +229,35 @@ public class JourneySetImpl extends EObjectImpl implements JourneySet {
 	 */
 	public String getGraphviz() {
 		StringBuilder builder = new StringBuilder("strict digraph JourneySet {\n");
+		builder.append("rankdir=LR;\n");
 		
 		Journey expected = getExpectedJoruney();
-		builder.append(expected.getGraphviz());
+		//EList<String> expEdges = expected.getEdges(); 
+		builder.append(expected.getGraphviz(false, null));
 		for (Journey journey: getJourneys()) {
 			if (journey == expected) continue;
-			builder.append(journey.getGraphviz());
+			builder.append(journey.getGraphviz(false, null));
 		}
 		
 		builder.append("}\n"); //close JourneySet
 		
+		return builder.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String getGraphviz(Journey activeJourney) {
+		StringBuilder builder = new StringBuilder("strict digraph " + activeJourney.getID() + " {\n");
+		builder.append("rankdir=LR;\n");
+		builder.append("edge [color=slategrey]\n");
+		
+		builder.append(getExpectedJoruney().getGraphviz(false, activeJourney.getEdges()));
+		builder.append(activeJourney.getGraphviz(true, null));
+		
+		builder.append("}\n"); //close JourneySet
 		return builder.toString();
 	}
 
@@ -259,7 +278,7 @@ public class JourneySetImpl extends EObjectImpl implements JourneySet {
 		for (Journey journey: this.getJourneys()) {
 			if (journey == expected) continue;
 			
-			JourneyDiff diff = expected.compare(journey);
+			JourneyDiff diff = expected.compareTo(journey);
 			++total;
 			
 			common += diff.getCommonTP();

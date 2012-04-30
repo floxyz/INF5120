@@ -8,14 +8,13 @@ package journeymodel.impl;
 
 import java.util.Collection;
 import java.util.Date;
-import java.util.List;
-
-import journeymodel.EInitiator;
-import java.util.Set;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import journeymodel.EChannel;
 import journeymodel.EEvaluation;
+import journeymodel.EInitiator;
 import journeymodel.EStatus;
 import journeymodel.Journey;
 import journeymodel.JourneyDiff;
@@ -25,15 +24,12 @@ import journeymodel.Touchpoint;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -351,7 +347,6 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 		return touchpoints;
 	}
 
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * Compare Journey's Touchpoint lists.
@@ -363,7 +358,7 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public JourneyDiff compare(Journey other) {
+	public JourneyDiff compareTo(Journey other) {
 		Set<String> thisSet = new HashSet<String>();
 		Set<String> otherSet = new HashSet<String>();
 		for (Touchpoint tp: getTouchpoints())
@@ -453,7 +448,7 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 	 * @generated NOT
 	 */
 	public String getComparedToExpected(Journey expected) {
-		JourneyDiff diff = this.compare(expected);
+		JourneyDiff diff = this.compareTo(expected);
 		StringBuilder builder = new StringBuilder("## Compared to the Expected Journey:\n");
 		builder.append("* Common touchpoints: " + diff.getCommonTP() + "\n");
 		builder.append("* New touchpoints:    " + diff.getNewTP() + "\n");
@@ -497,14 +492,30 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * isActive means that edges in this journey should be marked with color.
+	 * 
+	 * activeEdges list contains edges for other journeys that should be marked
+	 * with color. Because they might be are first referred here they have to
+	 * be already defined with color.
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public String getGraphviz() {
+	public String getGraphviz(boolean isActive, EList<String> activeEdge) {
 		StringBuilder builder = new StringBuilder();
 		builder.append("subgraph cluster_" + getID() +" {\n");
 		builder.append("label = \"" + getID() + "\"\n");
 		
+		//Set colors for active nodes
+		if (isActive)
+			builder.append("edge [color=darkorange];\n");
+		else if (activeEdge != null){
+			for (String edge: getEdges()) {
+				if (edge.charAt(0) == ' ' || edge.charAt(edge.length() - 1) == ' ' //except start/end edges
+						|| !activeEdge.contains(edge))
+					continue;
+				builder.append(edge + " [color=darkorange];\n");
+			}
+		}
 		boolean first = true;
 		for (Touchpoint tp: getTouchpoints()) {
 			if (first)
@@ -514,13 +525,35 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 			builder.append(tp.getID());
 		}
 		builder.append(";\n");
+		
+		//Add colors to the nodes
+		for (Touchpoint tp: getTouchpoints()) {
+			switch (tp.getEvaluation()) {
+			case GOOD: builder.append(tp.getID() + " [style=filled, fillcolor=lawngreen];\n"); break;
+			case MEDIUM: builder.append(tp.getID() + " [style=filled, fillcolor=cornflowerblue];\n"); break;
+			case BAD: builder.append(tp.getID() + " [style=filled, fillcolor=tomato];\n"); break;
+			case EMPTY: builder.append(tp.getID() + " [style=filled, fillcolor=white];\n"); break;
+			case NOT_AVAILABLE: builder.append(tp.getID() + " [style=filled, fillcolor=white];\n"); break;
+			}
+		}
 		builder.append("}\n"); //close Subgraph
 		
+		//Start and End nodes and edges
 		EList<Touchpoint> touchpoints = getTouchpoints();
 		Touchpoint start = touchpoints.get(0);
 		Touchpoint end = touchpoints.get(touchpoints.size() - 1);
-		builder.append("start -> " + start.getID() + ";\n");
-		builder.append(end.getID() + " -> end;\n");
+		
+		if (isActive || (activeEdge != null && activeEdge.contains(" -> " + start.getID())))
+			builder.append("start -> " + start.getID() + " [color=darkorange];\n");
+		else
+			builder.append("start -> " + start.getID() + ";\n");
+		
+		if (status == EStatus.COMPLETED) {
+		if (isActive || (activeEdge != null && activeEdge.contains(end.getID() + " -> ")))
+			builder.append(end.getID() + " -> end [color=darkorange];\n");
+		else
+			builder.append(end.getID() + " -> end;\n");
+		}
 		
 		return builder.toString();
 	}
@@ -560,6 +593,26 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 			builder.append(i + ".     " + tp.getID() + " " + tp.getName() + " (" + tp.getEvaluation() + ")");
 		}
 		return builder.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * Edges as a list of strings e.g.:
+	 * "ID0 -> ID1", "ID1 -> ID2"
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList<String> getEdges() {
+		EList<String> list = new BasicEList<String>();
+		String last = "";
+		for (Touchpoint tp: getTouchpoints()) {
+			list.add(last + " -> " + tp.getID());
+			last = tp.getID();
+		}
+		if (status == EStatus.COMPLETED) {
+			list.add(last + " -> ");
+		}
+		return list;
 	}
 
 	/**

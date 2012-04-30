@@ -116,6 +116,14 @@ public interface JourneySet extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	String getGraphviz(Journey activeJourney);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model kind="operation"
 	 * @generated
 	 */
