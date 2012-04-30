@@ -24,7 +24,7 @@ public class Visualizer {
 	private Resource resource;
 	private EObject resourceContent;
 	
-	private static String DOT = "dot";	// Assuming it's in the system path
+	private static String DOT = "/usr/local/bin/dot";	// Assuming it's in the system path
 
 	public Visualizer(String filename) {
 		// Create a resource set.
@@ -52,9 +52,7 @@ public class Visualizer {
 	 */
 	public void dump() throws IOException, InterruptedException {
 		// get model elements from the resource
-		if (resourceContent instanceof Journey) {
-			Journey journey = (Journey) resourceContent;
-		} else if (resourceContent instanceof JourneySet) {
+		if (resourceContent instanceof JourneySet) {
 			JourneySet set = (JourneySet) resourceContent;
 			
 			PrintWriter out = new PrintWriter(new FileOutputStream("graphSet.svg"));
@@ -77,7 +75,7 @@ public class Visualizer {
 	 * Toabi, this should be useful for you :)
 	 * It returns graph in SVG format. Take a look at dump() for example usage.
 	 */
-	private String graphvizToSvg(String graph) throws IOException, InterruptedException {
+	public static String graphvizToSvg(String graph) throws IOException, InterruptedException {
 		//Execute dot process
 		Runtime runTime = Runtime.getRuntime();
 		String[] args = {DOT, "-Tsvg"};
@@ -94,6 +92,9 @@ public class Visualizer {
     	StringBuilder builder = new StringBuilder();
     	String line;
     	while ((line = reader.readLine()) != null) {
+    		line = line.replaceAll("[0-9]+pt", "100%");
+    		//line = line.replaceAll("viewBox=\"([0-9]+.[0-9]+\\s?){4}\"", "");
+    		//System.out.println(line);
     		builder.append(line);
     	}
     	reader.close();

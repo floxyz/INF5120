@@ -504,7 +504,7 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 		StringBuilder builder = new StringBuilder();
 		builder.append("subgraph cluster_" + getID() +" {\n");
 		builder.append("label = \"" + getID() + "\"\n");
-		
+
 		//Set colors for active nodes
 		if (isActive)
 			builder.append("edge [color=darkorange];\n");
@@ -528,14 +528,18 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 		
 		//Add colors to the nodes
 		for (Touchpoint tp: getTouchpoints()) {
+			builder.append(tp.getID() + "[");
+			builder.append("style=filled, ");
+			builder.append("id=" + tp.getID() + ", ");
 			switch (tp.getEvaluation()) {
-			case GOOD: builder.append(tp.getID() + " [style=filled, fillcolor=lawngreen];\n"); break;
-			case MEDIUM: builder.append(tp.getID() + " [style=filled, fillcolor=cornflowerblue];\n"); break;
-			case BAD: builder.append(tp.getID() + " [style=filled, fillcolor=tomato];\n"); break;
-			case EMPTY: builder.append(tp.getID() + " [style=filled, fillcolor=white];\n"); break;
-			case NOT_AVAILABLE: builder.append(tp.getID() + " [style=filled, fillcolor=white];\n"); break;
+				case GOOD: builder.append("fillcolor=lawngreen"); break;
+				case MEDIUM: builder.append("fillcolor=cornflowerblue"); break;
+				case BAD: builder.append("fillcolor=tomato"); break;
+				case EMPTY: builder.append("fillcolor=white"); break;
+				case NOT_AVAILABLE: builder.append("fillcolor=white"); break;
 			}
-		}
+			builder.append("];\n");
+		}		
 		builder.append("}\n"); //close Subgraph
 		
 		//Start and End nodes and edges
@@ -555,6 +559,7 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 			builder.append(end.getID() + " -> end;\n");
 		}
 		
+		System.out.println(builder.toString());
 		return builder.toString();
 	}
 

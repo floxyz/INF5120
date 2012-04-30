@@ -8,6 +8,7 @@
     <property environment="env"/>
     <property name="ECLIPSE_HOME" value="../../../../../Applications/eclipse"/>
     <property name="Customer Journeys.analyzer.location" value="../Customer Journeys.analyzer"/>
+    <property name="Customer Journeys.visualizer.location" value="../Customer Journeys.visualizer"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.6"/>
     <property name="source" value="1.6"/>
@@ -52,6 +53,12 @@
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects">
         <ant antfile="build.xml" dir="${Customer Journeys.analyzer.location}" inheritAll="false" target="clean"/>
         <ant antfile="build.xml" dir="${Customer Journeys.analyzer.location}" inheritAll="false" target="build">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+        <ant antfile="build.xml" dir="${Customer Journeys.visualizer.location}" inheritAll="false" target="clean"/>
+        <ant antfile="build.xml" dir="${Customer Journeys.visualizer.location}" inheritAll="false" target="build">
             <propertyset>
                 <propertyref name="build.compiler"/>
             </propertyset>

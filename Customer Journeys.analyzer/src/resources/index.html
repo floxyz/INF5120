@@ -24,7 +24,7 @@
 
     <div class="container">
 	
-	<div class="row">
+	<div class="row journeys">
 		<div class="span12">
 			  <h1 id="h1_per_journey">Journeys</h1>
 			  
@@ -49,7 +49,7 @@
 								<ul>
 								<#list journey.getTouchpoints() as tp>
 									<li>
-										<div class="well">
+										<div class="touchpoint well" data-id="${tp.getID()}">
 											<h5>${tp.getName()} <span class="label 
 													<#switch tp.getEvaluation()>
 													<#case 'good'>
@@ -75,7 +75,13 @@
 								</#list>
 								</ul>
 							</div>
-							<div class="span6 offset2">
+							<div class="span7 offset1">
+								<div class="thumbnail">
+									<#assign id = journey.getID()>
+									${graphs[id]}
+								</div>
+								
+								
 					            <#assign x = journey.getRatingStatistics()>
 					            <p>${m.markdown(x)}</p>
 
@@ -94,16 +100,26 @@
 			        </#list>
 			      </div>					
 	  		</div>
+	</div> <!-- upper row  -->
+	
+	<div class="row global">
+        <h1 id="h1_global">Global statistics</h1>
 
-	</div>
-    
-	<div class="row">
-		<div class="span12">
-	      <h1 id="h1_global">Global statistics</h1>
+		<div class="span8">
+			<div class="thumbnails">
+				<div class="thumbnail">
+					${graphs._set}
+				</div>
+				<h5>Graph of all journeys compared to the reference.</h5>
+			</div>
+		</div>
+
+		<div class="span4">
 	      <#assign x = set.getGlobalComparedToExpected()>
 	      <p>${m.markdown(x)}</p>			
 		</div>
-	</div>
+		
+	</div> 	<!-- bottom row -->
 	  
       
     </div> <!-- /container -->

@@ -8,3 +8,9 @@ div.touchpoint-details ul{
 	list-style: none;
 	margin-left: 0;
 }
+
+
+.touchpoint.highlighted, .touchpoint:hover{
+	border-color: black;
+	border-width: 2px;
+}

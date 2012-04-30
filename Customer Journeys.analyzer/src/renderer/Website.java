@@ -5,14 +5,14 @@ import java.util.*;
 
 import com.petebevin.markdown.MarkdownProcessor;
 
-import freemarker.cache.ClassTemplateLoader;
 import freemarker.cache.FileTemplateLoader;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 
+import journeymodel.Journey;
 import journeymodel.JourneySet;
-import logic.DetailAnalyzer;
+import logic.Visualizer;
 
 public class Website {
 
@@ -39,6 +39,13 @@ public class Website {
 		// the real deal
 		model.put("set", this.set);
 		model.put("journeys", this.set.getJourneys());
+
+		HashMap<String, String> graphs = new HashMap<String, String>();		
+		for(Journey j: set.getJourneys()){
+			graphs.put(j.getID(), this.getSvgGraph(this.set, j));
+		}
+		graphs.put("_set", this.getSvgGraph(set, null));
+		model.put("graphs", graphs);
 		
 		// render and save the stuff
 		try {
@@ -61,6 +68,24 @@ public class Website {
 		
 	}
 
+	private String getSvgGraph(JourneySet set, Journey j){
+		try {
+			if(j == null){
+				return Visualizer.graphvizToSvg(set.getGraphviz());
+			} else {
+				return Visualizer.graphvizToSvg(set.getGraphviz(j));
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+		
+	}
+		
 	private String getResource(String name){
 		System.out.println("Loading resource: " + name);
 		return Website.readTextFile(String.class, name);
