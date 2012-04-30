@@ -559,7 +559,6 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 			builder.append(end.getID() + " -> end;\n");
 		}
 		
-		System.out.println(builder.toString());
 		return builder.toString();
 	}
 
