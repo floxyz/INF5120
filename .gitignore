@@ -1,8 +1,6 @@
 *.class
 
 # Package Files #
-*.jar
-!libs/*.jar	#exclude libs for the projects
 *.war
 *.ear
 
