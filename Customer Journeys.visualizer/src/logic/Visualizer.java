@@ -24,7 +24,7 @@ public class Visualizer {
 	private Resource resource;
 	private EObject resourceContent;
 	
-	private static String DOT = "/usr/local/bin/dot";	// Assuming it's in the system path
+	private static String DOT = "dot";	// Assuming it's in the system path
 
 	public Visualizer(String filename) {
 		// Create a resource set.
