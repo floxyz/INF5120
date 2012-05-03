@@ -35,12 +35,12 @@ parts of the assignment have been solved and implemented. The basic task was to 
 the Eclipse Modelling Framework\footnote{EMF - \url{http://www.eclipse.org/modeling/emf/}}, make it possible to extract 
 statistics out of the customer journeys and finally the option to choose between three different tasks. For the third part 
 it was possible to choose between a user-friendly editor, a graphical exporter or adding support for multiple journeys. In
-this report the third option, a graphical exporter, was chosen and combined with the statistic component.
+this report, the third option, a graphical exporter, was chosen and combined with the statistic component.
 
 The first Section \ref{section:model} describes how the model was built and discusses the different components. The next
 section \ref{section:statistic} depicts which statistics were generated. Section \ref{section:export}
 compares the initial graph idea to the final graphs produced by the exporter. Section \ref{section:merge} explains how
-the statistic and the exporter components were merged to generate a useful html. Finally, section \ref{section:impl} shows
+the statistic and the exporter components were merged to generate a useful HTML report. Finally, section \ref{section:impl} shows
 some details about the implementation and how we used the EMF tools.
 
 \section{Creating a DSL metamodel with EMF} 
@@ -59,8 +59,8 @@ The model itself consists of three main components: The first one is the \lstinl
 includes the reference journey and a set of examples. A reference journey has to be set to allow comparison
 between the example journeys and the reference. This component also has a method which allows the comparison
 of the journeys to the reference journey. The model also contains the method \lstinline!getComparedToExpectedJourney(Journey)!
-which compares a given journey to the reference. Other methods generate the graphical export and the markdown source. More
-information on the two latter things can be found in Sections \ref{section:statistic} and \ref{section:export}.
+which compares a given journey to the reference. Other methods generate the graphical export and the markdown source of the
+statistics. More information on the two latter things can be found in Sections \ref{section:statistic} and \ref{section:export}.
 
 The second component is the \lstinline!Journey! which depicts the Customer journey itself. This journey consists of 
 an ID, a more descriptive name, a date, the status and an optional comment. If the ID of a journey is 
@@ -101,9 +101,11 @@ One part of the assignment was to print the statistics in a convenient and usefu
 We choose the generate a HTML report which contains all data in a standalone file for easy sharing. The report
 contains all the journeys with their touchpoints, the generated graphs and statistics. The list of touchpoints
 is linked with the graphical representation by clientside scripting. This report is generated using markdown
-\footnote{http://daringfireball.net/projects/markdown/} which also makes it easy for a human to read. At the time
+Freemaker, a Java Templating Library. The statistics are converted from their plain text Markdown\footnote{http://daringfireball.net/projects/markdown/} representation to HTML and inserted. This allows to also
+produce ACSII only or CLI output on the console which is still easy for a human to read. At the time
 of writing this report the Analyzer component does not  produce the markdown source directly but the merged product as 
-described in  section \ref{section:merge}. The classic markdown report can be easily activated again in the source code.
+described in  section \ref{section:merge}. The classic markdown-only report can be easily activated again by doing
+simple modifications to the source code.
 
 \section{Graphical Export} 
 \label{section:export}
@@ -143,13 +145,15 @@ arrows make it easy to follow the example journey.
 \label{section:merge}
 
 The last work done for this assignment was to merge the graphical export feature and the statistics view. This was
-implemented into the Analyzer component and generates a new html file which can be viewed with a web browser (tested
-with Chrome 18, Firefox 12 and Safari). The html shows a tabbed view of all the example journeys and it is possible to view
+implemented into the Analyzer component and generates a new HTML file which can be viewed with a web browser (tested
+with Chrome 18+, Firefox 12 and Safari). The HTML shows a tabbed view of all the example journeys and it is possible to view
 every journey on its own. All the statistics from the analyzer can be found here. By hovering over a touchpoint
-it is marked in the graphical export which allows an easy overview even of very complex journeys. 
+it is highlighted in the graphical export which allows an easy overview even of very complex journeys. The reverse
+way is also possible.
+
 Figure \ref{figure:merge_figure} shows an example of the merged component. Every page also shows the complete overview
-and the touchpoints there are also highlighted. To generate the html the CLI from the Analyzer component has to be run
-and a new html named \lstinline!output.hmtl! is generated. This file can be viewed with any web browser.
+and the touchpoints there are also highlighted. To generate the HTML the CLI from the Analyzer component has to be run
+and a new HTML file named \lstinline!output.hmtl! is generated. This file can be viewed with any recent web browser.
 
 \begin{figure}[hbtp]
 	\centering
@@ -176,6 +180,6 @@ customer journeys as described in Section \ref{section:export}.
 	\label{figure:projects}
 \end{figure}
 
-For version control a github repository was used\footnote{\url{https://github.com/floxyz/INF5120}}.
+For version control and collaboration, a git repository hosted on Github was used\footnote{\url{https://github.com/floxyz/INF5120}}.
 
 \end{document}
