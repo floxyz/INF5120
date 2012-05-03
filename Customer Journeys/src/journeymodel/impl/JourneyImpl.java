@@ -489,6 +489,8 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 		}
 		return counter;
 	}
+	
+	protected static String arrowColor = "darkorange";
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -507,13 +509,13 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 
 		//Set colors for active nodes
 		if (isActive)
-			builder.append("edge [color=darkorange];\n");
+			builder.append("edge [color=" + arrowColor + "];\n");
 		else if (activeEdge != null){
 			for (String edge: getEdges()) {
 				if (edge.charAt(0) == ' ' || edge.charAt(edge.length() - 1) == ' ' //except start/end edges
 						|| !activeEdge.contains(edge))
 					continue;
-				builder.append(edge + " [color=darkorange];\n");
+				builder.append(edge + " [color=" + arrowColor + "];\n");
 			}
 		}
 		boolean first = true;
@@ -533,9 +535,9 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 			builder.append("id=" + tp.getID() + ", ");
 			switch (tp.getEvaluation()) {
 				case GOOD: builder.append("fillcolor=lawngreen"); break;
-				case MEDIUM: builder.append("fillcolor=cornflowerblue"); break;
+				case MEDIUM: builder.append("fillcolor=\"#F89406\""); break;
 				case BAD: builder.append("fillcolor=tomato"); break;
-				case EMPTY: builder.append("fillcolor=white"); break;
+				case EMPTY: builder.append("fillcolor=\"#999999\""); break;
 				case NOT_AVAILABLE: builder.append("fillcolor=white"); break;
 			}
 			builder.append("];\n");
@@ -548,13 +550,13 @@ public class JourneyImpl extends EObjectImpl implements Journey {
 		Touchpoint end = touchpoints.get(touchpoints.size() - 1);
 		
 		if (isActive || (activeEdge != null && activeEdge.contains(" -> " + start.getID())))
-			builder.append("start -> " + start.getID() + " [color=darkorange];\n");
+			builder.append("start -> " + start.getID() + " [color=" + arrowColor + "];\n");
 		else
 			builder.append("start -> " + start.getID() + ";\n");
 		
 		if (status == EStatus.COMPLETED) {
 		if (isActive || (activeEdge != null && activeEdge.contains(end.getID() + " -> ")))
-			builder.append(end.getID() + " -> end [color=darkorange];\n");
+			builder.append(end.getID() + " -> end [color=" + arrowColor + "];\n");
 		else
 			builder.append(end.getID() + " -> end;\n");
 		}
