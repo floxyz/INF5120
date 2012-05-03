@@ -44,6 +44,7 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.common_2.7.0.v20120127-1122.jar"/>
         <pathelement location="../libs/markdownj-1.0.2b4-0.3.0.jar"/>
         <pathelement location="../libs/freemarker.jar"/>
+        <pathelement location="../libs/JSAP-2.1.jar"/>
         <path refid="Customer Journeys.visualizer.classpath"/>
     </path>
     <target name="init">
@@ -97,6 +98,7 @@
     </target>
     <target name="CLI">
         <java classname="ui.CLI" failonerror="true" fork="yes">
+        	<arg line="${args}"/>
             <classpath refid="Customer Journeys.analyzer.classpath"/>
         </java>
     </target>
